@@ -8,31 +8,48 @@ import {
   View,
   Alert,
   Image,
+  Platform,
 } from 'react-native';
 
 import TabNavigator from 'react-native-tab-navigator';
+import { Navigator } from 'react-native-deprecated-custom-components';
+
+import Home from './pages/Home/HJHome';
+import Shop from './pages/Shop/HJShop';
+import Category from './pages/Category/HJCategory';
+import Mine from './pages/Mine/HJMine';
+
 
 export default class Main extends React.Component {
+
+  // Main.propTypes = {
+  //   title:React.PropTypes.bool
+  // };
+  //
+  // Main.defaultProps = {
+  //   title:'title'
+  // };
+
 
   constructor(props){
     super(props);
     this.state = {selectedTab:'Home'};
-  }
+  };
+
+
 
   render() {
     return (
       <TabNavigator>
 
-        <TabNavigator>
-              {/* 首页 */}
-              {this.renderTabItem("首页",'ico_dhshouye','ico_dhshouyed','Home','Home',Home)}
-              {/* 商家 */}
-              {this.renderTabItem("店铺",'ico_dhdianpu','ico_dhdianpud','Shop','Shop',Shop)}
-              {/* 我的 */}
-              {this.renderTabItem("分类",'ico_dhfeilei','ico_dhfeileid','Mine','Mine',Mine)}
-              {/* 更多 */}
-              {this.renderTabItem("我的",'ico_dhwode','ico_dhwoded','More','More',More)}
-            </TabNavigator>
+        {/* 首页 */}
+        {this.renderTabItem("首页",'ico_dhshouye','ico_dhshouyed','Home','Home',Home,'12')}
+        {/* 商家 */}
+        {this.renderTabItem("店铺",'ico_dhdianpu','ico_dhdianpud','Shop','Shop',Shop)}
+        {/* 我的 */}
+        {this.renderTabItem("分类",'ico_dhfeilei','ico_dhfeileid','Category','Category',Category)}
+        {/* 更多 */}
+        {this.renderTabItem("我的",'ico_dhwode','ico_dhwoded','Mine','Mine',Mine)}
 
       </TabNavigator>
     );
@@ -64,5 +81,21 @@ export default class Main extends React.Component {
       )
     }
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#F5FCFF',
+    },
+    iconStyle:{
+      width: Platform.OS === 'ios' ? 30 :25,
+      height:30
+    },
+    selectedTitleStyle:{
+      color:'orange'
+    }
+});
 
 module.exports = Main;
