@@ -18,7 +18,9 @@ export default class NHPatient extends React.Component {
     return (
       // <NHHome index={index} />
       <Text>
-        wo  rae dsaduasu
+        wo  rae dsaduasuhqwiueiu
+        hqwiuehiuqwehh
+        qiwuehiuqwhuiehiquwhehwqiuehiuq
       </Text>
     );
   }
