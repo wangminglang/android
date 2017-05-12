@@ -17,5 +17,6 @@
     "react-native-swiper": "^1.5.4",
     "react-native-viewpager": "^0.2.13",
     "react-timer-mixin": "^0.13.3",
+    "react-native-tab-navigator": "^0.3.3"
   }
 }
