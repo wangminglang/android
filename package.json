@@ -6,9 +6,7 @@
     "start": "node node_modules/react-native/local-cli/cli.js start",
 	  "bundle-android-assets":"node node_modules/react-native/local-cli/cli.js bundle --platform android --dev false --entry-file index.android.js --bundle-output ../assets/index.android.bundle --assets-dest app/src/main/res/",
     "bundle-android":"react-native bundle --entry-file index.android.js --bundle-output ../bundle/index.android.bundle --platform android --assets-dest ../bundle --dev false",
-    "bundle-ios":"node node_modules/react-native/local-cli/cli.js bundle --platform ios --entry-file index.ios.js --bundle-output ./main.jsbundle --dev false",
-    "bundle-ios-assets":"node node_modules/react-native/local-cli/cli.js bundle --entry-file index.ios.js --bundle-output ./bundle/index.ios.jsbundle --platform ios --assets-dest ./bundle --dev false"
-
+    "bundle-ios-assets":"node node_modules/react-native/local-cli/cli.js bundle --entry-file index.ios.js --bundle-output .Bundle/ios/index.ios.jsbundle --platform ios --assets-dest ./bundle --dev false"
   },
   "dependencies": {
     "react": "16.0.0-alpha.6",
