@@ -10,13 +10,16 @@ import {
   Image,
 } from 'react-native';
 
-import NHHome from './Component/Home/NHHome';
+// import NHHome from './Component/Home/NHHome';
 
 export default class NHPatient extends React.Component {
   render() {
-    var index = this.props['index'];
+    // var index = this.props['index'];
     return (
-      <NHHome index={index} />
+      // <NHHome index={index} />
+      <Text>
+        wo  rae dsaduasu
+      </Text>
     );
   }
 }
