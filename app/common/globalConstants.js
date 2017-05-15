@@ -1,4 +1,5 @@
 import { Dimensions, Platform, PixelRatio } from 'react-native';
+import NetUtil from './NHNetUtil';
 
 global.gScreen = {
     width: Dimensions.get('window').width,
@@ -17,3 +18,5 @@ global.gColors = {
     healthYellow: 'rgb(254, 210, 10)',
     healthRed: 'rgb(251, 25, 8)'
 }
+
+global.NetUtil = NetUtil;

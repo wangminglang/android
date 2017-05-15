@@ -31,5 +31,3 @@ export default class Mine extends React.Component {
 
 
 }
-
-module.exports = Mine;

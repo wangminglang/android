@@ -31,5 +31,3 @@ export default class Shop extends React.Component {
 
 
 }
-
-module.exports = Shop;

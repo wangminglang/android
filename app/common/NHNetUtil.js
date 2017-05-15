@@ -1,8 +1,8 @@
 import Common from './constants';
 import md5 from "react-native-md5";
 
-export default Util = {
-	get: (url, successCallback, failCallback) => {
+export default NetUtil = {
+	GET: (url, successCallback, failCallback) => {
 		fetch(url)
 			.then((response) => response.text())
 			.then((responseText) => {
@@ -13,16 +13,16 @@ export default Util = {
 			})
 	},
 
-	post: (url,params,callback) => {
+	POST: (url,params,callback) => {
         let tokenString = Common.netConfig.AppId;
         tokenString = tokenString+Common.netConfig.AppKey;
         let now = Date.now().toString().slice(0,10);
         tokenString += now;
         let token = md5.hex_md5(tokenString);
         let param = {
-          'appId':Component.AppId,
+          'appId':Common.netConfig.AppId,
           'deviceId' : '95501CD5-EF3D-4690-8E45-29D6610C7B85',
-          'clientversion' : Component.clientversion,
+          'clientversion' : Common.netConfig.clientversion,
           'time' : now,
           'token' : token
         };
@@ -31,7 +31,6 @@ export default Util = {
             param[key] = params[key];
           }
         }
-
         let queryString = toQueryString(param);
         fetch(url,
                 {
@@ -47,7 +46,7 @@ export default Util = {
             .then((responseData)=>{
               // alert(responseData.data.changeExpertNoticeText);
               if (callback) {
-
+								console.log(url,param,responseData);
                 callback(responseData);
               }
             })
