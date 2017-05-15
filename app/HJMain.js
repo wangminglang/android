@@ -1,5 +1,6 @@
 'use strict';
 
+import GlobalContants from './common/globalConstants';
 import React,{Component} from 'react';
 import {
   AppRegistry,

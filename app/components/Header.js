@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
     StyleSheet,
     View,
@@ -8,12 +8,16 @@ import {
     Platform
 } from 'react-native';
 
-export default class Header extends Component {
+export default class Header extends PureComponent {
+	static defaultProps = {
+		showLeftIcon: false
+	}
+
 	render() {
 		let NavigationBar = []
 
 		//左边按钮
-		if (this.props.leftIcon != undefined) {
+		if (this.props.showLeftIcon) {
 			NavigationBar.push(
 				<TouchableOpacity
 					key='leftIcon'
@@ -21,7 +25,7 @@ export default class Header extends Component {
 					onPress={this.props.leftIconAction}
 					style={styles.leftIcon}
 				>
-					<Image resizeMode={'contain'} source={this.props.leftIcon} style={{height: this.props.leftIconSize || 20, width: this.props.leftIconSize || 20}}  />
+					<Image resizeMode={'contain'} source={require('../resource/ic_back_dark.png')} style={{height: this.props.leftIconSize || 20, width: this.props.leftIconSize || 20}}  />
 				</TouchableOpacity>
 			)
 		}
@@ -89,9 +93,8 @@ const styles = StyleSheet.create({
         borderBottomColor: '#ccc'
 	},
 	title: {
-		fontSize: 16,
-        marginLeft: 15,
-        color: 'black'
+		fontSize: 17,
+        color: gColors.title
 	},
 	leftIcon: {
 		width: Platform.OS === 'ios' ? 44 : 50,
