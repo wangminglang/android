@@ -1,4 +1,5 @@
 import { Dimensions, Platform, PixelRatio } from 'react-native';
+import NetUtil from './NHNetUtil';
 
 global.gScreen = {
     width: Dimensions.get('window').width,
@@ -17,3 +18,6 @@ global.gColors = {
 global.gFetchArguments = {
 	pageSize: 20
 }
+
+
+global.NetUtil = NetUtil;
