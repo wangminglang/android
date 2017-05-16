@@ -4,12 +4,11 @@ import React,{Component, PureComponent} from 'react';
 import {
   StyleSheet,
   View,
-  ListView,
   RefreshControl,
   TouchableOpacity,
   Image,
   Text,
-  Dimensions
+  FlatList
 } from 'react-native';
 
 import {observer} from 'mobx-react/native';
@@ -25,12 +24,6 @@ export default class Shop extends React.Component {
 
   constructor(props){
     super(props);
-    this.state = {
-      dataSource: new ListView.DataSource({
-        rowHasChanged: (row1, row2) => row1 !== row2
-      })
-    }
-
     this.shopListStore = new ShopStore(URL);
 
   };
@@ -42,29 +35,28 @@ export default class Shop extends React.Component {
         <Header title='店铺' />
         <Loading isShow={isFetching} />
         {!isFetching &&
-        <ListView
-          dataSource={this.state.dataSource.cloneWithRows(listData.slice(0))}
-          renderRow={this._renderRow}
-          renderFooter={this._renderFooter}
-          enableEmptySections={true}
-          initialListSize={2}
+        <FlatList
+          data={listData.slice(0)}
+          renderItem={this._renderItem}
+          ItemSeparatorComponent={this._renderSeparator}
+          ListFooterComponent={this._renderFooter}
           onEndReached={this._onEndReach}
           onEndReachedThreshold={30}
-          refreshControl={
-            <RefreshControl 
-              refreshing={isRefreshing}
-              onRefresh={this._onRefresh}
-              colors={['rgb(217, 51, 58)']}
-            />
-          }
+          onRefresh={this._onRefresh}
+          refreshing={isRefreshing}
+          keyExtractor={(item, index) => index}
         />
         }
       </View>
     );
   }
 
-  _renderRow = (data) => {
-    return <ShopItem data={data} onPress={this._onPressCell} />
+  _renderItem = ({item, index}) => {
+    return <ShopItem data={item} onPress={this._onPressCell} />
+  }
+
+  _renderSeparator = () => {
+    return <View style={{width: gScreen.width, height: 1*gScreen.onePix, backgroundColor: gColors.background}} />
   }
 
   _renderFooter = () => {
@@ -140,9 +132,7 @@ const styles = StyleSheet.create({
   },
   cell: {
     width: gScreen.width, 
-    backgroundColor: 'white',
-    borderBottomWidth: 1,
-    borderBottomColor: gColors.background
+    backgroundColor: 'white'
   },
   topView: {
     flexDirection: 'row',
