@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 
 import LoopView from '../../components/HJLoopView'
-
+import HomeList from './HJHomeListView'
 
 export default class Home extends React.Component {
 
@@ -32,6 +32,7 @@ export default class Home extends React.Component {
         {this.renderTextInput()}
         {this.renderSliderView()}
         {this.renderLoopView()}
+        {this.renderHomeList()}
       </View>
     );
   }
@@ -71,6 +72,12 @@ export default class Home extends React.Component {
   renderLoopView(){
     return(
       <LoopView />
+    )
+  }
+
+  renderHomeList(){
+    return(
+      <HomeList/>
     )
   }
 
