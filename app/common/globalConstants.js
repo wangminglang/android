@@ -19,5 +19,9 @@ global.gFetchArguments = {
 	pageSize: 20
 }
 
+global.gBaseUrl = {
+	baseUrl: 'http://192.168.1.248:957/'
+}
+
 
 global.NetUtil = NetUtil;

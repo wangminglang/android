@@ -8,7 +8,8 @@ import {
   RefreshControl,
   TouchableOpacity,
   Image,
-  Text
+  Text,
+  Dimensions
 } from 'react-native';
 
 import {observer} from 'mobx-react/native';
@@ -17,7 +18,7 @@ import Header from '../../components/Header';
 import Loading from '../../components/Loading';
 import LoadMoreFooter from '../../components/LoadMoreFooter';
 
-const URL = 'http://192.168.1.248:957/buyerapi/shop/getShopsList';
+const URL = gBaseUrl.baseUrl + 'buyerapi/shop/getShopsList';
 
 @observer
 export default class Shop extends React.Component {
@@ -71,11 +72,15 @@ export default class Shop extends React.Component {
   }
 
   _onEndReach = () => {
-
+    if (!this.shopListStore.isNoMore) {
+      this.shopListStore.page++;
+      this.shopListStore.fetchListData();
+    }
   }
 
   _onRefresh = () => {
-
+    this.shopListStore.isRefreshing = true;
+    this.shopListStore.fetchListData();
   }
 
   _onPressCell = (data) => {
@@ -107,10 +112,11 @@ class ShopItem extends PureComponent {
         </View>
         <View style={styles.bottomView}>
           {data.goodsList.map((item, i) => {
+            const itemWidth = (gScreen.width - 60)/3 - 9;
             return (
-              <View style={{marginRight: 9, width: 96}} key={i}>
-                <Image source={{uri: item.image}} style={{width: 96, height: 96}} />
-                <Text style={{color: '#ea4355', fontSize: 12, width: 96, textAlign: 'center', marginTop: 10}} >￥{item.price}</Text>
+              <View style={{marginRight: 9, width: itemWidth}} key={i}>
+                <Image source={{uri: item.image}} style={{width: itemWidth, height: itemWidth}} />
+                <Text numberOfLines={1} style={{color: '#ea4355', fontSize: 12, width: itemWidth, textAlign: 'center', marginTop: 10}} >￥{item.price}</Text>
               </View>
             )
           })
