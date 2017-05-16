@@ -33,6 +33,7 @@ export default class Home extends React.Component {
         {this.renderSliderView()}
         {this.renderLoopView()}
         {this.renderHomeList()}
+
       </View>
     );
   }
@@ -80,6 +81,7 @@ export default class Home extends React.Component {
       <HomeList/>
     )
   }
+
 
   componentDidMount(){
   }

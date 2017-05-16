@@ -14,8 +14,7 @@ import {
 var Dimensions = require('Dimensions');
 var {width} = Dimensions.get('window');
 
-import NetUtil from '../common/HJNetUtil'
-
+import NetUtil from '../common/HJNetUtil';
 import Swiper from 'react-native-swiper';
 
 export default class LoopView extends React.Component{
