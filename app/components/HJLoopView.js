@@ -14,7 +14,7 @@ import {
 var Dimensions = require('Dimensions');
 var {width} = Dimensions.get('window');
 
-import NetUtil from '../common/NHNetUtil'
+import NetUtil from '../common/HJNetUtil'
 
 import Swiper from 'react-native-swiper';
 

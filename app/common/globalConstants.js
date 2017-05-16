@@ -1,5 +1,5 @@
 import { Dimensions, Platform, PixelRatio } from 'react-native';
-import NetUtil from './NHNetUtil';
+import NetUtil from './HJNetUtil';
 
 global.gScreen = {
     width: Dimensions.get('window').width,

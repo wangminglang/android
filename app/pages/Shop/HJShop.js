@@ -92,7 +92,6 @@ class ShopItem extends PureComponent {
 
   render() {
     const {data} = this.props;
-    alert(gScreen.onePix)
     return(
       <TouchableOpacity
         activeOpacity={0.75}
