@@ -20,7 +20,11 @@ export default class Home extends React.Component {
 
   constructor(props){
     super(props);
-    this.state = {link:'link'};
+    this.state = {
+      headLunbo:[],
+      catInfo:Object,
+      goodsList:[]
+    };
   };
 
 
@@ -33,7 +37,6 @@ export default class Home extends React.Component {
         {this.renderSliderView()}
         {this.renderLoopView()}
         {this.renderHomeList()}
-
       </View>
     );
   }
@@ -57,7 +60,7 @@ export default class Home extends React.Component {
     return(
       <View style={styles.navBarStyle}>
         <Text>
-          好价
+          {this.state.catInfo.className}
         </Text>
       </View>
     )
@@ -72,20 +75,32 @@ export default class Home extends React.Component {
 
   renderLoopView(){
     return(
-      <LoopView />
+      <LoopView dataSource={this.state.headLunbo}/>
     )
   }
 
   renderHomeList(){
     return(
-      <HomeList/>
+      <HomeList dataSource={this.state.goodsList}/>
     )
   }
 
 
   componentDidMount(){
+    global.NetUtil.GET("http://192.168.1.248:957/buyerapi/home/getHomeAllClassFirstPageData",(data)=>this.successCallback(data),null);
+
   }
 
+  successCallback(data){
+    if (data.result) {
+      this.setState({
+        headLunbo:data.data[0].headLunbo,
+        catInfo:data.data[0].catInfo,
+        goodsList:data.data[0].goodsList
+      })
+    }
+    // console.log(this.state);
+  }
 
 }
 

@@ -15,7 +15,7 @@ import {
 
 import HomeListCell from './HJHomeCell';
 
-export default class HomeList extends React.Component {
+export default class HomeList extends React.PureComponent {
 
 
 
@@ -26,7 +26,6 @@ export default class HomeList extends React.Component {
   // 初始化模拟数据
   constructor(props) {
     super(props);
-    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
       dataSource: []
     };
@@ -35,29 +34,50 @@ export default class HomeList extends React.Component {
 
   render() {
     return (
-      <View>
+      <View style={styles.containStyle}>
         <FlatList
-          data={this.state.dataSource}
+          data={this.props.dataSource}
           renderItem={this.renderRow}
+          keyExtractor={this._keyExtractor}
+          ItemSeparatorComponent={this._ItemSeparatorComponent}
+          onEndReachedThreshold={this._onEndReachedThreshold}
         />
       </View>
     );
   }
 
   renderRow(rowData){
+    console.log(rowData);
     return(
-      <Text>
-        1
-      </Text>
+      <HomeListCell Item={rowData.item}/>
     )
+  }
+
+  _keyExtractor(data,index){
+
+    return index;
+  }
+  _ItemSeparatorComponent(){
+    return(
+      <View style={styles.SeparatorComponent}>
+      </View>
+  )
+  }
+  _onEndReachedThreshold(){
+
   }
 
   componentDidMount(){
 
-    global.NetUtil.POST("http://119.2.8.83:888/api/index_app/lunbo", {'source': '0'}, (data)=>this.loadData(data));
+    global.NetUtil.GET("http://192.168.1.248:957/buyerapi/home/getHomeAllClassFirstPageData",(data)=>this.successCallback(data),null);
+  }
+
+  successCallback(data){
+    // console.log(data);
   }
 
   loadData(data){
+
     if (data.result) {
 
       this.setState({
@@ -66,3 +86,13 @@ export default class HomeList extends React.Component {
     }
   }
 }
+const styles = StyleSheet.create({
+  containStyle:{
+    flex:1,
+  },
+
+  SeparatorComponent:{
+    height:10,
+    backgroundColor:'#dddddd'
+  },
+})
