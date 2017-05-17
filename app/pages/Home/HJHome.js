@@ -12,6 +12,7 @@ import {
 } from 'react-native';
 
 import HomeList from './HJHomeListView'
+import HomeSlider from './HJHomeSlider'
 
 export default class Home extends React.Component {
 
@@ -67,6 +68,7 @@ export default class Home extends React.Component {
   renderSliderView(){
     return(
       <View style={styles.sliderViewStyle}>
+        <HomeSlider/>
       </View>
     )
   }
