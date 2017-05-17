@@ -80,11 +80,7 @@ export default class Shop extends React.Component {
 
   _onPressCell = (data) => {
     const {navigate} = this.props.navigation;
-<<<<<<< HEAD
     navigate('ShopDetail', data);
-=======
-    navigate('ShopDetail');
->>>>>>> be2f1040bc2b8a75208f7592b442832cb9527e24
   }
 
 }

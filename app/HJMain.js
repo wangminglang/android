@@ -38,7 +38,6 @@ const NavigationShop = StackNavigator({
 const MyApp = TabNavigator({
   Home: {
     screen: Home,
-<<<<<<< HEAD
     navigationOptions: tabNavigationOptions('首页', require('./images/ico_dhshouye.png'))
   },
   Shop: {
@@ -52,21 +51,6 @@ const MyApp = TabNavigator({
   Mine: {
     screen: Mine,
     navigationOptions: tabNavigationOptions('我的', require('./images/ico_dhwode.png'))
-=======
-    navigationOptions: tabNavigationOptions('首页', require('./resource/ico_dhshouye.png'))
-  },
-  Shop: {
-    screen: NavigationShop,
-    navigationOptions: tabNavigationOptions('店铺', require('./resource/ico_dhdianpu.png'))
-  },
-  Category: {
-    screen: Category,
-    navigationOptions: tabNavigationOptions('分类', require('./resource/ico_dhfeilei.png'))
-  },
-  Mine: {
-    screen: Mine,
-    navigationOptions: tabNavigationOptions('我的', require('./resource/ico_dhwode.png'))
->>>>>>> be2f1040bc2b8a75208f7592b442832cb9527e24
   }
 }, {
   animationEnabled: false, // 切换页面时不显示动画b
