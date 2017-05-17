@@ -100,7 +100,7 @@ class ShopItem extends PureComponent {
         onPress={this._onPress}
       >
         <View style={styles.topView} >
-          <Image source={{uri: data.image}} style={styles.leftIcon} />
+          <Image source={data.image ? {uri: data.image} : require('../../images/dianputouxiang.jpg')} style={styles.leftIcon} />
           <View style={styles.rightView}>
             <Text numberOfLines={1} style={styles.name}>{data.nameShop}</Text>
             <Text numberOfLines={1} style={styles.description}>{data.descriptionShop}</Text>
@@ -111,7 +111,7 @@ class ShopItem extends PureComponent {
             const itemWidth = (gScreen.width - 60)/3 - 9;
             return (
               <View style={{marginRight: 9, width: itemWidth}} key={i}>
-                <Image source={{uri: item.image}} style={{width: itemWidth, height: itemWidth}} />
+                <Image source={item.image ? {uri: item.image} : require('../../images/dianpushangpin.jpg')} style={{width: itemWidth, height: itemWidth}} />
                 <Text numberOfLines={1} style={{color: '#ea4355', fontSize: 12, width: itemWidth, textAlign: 'center', marginTop: 10}} >￥{item.price}</Text>
               </View>
             )
