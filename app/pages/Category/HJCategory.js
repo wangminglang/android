@@ -24,12 +24,9 @@ export default class Category extends React.Component {
 
   render() {
     return (
-      <View>
-      </View>
+      <Text>Category</Text>
     );
   }
 
 
 }
-
-module.exports = Category;

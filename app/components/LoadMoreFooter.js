@@ -17,7 +17,7 @@ export default class LoadMoreFooter extends Component {
 
     render() {
         const {isNoMore} = this.props;
-        const title = isNoMore ? '- 没有更多的数据了 -' : '正在加载更多的数据...';
+        const title = isNoMore ? '- 没有更多了 -' : '正在加载中...';
         return(
         	<View style={styles.loadingContainer}>
                 {!isNoMore && <ActivityIndicator />}
@@ -30,14 +30,14 @@ export default class LoadMoreFooter extends Component {
 
 const styles = StyleSheet.create({
 	loadingContainer: {
-        height: 40,
+        height: 46,
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'row'
     },
     title: {
-        fontSize: 14,
+        fontSize: 12,
         marginLeft: 5,
-        color: 'gray'
+        color: '#7f7f7f'
     }
 })
