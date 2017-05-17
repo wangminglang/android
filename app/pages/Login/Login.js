@@ -10,10 +10,11 @@ import {
     TouchableOpacity,
     Image
 } from 'react-native';
+import TextDivider from "./TextDriver";
 //得到屏幕宽度
 var dimen = require('Dimensions');
 var width = dimen.get('window').width;
-import CheckBox from 'react-native-check-box'
+import CheckBox from 'react-native-check-box';
 var Login = React.createClass({
     render() {
         return (
@@ -29,14 +30,15 @@ var Login = React.createClass({
                 <TextInput
                     style={styles.inputStyle}
                     placeholder="手机号"
-                    underlinecolorandroid='transparent'>
+                    underlineColorAndroid='transparent'>
                 </TextInput>
                 <View style={styles.marginTop}>
                     <TextInput
                         style={styles.inputCodeStyle}
                         placeholder="验证码"
-                        underlinecolorandroid='transparent'>
+                        underlineColorAndroid='transparent'>
                     </TextInput>
+                    <View style={styles.divider}/>
                     <TouchableOpacity>
                         <View style={styles.getCode}>
                             <Text style={styles.codeStyle}>
@@ -56,11 +58,11 @@ var Login = React.createClass({
                     <CheckBox
                     ></CheckBox>
                     <Text>
-                        我已阅读并同意服务协议
+                        我已阅读并同意<Text >《服务协议》</Text>
                     </Text>
                 </View>
                 <View style={styles.bottom}>
-                    <Text style={styles.bottomText}>使用其他方式登陆</Text>
+                    <TextDivider text="其他账号登录"/>
                     <Image source={{uri: 'zby'}} style={styles.img}/>
                 </View>
             </View>
@@ -99,6 +101,7 @@ const styles = StyleSheet.create({
         marginLeft: 15,
         marginRight: 15,
         flexDirection: 'row',
+        alignItems: 'center',
     },
     inputStyle: {
         height: 45,
@@ -107,14 +110,14 @@ const styles = StyleSheet.create({
         backgroundColor: '#EDEDED',
         marginTop: 15,
         fontSize: 15,
-        paddingLeft:15
+        paddingLeft: 15
     },
     inputCodeStyle: {
         width: 230,
         height: 45,
         backgroundColor: '#EDEDED',
         fontSize: 15,
-        paddingLeft:15
+        paddingLeft: 15
     },
     codeStyle: {
         fontSize: 15,
@@ -126,8 +129,6 @@ const styles = StyleSheet.create({
         height: 45,
         alignItems: 'center',
         justifyContent: 'center',
-        borderLeftWidth: 1,
-        borderColor: 'gray',
         backgroundColor: '#EDEDED',
     },
     btnLogin: {
@@ -147,10 +148,10 @@ const styles = StyleSheet.create({
     agreement: {
         marginTop: 23,
         marginLeft: 15,
-        flexDirection:'row',
+        flexDirection: 'row',
     },
     bottom: {
-        width:width,
+        width: width,
         position: 'absolute',
         bottom: 20,
         justifyContent: 'center',
@@ -163,7 +164,12 @@ const styles = StyleSheet.create({
     img: {
         width: 50,
         height: 50,
-    }
+    },
+    divider: {
+        backgroundColor: '#3d3d3d',
+        height: 30,
+        width:.5
+    },
 });
 //输出组件类
 module.exports = Login;

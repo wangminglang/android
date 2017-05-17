@@ -4,11 +4,8 @@
 import React, {Component} from 'react';
 import {
     StyleSheet,
-    Text,
     View,
     TouchableOpacity,
-    Image,
-    Alert,
     ScrollView
 } from 'react-native';
 var MyCell = require('./MyCell');
@@ -18,15 +15,27 @@ var HeadView = require('./MyHeaderView')
 var dimen = require('Dimensions');
 var width = dimen.get('window').width;
 var Mine = React.createClass({
+    // componentDidMount(){
+    //     global.NetUtil.GET("http://192.168.1.248:957/buyerapi/user/getUserInfo",(data)=>this.successCallback(data),null);
+    //
+    // },
+    //
+    // successCallback(data){
+    //     if (data.result) {
+    //         this.setState({
+    //
+    //         })
+    //     }
+    // },
     render() {
         return (
             <View style={styles.content}>
                 <ScrollView style={styles.scrollStyle}>
                     <View>
                         <HeadView/>
-                        <TouchableOpacity>  <MyCell
+                       <MyCell
                             leftTitle="我的订单"
-                        /></TouchableOpacity>
+                        />
 
                         <Middle></Middle>
                     </View>
