@@ -1,5 +1,5 @@
 'use strict';
-
+import GlobalContants from './app/common/globalConstants';
 import React,{Component} from 'react';
 import {
   AppRegistry,
@@ -10,16 +10,12 @@ import {
   Image,
 } from 'react-native';
 
-// import NHHome from './Component/Home/NHHome';
+import Main from './app/HJMain';
 
 export default class NHPatient extends React.Component {
   render() {
-    // var index = this.props['index'];
     return (
-      // <NHHome index={index} />
-      <Text>
-        wo  rae dsaduasu
-      </Text>
+      <Main />
     );
   }
 }
