@@ -3,11 +3,7 @@
 import GlobalContants from './common/globalConstants';
 import React,{Component} from 'react';
 import {
-  AppRegistry,
   StyleSheet,
-  Text,
-  View,
-  Alert,
   Image,
   Platform,
 } from 'react-native';
@@ -18,7 +14,7 @@ import { Navigator } from 'react-native-deprecated-custom-components';
 import Home from './pages/Home/HJHome';
 import Shop from './pages/Shop/HJShop';
 import Category from './pages/Category/HJCategory';
-import Mine from './pages/Mine/HJMine';
+import Mine from './pages/MemberCenter/Center';
 
 import Header from './components/Header';
 

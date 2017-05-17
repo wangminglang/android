@@ -25,7 +25,7 @@ export default class Header extends PureComponent {
 					onPress={this.props.leftIconAction}
 					style={styles.leftIcon}
 				>
-					<Image resizeMode={'contain'} source={require('../resource/ic_back_dark.png')} style={{height: this.props.leftIconSize || 20, width: this.props.leftIconSize || 20}}  />
+					<Image resizeMode={'contain'} source={require('../images/ic_back_dark.png')} style={{height: this.props.leftIconSize || 20, width: this.props.leftIconSize || 20}}  />
 				</TouchableOpacity>
 			)
 		}
