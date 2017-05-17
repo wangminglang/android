@@ -9,7 +9,6 @@ import {
   TextInput
 } from 'react-native';
 
-import LoopView from '../../components/HJLoopView'
 import HomeList from './HJHomeListView'
 
 export default class Home extends React.Component {
@@ -33,7 +32,6 @@ export default class Home extends React.Component {
         {this.renderNavBar()}
         {this.renderTextInput()}
         {this.renderSliderView()}
-        {this.renderLoopView()}
         {this.renderHomeList()}
       </View>
     );
@@ -71,15 +69,12 @@ export default class Home extends React.Component {
     )
   }
 
-  renderLoopView(){
-    return(
-      <LoopView dataSource={this.state.headLunbo}/>
-    )
-  }
-
   renderHomeList(){
     return(
-      <HomeList dataSource={this.state.goodsList}/>
+      <HomeList
+        dataSource={this.state.goodsList}
+        headLunbo={this.state.headLunbo}
+      />
     )
   }
 
@@ -110,8 +105,11 @@ const styles = StyleSheet.create({
     textInputStyle:{
       height:30,
       width:0.7*gScreen.width,
-      backgroundColor:'#7f7f7f',
-      marginLeft:0.15*gScreen.width
+      backgroundColor:'#dddddd',
+      marginLeft:0.15*gScreen.width,
+      borderRadius:15,
+      paddingLeft:10,
+      fontSize:15,
     },
     navBarStyle:{
       height:gScreen.navBarHeight,

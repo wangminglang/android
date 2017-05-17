@@ -14,12 +14,14 @@ import {
 } from 'react-native';
 
 import HomeListCell from './HJHomeCell';
+import LoopView from '../../components/HJLoopView'
 
 export default class HomeList extends React.PureComponent {
 
 
 
   static defaultProps = {
+        headLunbo:[],
         dataSource: [],
         callBack: null
   };
@@ -27,7 +29,6 @@ export default class HomeList extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
-      dataSource: []
     };
   };
 
@@ -39,15 +40,15 @@ export default class HomeList extends React.PureComponent {
           data={this.props.dataSource}
           renderItem={this.renderRow}
           keyExtractor={this._keyExtractor}
-          ItemSeparatorComponent={this._ItemSeparatorComponent}
-          onEndReachedThreshold={this._onEndReachedThreshold}
+          ItemSeparatorComponent={()=>this._ItemSeparatorComponent()}
+          onEndReachedThreshold={()=>this._onEndReachedThreshold()}
+          ListHeaderComponent={()=>this._ListHeaderComponent()}
         />
       </View>
     );
   }
 
   renderRow(rowData){
-    console.log(rowData);
     return(
       <HomeListCell Item={rowData.item}/>
     )
@@ -57,34 +58,25 @@ export default class HomeList extends React.PureComponent {
 
     return index;
   }
+
   _ItemSeparatorComponent(){
     return(
       <View style={styles.SeparatorComponent}>
       </View>
-  )
+    )
   }
+
+  _ListHeaderComponent(){
+    return(
+      <LoopView dataSource={this.props.headLunbo}/>
+    )
+  }
+
   _onEndReachedThreshold(){
 
   }
 
-  componentDidMount(){
 
-    global.NetUtil.GET("http://192.168.1.248:957/buyerapi/home/getHomeAllClassFirstPageData",(data)=>this.successCallback(data),null);
-  }
-
-  successCallback(data){
-    // console.log(data);
-  }
-
-  loadData(data){
-
-    if (data.result) {
-
-      this.setState({
-        dataSource:data.data
-      });
-    }
-  }
 }
 const styles = StyleSheet.create({
   containStyle:{

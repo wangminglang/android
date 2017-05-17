@@ -33,15 +33,34 @@ export default class HomeListCell extends React.Component{
             {'¥'+this.props.Item.price}
           </Text>
           <View style={styles.groupUserStyle}>
-            <Image style={styles.userStyle} source={{uri:this.props.Item.groupUser[0]}}/>
-            <Image style={styles.userStyle}/>
-            <Text style={styles.pinButtonStyle}>
-              去拼团
-            </Text>
+            {this._renderUser()}
+            <TouchableOpacity key={this.props.Item.id} onPress={() => this.cellClick(this.props.Item.id)}>
+              <Text style={styles.pinButtonStyle}>
+                去拼团
+              </Text>
+            </TouchableOpacity>
+
           </View>
         </View>
       </View>
     );
+  }
+  _renderUser(){
+    var arr = [];
+    for (var i = 0; i < this.props.Item.groupUser.length; i++) {
+      var user = this.props.Item.groupUser[i];
+      arr.push(
+        <TouchableOpacity key={this.props.user.userId} onPress={() => this.cellClick(this.props.user.userId)}>
+        <Image style={styles.userStyle} source={{uri:user.headUrl}}/>
+        </TouchableOpacity>
+
+      )
+    }
+    return arr;
+  }
+
+  cellClick(data){
+    alert(data);
   }
 }
 
@@ -71,7 +90,10 @@ const styles = StyleSheet.create({
       width:40,
       height:40,
       backgroundColor:'white',
-      borderWidth:1
+      borderWidth:1,
+      borderRadius:20,
+      borderColor:'#dddddd',
+      marginRight:5
     },
     pinButtonStyle:{
       color:'white',
