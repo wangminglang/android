@@ -16,8 +16,6 @@ import Shop from './pages/Shop/HJShop';
 import Category from './pages/Category/HJCategory';
 import Mine from './pages/MemberCenter/Center';
 
-import Header from './components/Header';
-
 import ShopDetail from './pages/Shop/HJShopDetail';
 
 let tabNavigationOptions = (label, icon) => {
@@ -40,19 +38,19 @@ const NavigationShop = StackNavigator({
 const MyApp = TabNavigator({
   Home: {
     screen: Home,
-    navigationOptions: tabNavigationOptions('首页', require('./resource/ico_dhshouye.png'))
+    navigationOptions: tabNavigationOptions('首页', require('./images/ico_dhshouye.png'))
   },
   Shop: {
     screen: NavigationShop,
-    navigationOptions: tabNavigationOptions('店铺', require('./resource/ico_dhdianpu.png'))
+    navigationOptions: tabNavigationOptions('店铺', require('./images/ico_dhdianpu.png'))
   },
   Category: {
     screen: Category,
-    navigationOptions: tabNavigationOptions('分类', require('./resource/ico_dhfeilei.png'))
+    navigationOptions: tabNavigationOptions('分类', require('./images/ico_dhfeilei.png'))
   },
   Mine: {
     screen: Mine,
-    navigationOptions: tabNavigationOptions('我的', require('./resource/ico_dhwode.png'))
+    navigationOptions: tabNavigationOptions('我的', require('./images/ico_dhwode.png'))
   }
 }, {
   animationEnabled: false, // 切换页面时不显示动画b
