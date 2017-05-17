@@ -26,6 +26,7 @@ export default class Shop extends React.Component {
       header: <Header title='店铺详情' />
   })
 
+
   constructor(props){
     super(props);
     this.shopListStore = new ShopStore(URL);
@@ -79,7 +80,11 @@ export default class Shop extends React.Component {
 
   _onPressCell = (data) => {
     const {navigate} = this.props.navigation;
+<<<<<<< HEAD
     navigate('ShopDetail', data);
+=======
+    navigate('ShopDetail');
+>>>>>>> be2f1040bc2b8a75208f7592b442832cb9527e24
   }
 
 }

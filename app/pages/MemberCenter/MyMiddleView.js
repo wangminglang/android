@@ -5,43 +5,30 @@ import React, {Component} from 'react';
 import {
     Text,
     View,
-    Image,
     StyleSheet,
-    Switch
 } from 'react-native';
-var data = require('./tsconfig.json')
 var MyCell = React.createClass({
     render() {
         return (
             <View style={styles.viewStyle}>
-                {this.renderAllView()}
-            </View>
-        );
-    },
-    renderAllView(){
-        //定义数组
-        var view = [];
-        for (var i = 0; i < data.length; i++) {
-            view.push(
-                <InnerView key={i} number={data[i].number} title={data[i].title}></InnerView>
-            );
-        }
-        return view;
-    }
-});
-var InnerView = React.createClass({
-    getDefaultProps(){
-        return {
-            number: '',
-            title: '',
-        }
-    },
-    render() {
-        return (
-            <View style={styles.viewStyle}>
                 <View style={styles.leftViewStyle}>
-                    <Text style={styles.txt_style_top}>{this.props.number}</Text>
-                    <Text style={styles.txt_style_bottom}>{this.props.title}</Text>
+                    <Text style={styles.txt_style_top}>1</Text>
+                    <Text style={styles.txt_style_bottom}>待付款</Text>
+                </View>
+                <View style={styles.divider}/>
+                <View style={styles.leftViewStyle}>
+                    <Text style={styles.txt_style_top}>2</Text>
+                    <Text style={styles.txt_style_bottom}>拼团中</Text>
+                </View>
+                <View style={styles.divider}/>
+                <View style={styles.leftViewStyle}>
+                    <Text style={styles.txt_style_top}>3</Text>
+                    <Text style={styles.txt_style_bottom}>代发货</Text>
+                </View>
+                <View style={styles.divider}/>
+                <View style={styles.leftViewStyle}>
+                    <Text style={styles.txt_style_top}>4</Text>
+                    <Text style={styles.txt_style_bottom}>待收货</Text>
                 </View>
             </View>
         );
@@ -80,7 +67,12 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-around',
         backgroundColor: 'white',
-    }
+    },
+    divider: {
+        backgroundColor: '#3d3d3d',
+        height: 40,
+        width:.5
+    },
 });
 //输出组件类
 module.exports = MyCell;
