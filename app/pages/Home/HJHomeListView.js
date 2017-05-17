@@ -14,31 +14,35 @@ import {
 } from 'react-native';
 
 import HomeListCell from './HJHomeCell';
+import LoopView from '../../components/HJLoopView'
 
-export default class HomeList extends React.Component {
+export default class HomeList extends React.PureComponent {
 
 
 
   static defaultProps = {
+        headLunbo:[],
         dataSource: [],
         callBack: null
   };
   // 初始化模拟数据
   constructor(props) {
     super(props);
-    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
     this.state = {
-      dataSource: []
     };
   };
 
 
   render() {
     return (
-      <View>
+      <View style={styles.containStyle}>
         <FlatList
-          data={this.state.dataSource}
+          data={this.props.dataSource}
           renderItem={this.renderRow}
+          keyExtractor={this._keyExtractor}
+          ItemSeparatorComponent={()=>this._ItemSeparatorComponent()}
+          onEndReachedThreshold={()=>this._onEndReachedThreshold()}
+          ListHeaderComponent={()=>this._ListHeaderComponent()}
         />
       </View>
     );
@@ -46,23 +50,41 @@ export default class HomeList extends React.Component {
 
   renderRow(rowData){
     return(
-      <Text>
-        1
-      </Text>
+      <HomeListCell Item={rowData.item}/>
     )
   }
 
-  componentDidMount(){
+  _keyExtractor(data,index){
 
-    global.NetUtil.POST("http://119.2.8.83:888/api/index_app/lunbo", {'source': '0'}, (data)=>this.loadData(data));
+    return index;
   }
 
-  loadData(data){
-    if (data.result) {
-
-      this.setState({
-        dataSource:data.data
-      });
-    }
+  _ItemSeparatorComponent(){
+    return(
+      <View style={styles.SeparatorComponent}>
+      </View>
+    )
   }
+
+  _ListHeaderComponent(){
+    return(
+      <LoopView dataSource={this.props.headLunbo}/>
+    )
+  }
+
+  _onEndReachedThreshold(){
+
+  }
+
+
 }
+const styles = StyleSheet.create({
+  containStyle:{
+    flex:1,
+  },
+
+  SeparatorComponent:{
+    height:10,
+    backgroundColor:'#dddddd'
+  },
+})

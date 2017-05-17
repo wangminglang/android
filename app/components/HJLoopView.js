@@ -28,13 +28,13 @@ export default class LoopView extends React.Component{
 
   constructor(props){
     super(props);
-    this.state = {itemArr:[]};
+    // this.state = {itemArr:[]};
   };
 
   render() {
     return(
       <View style={styles.container}>
-        <Swiper height={200}  showsButtons={false} autoplay={true}>
+        <Swiper height={width*0.4}  showsButtons={false} autoplay={true}>
           {this.renderScrollItem()}
         </Swiper>
       </View>
@@ -43,9 +43,10 @@ export default class LoopView extends React.Component{
 
   renderScrollItem() {
     var itemArr = [];
+    // console.log("++++++",this.props.dataSource);
 
-    for (var i = 0; i < this.state.itemArr.length; i++) {
-      var item = this.state.itemArr[i];
+    for (var i = 0; i < this.props.dataSource.length; i++) {
+      var item = this.props.dataSource[i];
       var imageItem = this.renderLoopImage(item,i);
       itemArr.push(
         imageItem
@@ -57,15 +58,15 @@ export default class LoopView extends React.Component{
 
   renderLoopImage(item,i){
 
-      if (item.img_url) {
+      if (item.image) {
         return(
         <TouchableOpacity key={i} onPress={() => this.cellClick(i)}>
-            <Image source={{uri: item.img_url}} style={styles.image} />
+            <Image source={{uri: item.image}} style={styles.image} />
         </TouchableOpacity>)
       }else {
         return(
         <TouchableOpacity key={i} onPress={() => this.cellClick(i)}>
-            <Image source={{uri: "2"}} style={styles.image} />
+            <Image source={{uri: "1"}} style={styles.image} />
         </TouchableOpacity>)
       }
   }
@@ -75,28 +76,28 @@ export default class LoopView extends React.Component{
     this.props.callBack(data);
   }
 
-  componentDidMount(){
-    global.NetUtil.POST("http://119.2.8.83:888/api/index_app/lunbo", {'source': '0'}, (data)=>this.dealLunBoData(data));
-  }
+  // componentDidMount(){
+  //   global.NetUtil.POST("http://119.2.8.83:888/api/index_app/lunbo", {'source': '0'}, (data)=>this.dealLunBoData(data));
+  // }
 
-  dealLunBoData(data){
-    if (data.result) {
-      this.setState({
-        itemArr:data.data
-      })
-    }
-  }
+  // dealLunBoData(data){
+  //   if (data.result) {
+  //     this.setState({
+  //       itemArr:data.data
+  //     })
+  //   }
+  // }
 }
 
 
 const styles = StyleSheet.create({
     container:{
       marginTop: 10,
-      height: 200,
+      height: width*0.4,
     },
     image: {
       width: width,
-      height: 200,
+      height: width*0.4,
       resizeMode:'stretch'
     },
 

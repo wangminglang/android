@@ -46,7 +46,7 @@ export default NetUtil = {
             .then((responseData)=>{
               // alert(responseData.data.changeExpertNoticeText);
               if (callback) {
-								console.log(url,param,responseData);
+								// console.log(url,param,responseData);
                 callback(responseData);
               }
             })
