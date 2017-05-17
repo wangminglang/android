@@ -28,7 +28,7 @@ var MyCell = React.createClass({
                 {/*-------右边---------*/}
                 <View style={styles.rightViewStyle}>
                     {  this.renderRightView()}
-                    <Image source={{uri: 'icon_cell_rightarrow'}} style={styles.iconStyle}/>
+                    <Image source={require('./../../images/ico_jiantou.png')} style={styles.iconStyle}/>
                 </View>
             </View>
         );

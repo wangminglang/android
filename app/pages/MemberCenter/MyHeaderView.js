@@ -8,6 +8,9 @@ import {
     Image,
     StyleSheet,
 } from 'react-native';
+//得到屏幕宽度
+var dimen = require('Dimensions');
+var width = dimen.get('window').width;
 var HeaderView = React.createClass({
     render() {
         return (
@@ -19,10 +22,12 @@ var HeaderView = React.createClass({
     //顶部view
     renderHeadView(){
         return (
-            <View style={{alignItems: 'center', paddingTop: 15, paddingBottom: 30,}}>
-                <Image source={{uri: 'see'}} style={styles.top_img_style}/>
-                <Text style={{marginTop: 15, color: 'white',}}>18888888888888</Text>
-                <Image source={{uri: 'see'}} style={styles.top_right_img_style}/>
+            <View style={{alignItems: 'center'}}>
+                <Image source={require('./../../images//bg_gerenzhongxin.png')} style={styles.bg_style}>
+                    <Image source={require('./../../images//ico_touxiang.png')} style={styles.top_img_style}/>
+                    <Text style={{marginTop: 15, color: 'white',}}>18888888888888</Text>
+                    <Image source={require('./../../images//ico_shouyexiaoxi.png')} style={styles.top_right_img_style}/>
+                </Image>
             </View>
         )
     },
@@ -43,7 +48,14 @@ const styles = StyleSheet.create({
     },
     viewStyle: {
         backgroundColor: 'red',
-    }
+    },
+    bg_style: {
+        height: 165,
+        width: width,
+        resizeMode: 'stretch',
+        alignItems: 'center',
+        paddingTop:20,
+    },
 });
 //输出组件类
 module.exports = HeaderView;

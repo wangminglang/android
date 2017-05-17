@@ -21,7 +21,7 @@ var Mine = React.createClass({
     render() {
         return (
             <View style={styles.content}>
-                <ScrollView style={{width:width}}>
+                <ScrollView style={styles.scrollStyle}>
                     <View>
                         <HeadView/>
                         <MyCell
@@ -29,7 +29,7 @@ var Mine = React.createClass({
                         />
                         <Middle></Middle>
                     </View>
-                    <View style={{marginTop: 20,width:width}}>
+                    <View style={{marginTop: 20}}>
                         <MyCell
                             leftTitle="地址管理"
                         />
@@ -50,6 +50,9 @@ const styles = StyleSheet.create({
     content: {
         flex: 1,
         backgroundColor: '#f4f4f4'
+    },
+    scrollStyle: {
+        width:width,
     },
 });
 //输出组件类

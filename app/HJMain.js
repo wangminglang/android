@@ -3,11 +3,7 @@
 import GlobalContants from './common/globalConstants';
 import React,{Component} from 'react';
 import {
-  AppRegistry,
   StyleSheet,
-  Text,
-  View,
-  Alert,
   Image,
   Platform,
 } from 'react-native';
@@ -18,7 +14,7 @@ import { Navigator } from 'react-native-deprecated-custom-components';
 import Home from './pages/Home/HJHome';
 import Shop from './pages/Shop/HJShop';
 import Category from './pages/Category/HJCategory';
-import Mine from './pages/Mine/HJMine';
+import Mine from './pages/MemberCenter/Center';
 
 
 export default class Main extends React.Component {
@@ -42,7 +38,6 @@ export default class Main extends React.Component {
   render() {
     return (
       <TabNavigator>
-
         {/* 首页 */}
         {this.renderTabItem("首页",'ico_dhshouye','ico_dhshouyed','Home','Home',Home,'12')}
         {/* 商家 */}
