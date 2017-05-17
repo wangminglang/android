@@ -24,8 +24,7 @@ export default class Mine extends React.Component {
 
   render() {
     return (
-      <View>
-      </View>
+      <Text>Mine</Text>
     );
   }
 

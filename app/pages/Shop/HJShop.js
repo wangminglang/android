@@ -22,17 +22,19 @@ const URL = gBaseUrl.baseUrl + 'buyerapi/shop/getShopsList';
 @observer
 export default class Shop extends React.Component {
 
+  static navigationOptions={
+      header: <Header title='店铺详情' />
+  }
+
   constructor(props){
     super(props);
     this.shopListStore = new ShopStore(URL);
-
   };
 
   render() {
     const {isFetching, isRefreshing, listData} = this.shopListStore;
     return (
       <View style={styles.container} >
-        <Header title='店铺' />
         <Loading isShow={isFetching} />
         {!isFetching &&
         <FlatList
@@ -76,7 +78,8 @@ export default class Shop extends React.Component {
   }
 
   _onPressCell = (data) => {
-
+    const {navigate} = this.props.navigation;
+    navigate('ShopDetail');
   }
 
 }
