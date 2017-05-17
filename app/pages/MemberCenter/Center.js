@@ -24,9 +24,10 @@ var Mine = React.createClass({
                 <ScrollView style={styles.scrollStyle}>
                     <View>
                         <HeadView/>
-                        <MyCell
+                        <TouchableOpacity>  <MyCell
                             leftTitle="我的订单"
-                        />
+                        /></TouchableOpacity>
+
                         <Middle></Middle>
                     </View>
                     <View style={{marginTop: 20}}>
