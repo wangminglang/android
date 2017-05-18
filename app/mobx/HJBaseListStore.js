@@ -1,5 +1,4 @@
 import {observable, computed, action, runInAction} from 'mobx';
-import NetUtil from '../common/HJNetUtil';
 
 export default class baseListStore {
 	@observable listData = []

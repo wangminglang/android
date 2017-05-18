@@ -22,9 +22,10 @@ const URL = gBaseUrl.baseUrl + 'buyerapi/shop/getShopsList';
 @observer
 export default class Shop extends React.Component {
 
-  static navigationOptions={
+  static navigationOptions = (navigation) => ({
       header: <Header title='店铺详情' />
-  }
+  })
+
 
   constructor(props){
     super(props);
@@ -79,7 +80,7 @@ export default class Shop extends React.Component {
 
   _onPressCell = (data) => {
     const {navigate} = this.props.navigation;
-    navigate('ShopDetail');
+    navigate('ShopDetail', data);
   }
 
 }

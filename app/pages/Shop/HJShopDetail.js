@@ -11,11 +11,14 @@ import {
 } from 'react-native';
 import Header from '../../components/Header';
 
-
 export default class ShopDetail extends React.Component {
 
-  static navigationOptions={
-      header: <Header title='店铺详情' />
+  static navigationOptions = ({ navigation }) => ({
+    header: <Header title={navigation.state.params.nameShop} showLeftIcon={true} leftIconAction={() => navigation.goBack()} />
+  })
+
+  componentDidMount() {
+    const {params} = this.props.navigation.state;
   }
 
   render() {
