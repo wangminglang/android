@@ -13,7 +13,7 @@ export default class HotRN extends Component {
     render() {
         return (
             <View style={styles.container}>
-              <Main></Main>
+              <Main/>
             </View>
         );
     }

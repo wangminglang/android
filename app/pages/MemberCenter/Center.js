@@ -6,7 +6,8 @@ import {
     StyleSheet,
     View,
     TouchableHighlight,
-    ScrollView
+    ScrollView,
+    TouchableOpacity
 } from 'react-native';
 var MyCell = require('./MyCell');
 var Middle = require('./MyMiddleView');
@@ -70,11 +71,11 @@ export default class Mine extends React.Component {
 
                     </View>
                     <View style={{marginTop: 20}}>
-                        <TouchableHighlight>
+                        <TouchableOpacity onPress={() => this.jump_ToAddressManner()}>
                             <MyCell
                                 leftTitle="地址管理"
                             />
-                        </TouchableHighlight>
+                        </TouchableOpacity>
 
                     </View>
                     <MyCell
@@ -93,9 +94,9 @@ export default class Mine extends React.Component {
      * 地址管理
      */
     jump_ToAddressManner() {
-        this.props.navigator.push({
-            component: Login
-        });
+        // alert('点击了');
+        const {navigate} = this.props.navigation;
+        navigate('MineLogin');
     }
 }
 const styles = StyleSheet.create({

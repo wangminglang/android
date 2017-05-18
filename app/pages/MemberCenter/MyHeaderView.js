@@ -31,7 +31,8 @@ export default class HeaderView extends React.Component {
                 <Image source={require('./../../images/bg_gerenzhongxin.png')} style={styles.bg_style}>
                     <Image source={{uri:this.props.imgUrl}} style={styles.top_img_style}/>
                     <Text style={{marginTop: 15, color: 'white',}}>{this.props.userName}</Text>
-                    <Image source={require('./../../images/ico_shouyexiaoxi.png')} style={styles.top_right_img_style}/>
+                    <Image source={this.props.imgUrl ? {uri:this.props.imgUrl} : require('./../../images/ico_shouyexiaoxi.png')} style={styles.top_right_img_style}/>
+                    
                 </Image>
             </View>
         )

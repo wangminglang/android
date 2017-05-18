@@ -9,12 +9,14 @@ import {
 } from 'react-native';
 
 import {StackNavigator, TabNavigator} from 'react-navigation';
-import { Navigator } from 'react-native-deprecated-custom-components';
+// import { Navigator } from 'react-native-deprecated-custom-components';
 
 import Home from './pages/Home/HJHome';
 import Shop from './pages/Shop/HJShop';
 import Category from './pages/Category/HJCategory';
 import Mine from './pages/MemberCenter/Center';
+
+import Login from './pages/Login/Login'
 
 import ShopDetail from './pages/Shop/HJShopDetail';
 
@@ -35,6 +37,11 @@ const NavigationShop = StackNavigator({
     ShopDetail: {screen: ShopDetail}
 });
 
+const NavigationMine = StackNavigator({
+    Mine: {screen: Mine},
+    MineLogin: {screen: Login},
+});
+
 const MyApp = TabNavigator({
   Home: {
     screen: Home,
@@ -49,7 +56,7 @@ const MyApp = TabNavigator({
     navigationOptions: tabNavigationOptions('分类', require('./images/ico_dhfeilei.png'))
   },
   Mine: {
-    screen: Mine,
+    screen: NavigationMine,
     navigationOptions: tabNavigationOptions('我的', require('./images/ico_dhwode.png'))
   }
 }, {
