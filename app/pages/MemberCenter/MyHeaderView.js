@@ -11,27 +11,33 @@ import {
 //得到屏幕宽度
 var dimen = require('Dimensions');
 var width = dimen.get('window').width;
-var HeaderView = React.createClass({
+export default class HeaderView extends React.Component {
+    static defaultProps = {
+        imgUrl: null,
+        userName: "",
+    };
     render() {
         return (
             <View style={styles.viewStyle}>
                 {this.renderHeadView()}
             </View>
         );
-    },
+    }
+
     //顶部view
-    renderHeadView(){
+    renderHeadView() {
         return (
             <View style={{alignItems: 'center'}}>
-                <Image source={require('./../../images//bg_gerenzhongxin.png')} style={styles.bg_style}>
-                    <Image source={require('./../../images//ico_touxiang.png')} style={styles.top_img_style}/>
-                    <Text style={{marginTop: 15, color: 'white',}}>18888888888888</Text>
-                    <Image source={require('./../../images//ico_shouyexiaoxi.png')} style={styles.top_right_img_style}/>
+                <Image source={require('./../../images/bg_gerenzhongxin.png')} style={styles.bg_style}>
+                    <Image source={{uri:this.props.imgUrl}} style={styles.top_img_style}/>
+                    <Text style={{marginTop: 15, color: 'white',}}>{this.props.userName}</Text>
+                    <Image source={this.props.imgUrl ? {uri:this.props.imgUrl} : require('./../../images/ico_shouyexiaoxi.png')} style={styles.top_right_img_style}/>
+                    
                 </Image>
             </View>
         )
-    },
-});
+    }
+}
 const styles = StyleSheet.create({
     top_img_style: {
         height: 60,
@@ -54,7 +60,7 @@ const styles = StyleSheet.create({
         width: width,
         resizeMode: 'stretch',
         alignItems: 'center',
-        paddingTop:20,
+        paddingTop: 20,
     },
 });
 //输出组件类

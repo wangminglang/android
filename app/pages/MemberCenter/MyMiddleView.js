@@ -6,34 +6,45 @@ import {
     Text,
     View,
     StyleSheet,
+    TouchableHighlight
 } from 'react-native';
-var MyCell = React.createClass({
+import Login from '../Login/Login'
+export default class MyCell extends React.Component {
+    static defaultProps = {
+        waitPay: "",
+        waitShipping: "",
+        shipping: "",
+        partShipped: ""
+    };
+
     render() {
         return (
             <View style={styles.viewStyle}>
-                <View style={styles.leftViewStyle}>
-                    <Text style={styles.txt_style_top}>1</Text>
-                    <Text style={styles.txt_style_bottom}>待付款</Text>
-                </View>
+                <TouchableHighlight >
+                    <View style={styles.leftViewStyle}>
+                        <Text style={styles.txt_style_top}>{this.props.waitPay}</Text>
+                        <Text style={styles.txt_style_bottom}>待付款</Text>
+                    </View>
+                </TouchableHighlight>
                 <View style={styles.divider}/>
                 <View style={styles.leftViewStyle}>
-                    <Text style={styles.txt_style_top}>2</Text>
+                    <Text style={styles.txt_style_top}>{this.props.waitShipping}</Text>
                     <Text style={styles.txt_style_bottom}>拼团中</Text>
                 </View>
                 <View style={styles.divider}/>
                 <View style={styles.leftViewStyle}>
-                    <Text style={styles.txt_style_top}>3</Text>
+                    <Text style={styles.txt_style_top}>{this.props.shipping}</Text>
                     <Text style={styles.txt_style_bottom}>代发货</Text>
                 </View>
                 <View style={styles.divider}/>
                 <View style={styles.leftViewStyle}>
-                    <Text style={styles.txt_style_top}>4</Text>
+                    <Text style={styles.txt_style_top}>{this.props.partShipped}</Text>
                     <Text style={styles.txt_style_bottom}>待收货</Text>
                 </View>
             </View>
         );
-    },
-});
+    }
+}
 const styles = StyleSheet.create({
     txt_style_top: {
         fontSize: 16,
@@ -71,7 +82,7 @@ const styles = StyleSheet.create({
     divider: {
         backgroundColor: '#3d3d3d',
         height: 40,
-        width:.5
+        width: .5
     },
 });
 //输出组件类
