@@ -9,15 +9,14 @@ import {
     StyleSheet,
     Switch
 } from 'react-native';
-var MyCell = React.createClass({
-    getDefaultProps(){
-        return {
-            imgName: '',
-            leftTitle: '',
-            rightTitle: '',
-            rightImgname: ''
-        }
-    },
+export default class MyCell extends React.Component {
+    static defaultProps = {
+        imgName: '',
+        leftTitle: '',
+        rightTitle: '',
+        rightImgname: ''
+    };
+
     render() {
         return (
             <View style={styles.viewStyle}>
@@ -32,28 +31,30 @@ var MyCell = React.createClass({
                 </View>
             </View>
         );
-    },
+    }
+
     //右边内容
-    renderRightView(){
-        if (this.props.rightImgname.length==0) {//不返回图片
+    renderRightView() {
+        if (this.props.rightImgname.length == 0) {//不返回图片
             return (
                 <Text style={styles.txt_style}>{this.props.rightTitle}</Text>
             )
         } else {
             return (
-                    <Image source={{uri: this.props.rightImgname}} style={styles.iconStyle}/>
+                <Image source={{uri: this.props.rightImgname}} style={styles.iconStyle}/>
             )
         }
-    },
+    }
+
     //右边
-    renderRightTitle(){
+    renderRightTitle() {
         if (this.props.rightTitle.length > 0) {
             return (
                 <Text style={{marginRight: 8}}>{this.props.rightTitle}</Text>
             )
         }
     }
-});
+}
 const styles = StyleSheet.create({
     txt_style: {
         fontSize: 16,

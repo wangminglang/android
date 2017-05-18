@@ -6,6 +6,8 @@ import {
     View,
 } from 'react-native';
 import Mine from './app/pages/MemberCenter/Center';
+import Login from './app/pages/Login/Login';
+import Main from './app/HJMain';
 export default class HotRN extends Component {
 
     render() {
