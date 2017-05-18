@@ -51,18 +51,6 @@ const MyApp = TabNavigator({
   Mine: {
     screen: Mine,
     navigationOptions: tabNavigationOptions('我的', require('./images/ico_dhwode.png'))
-  },
-  Shop: {
-    screen: NavigationShop,
-    navigationOptions: tabNavigationOptions('店铺', require('./images/ico_dhdianpu.png'))
-  },
-  Category: {
-    screen: Category,
-    navigationOptions: tabNavigationOptions('分类', require('./images/ico_dhfeilei.png'))
-  },
-  Mine: {
-    screen: Mine,
-    navigationOptions: tabNavigationOptions('我的', require('./images/ico_dhwode.png'))
   }
 }, {
   animationEnabled: false, // 切换页面时不显示动画b

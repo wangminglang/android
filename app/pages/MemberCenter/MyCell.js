@@ -16,13 +16,15 @@ export default class MyCell extends React.Component {
         rightTitle: '',
         rightImgname: ''
     };
-
+    setNativeProps(nativeProps) {
+        this._root.setNativeProps(nativeProps);
+    }
     render() {
         return (
             <View style={styles.viewStyle}>
                 <View style={styles.leftViewStyle}>
                     <Image source={{uri: this.props.imgName}} style={styles.leftImgStyle}/>
-                    <Text style={styles.txt_style}>{this.props.leftTitle}</Text>
+                    <Text style={styles.txt_style} ref={component => this._root = component}>{this.props.leftTitle}</Text>
                 </View>
                 {/*-------右边---------*/}
                 <View style={styles.rightViewStyle}>

@@ -5,16 +5,21 @@ import React, {Component} from 'react';
 import {
     StyleSheet,
     View,
-    TouchableOpacity,
+    TouchableHighlight,
     ScrollView
 } from 'react-native';
 var MyCell = require('./MyCell');
 var Middle = require('./MyMiddleView');
-var HeadView = require('./MyHeaderView')
+var HeadView = require('./MyHeaderView');
+import Login from'../Login/Login'
 //得到屏幕宽度
 var dimen = require('Dimensions');
 var width = dimen.get('window').width;
 export default class Mine extends React.Component {
+    static defaultProps = {
+        id: "",
+    };
+
     constructor(props) {
         super(props);
         this.state = {
@@ -50,25 +55,27 @@ export default class Mine extends React.Component {
             <View style={styles.content}>
                 <ScrollView style={styles.scrollStyle}>
                     <View>
-                        <HeadView>
+                        <HeadView
                             imgUrl={this.state.imgUrl}
-                            userName={this.state.userName}
-                        </HeadView>
+                            userName={this.state.userName}/>
                         <MyCell
                             leftTitle="我的订单"
                         />
 
-                        <Middle>
+                        <Middle
                             waitPay={this.state.waitPay}
                             waitShipping={this.state.waitShipping}
                             shipping={this.state.shipping}
-                            partShipped={this.state.partShipped}
-                        </Middle>
+                            partShipped={this.state.partShipped}/>
+
                     </View>
                     <View style={{marginTop: 20}}>
-                        <MyCell
-                            leftTitle="地址管理"
-                        />
+                        <TouchableHighlight>
+                            <MyCell
+                                leftTitle="地址管理"
+                            />
+                        </TouchableHighlight>
+
                     </View>
                     <MyCell
                         leftTitle="联系客服"
@@ -80,6 +87,15 @@ export default class Mine extends React.Component {
             </View>
 
         );
+    }
+
+    /**
+     * 地址管理
+     */
+    jump_ToAddressManner() {
+        this.props.navigator.push({
+            component: Login
+        });
     }
 }
 const styles = StyleSheet.create({

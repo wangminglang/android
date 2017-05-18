@@ -13,7 +13,7 @@ var dimen = require('Dimensions');
 var width = dimen.get('window').width;
 export default class HeaderView extends React.Component {
     static defaultProps = {
-        imgUrl: "",
+        imgUrl: null,
         userName: "",
     };
     render() {
@@ -28,10 +28,10 @@ export default class HeaderView extends React.Component {
     renderHeadView() {
         return (
             <View style={{alignItems: 'center'}}>
-                <Image source={require('./../../images//bg_gerenzhongxin.png')} style={styles.bg_style}>
-                    <Image source={require('./../../images//ico_touxiang.png')} style={styles.top_img_style}/>
+                <Image source={require('./../../images/bg_gerenzhongxin.png')} style={styles.bg_style}>
+                    <Image source={{uri:this.props.imgUrl}} style={styles.top_img_style}/>
                     <Text style={{marginTop: 15, color: 'white',}}>{this.props.userName}</Text>
-                    <Image source={require('./../../images//ico_shouyexiaoxi.png')} style={styles.top_right_img_style}/>
+                    <Image source={require('./../../images/ico_shouyexiaoxi.png')} style={styles.top_right_img_style}/>
                 </Image>
             </View>
         )

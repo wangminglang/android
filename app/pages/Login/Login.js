@@ -30,6 +30,7 @@ var Login = React.createClass({
                 <TextInput
                     style={styles.inputStyle}
                     placeholder="手机号"
+                    keyboardType='numeric'
                     underlineColorAndroid='transparent'>
                 </TextInput>
                 <View style={styles.marginTop}>
@@ -168,7 +169,7 @@ const styles = StyleSheet.create({
     divider: {
         backgroundColor: '#3d3d3d',
         height: 30,
-        width:.5
+        width: .5
     },
 });
 //输出组件类
