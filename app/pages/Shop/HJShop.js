@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
   },
   cell: {
     width: gScreen.width, 
-    backgroundColor: 'white'
+    backgroundColor: gColors.white
   },
   topView: {
     flexDirection: 'row',
@@ -154,11 +154,11 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 16,
-    color: '#333333'
+    color: gColors.title
   },
   description: {
     fontSize: 13,
-    color: '#7f7f7f',
+    color: gColors.description,
     marginTop: 14
   },
   bottomView: {

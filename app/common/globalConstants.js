@@ -12,7 +12,9 @@ global.gScreen = {
 
 global.gColors = {
     title: '#333333',
-    background: '#f4f4f4'
+    description: '#7f7f7f',
+    background: '#f4f4f4',
+    white: 'white'
 }
 
 global.gFetchArguments = {
