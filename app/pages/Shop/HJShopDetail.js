@@ -265,7 +265,7 @@ const styles = StyleSheet.create({
     backgroundColor: gColors.white,
     width: (gScreen.width - 4)/2,
     marginTop: 2,
-      alignItems: 'center'
+    alignItems: 'center'
   }
 
 })
