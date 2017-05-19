@@ -8,7 +8,8 @@ import {
     StyleSheet,
     TextInput,
     TouchableOpacity,
-    Image
+    Image,
+    Alert
 } from 'react-native';
 import TextDivider from "./TextDriver";
 //得到屏幕宽度
@@ -23,6 +24,7 @@ export default class Login extends React.Component {
             code: "",
         };
     };
+
     render() {
         return (
             <View style={styles.content}>
@@ -39,7 +41,8 @@ export default class Login extends React.Component {
                     placeholder="手机号"
                     keyboardType='numeric'
                     onChangeText={(text) => {
-                    this.state.phoneNumber = text}}
+                        this.state.phoneNumber = text
+                    }}
                     underlineColorAndroid='transparent'>
                 </TextInput>
                 <View style={styles.marginTop}>
@@ -47,20 +50,21 @@ export default class Login extends React.Component {
                         style={styles.inputCodeStyle}
                         placeholder="验证码"
                         onChangeText={(text) => {
-                            this.state.code = text}}
+                            this.state.code = text
+                        }}
                         underlineColorAndroid='transparent'>
                     </TextInput>
                     <View style={styles.divider}/>
                     <TouchableOpacity>
                         <View style={styles.code}>
-                            <Text style={styles.codeStyle} onPress={()=>getCode()}>
+                            <Text style={styles.codeStyle} onPress={() => getCode()}>
                                 获取验证码
                             </Text>
                         </View>
                     </TouchableOpacity>
                 </View>
                 <TouchableOpacity
-                    onPress={()=>this.login()}>
+                    onPress={() => this.login()}>
                     <View style={styles.btnLogin}>
                         <Text style={styles.loginText}>
                             登录
@@ -71,9 +75,10 @@ export default class Login extends React.Component {
                     <CheckBox
                         onClick={() => this.onCheck()}
                         isChecked={this.state.checked}
-                        checkedImage={<Image source={require('./../../images/zhifugou.png')} style={{width: 18, height: 18}}/>}
-                        unCheckedImage={<Image source={require('./../../images/zhifugou2.png')}
+                        checkedImage={<Image source={require('./../../images/zhifugou.png')}
                                              style={{width: 18, height: 18}}/>}
+                        unCheckedImage={<Image source={require('./../../images/zhifugou2.png')}
+                                               style={{width: 18, height: 18}}/>}
                     ></CheckBox>
                     <Text>
                         我已阅读并同意<Text >《服务协议》</Text>
@@ -90,7 +95,7 @@ export default class Login extends React.Component {
     /**
      * 登陆
      */
-    login(){
+    login() {
         if (this.state.checked === false) {
             Alert.alert("您必须同意服务协议");
             return;
@@ -103,17 +108,44 @@ export default class Login extends React.Component {
             Alert.alert("验证码不能为空");
             return;
         }
+        let params = {
+            'mobile': this.state.phoneNumber,
+            'code': this.state.code,
+        };
+        NetUtil.POST('http://192.168.1.248:957/buyerapi/user/login', params, (data) => this.successCallback(data));
+    }
+
+    successCallback(data) {
+        console.log(data);
+        if (data.result) {
+            Alert.alert("登录成功");
+            Alert.alert("登录失败");
+        } else {
+        }
     }
 
     /**
      * 获取验证码
      */
-    getCode(){
-
+    getCode() {
+        if (this.state.phoneNumber.length === 0) {
+            Alert.alert("手机号不能为空");
+            return;
+        }
+        let params = {
+            'mobile': this.state.phoneNumber,
+        };
+        NetUtil.POST('http://192.168.1.248:957/buyerapi/user/getVerifyCode', params, (data) => this.successGetCodeCallback(data));
+    }
+    successGetCodeCallback(data) {
+        console.log(data);
+        if (data.result) {
+            Alert.alert("发送成功");
+        }
     }
     onCheck() {
         this.setState({
-            checked:!this.state.checked
+            checked: !this.state.checked
         })
     }
 }
@@ -197,7 +229,7 @@ const styles = StyleSheet.create({
         marginTop: 23,
         marginLeft: 15,
         flexDirection: 'row',
-        alignItems:'center'
+        alignItems: 'center'
     },
     bottom: {
         width: width,
