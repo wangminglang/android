@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 import Header from '../../components/Header';
 import Util from '../../common/HJNetUtil';
+import GoodsList from './HJGoodsList';
 
 const ShopDetailUrl = gBaseUrl.baseUrl + 'buyerapi/shop/getShopsDetail';
 const GoodsListUrl = gBaseUrl.baseUrl + 'buyerapi/goods/getGoodsList';
@@ -29,7 +30,8 @@ export default class ShopDetail extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      shopDetail: {}
+      shopDetail: {},
+      sortType: 0
     }
   }
 
@@ -44,17 +46,19 @@ export default class ShopDetail extends React.Component {
   }
 
   render() {
-    const { shopDetail } = this.state;
+    const { shopDetail, sortType } = this.state;
+    const params = {sortType: sortType, shopId: shopDetail.id}
     return (
       <View style={styles.container}>
         <TopView shopDetail={shopDetail} />
-        <GoodsSortHandleView sortTypes={sortTypes} onSelectSortType={this._onSelectSortType} />
+        <GoodsSortHandleView shopDetail={shopDetail} sortTypes={sortTypes} onSelectSortType={this._onSelectSortType} />
+        <GoodsList params={params} />
       </View>
     );
   }
 
-  _onSelectSortType = (type) => {
-    alert(type)
+  _onSelectSortType = () => {
+    
   }
 
 }
@@ -76,6 +80,7 @@ class GoodsSortHandleView extends Component {
     static propTypes = {
         sortTypes: React.PropTypes.array,
         onSelectSortType: React.PropTypes.func,
+        shopDetail: React.PropTypes.object
     }
 
     state = {
@@ -84,14 +89,14 @@ class GoodsSortHandleView extends Component {
     }
 
     render() {
-      const {sortTypes} = this.props
+      const {sortTypes, shopDetail} = this.props;
       const {isShow, currentType} = this.state;
       const rotate = isShow ? '90deg' : '-90deg';
 
       return(
         <View style={{zIndex: 1}}>
           <View style={[styles.sortView]} >
-            <Text style={styles.sortViewText} >全部商品（20）</Text>
+            <Text style={styles.sortViewText} >全部商品（{shopDetail.total}）</Text>
             <TouchableOpacity
               activeOpacity={0.75}
               style={{flexDirection: 'row'}}

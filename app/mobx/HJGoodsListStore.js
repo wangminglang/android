@@ -7,8 +7,9 @@ export default class baseListStore {
 	@observable isRefreshing = false
 	@observable isNoMore = true
 
-	constructor(URL) {
+	constructor(URL, params) {
 		this.URL = URL;
+		this.params = params;
 		this.fetchListData();
 	}
 
@@ -17,15 +18,15 @@ export default class baseListStore {
 		if (this.isRefreshing) this.page = 1;
 		this._fetchDataFromUrl()
 		.then((response) => {
-			const {data, isNoMore} = response;
+			const {list, isNoMore} = response;
 			runInAction(() => {
 				this.isRefreshing = false;
 				this.errorMsg = '';
 				this.isNoMore = isNoMore;
 				if (this.page == 1) {
-					this.listData.replace(data);
+					this.listData.replace(list);
 				}else{
-					this.listData.splice(this.listData.length, 0, ...data);
+					this.listData.splice(this.listData.length, 0, ...list);
 				}
 			})
 		}).catch((error) => {
@@ -43,14 +44,14 @@ export default class baseListStore {
 	_fetchDataFromUrl = () => {
 		return new Promise((resolve, reject) => {
             const URL = this.URL;
-			fetch(URL, {
-				page: this.page
-			})
+			const params = Object.assign({}, this.params, {page: this.page});
+			fetch(URL, params)
 			.then(response => response.json())
 			.then(responseData => {
 				if (responseData.result) {
 					const {data} = responseData;
-					resolve({data, isNoMore: data.length < gFetchArguments.pageSize})
+					const {list} = data;
+					resolve({list, isNoMore: list.length < gFetchArguments.pageSize})
 				}else {
 					reject(responseData.error);
 				}
