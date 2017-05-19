@@ -6,10 +6,11 @@ export default class baseListStore {
 	@observable page = 1
 	@observable isRefreshing = false
 	@observable isNoMore = true
+	@observable sortType = 0
 
-	constructor(URL, params) {
+	constructor(URL, shopId) {
 		this.URL = URL;
-		this.params = params;
+		this.shopId = shopId;
 		this.fetchListData();
 	}
 
@@ -44,7 +45,7 @@ export default class baseListStore {
 	_fetchDataFromUrl = () => {
 		return new Promise((resolve, reject) => {
             const URL = this.URL;
-			const params = Object.assign({}, this.params, {page: this.page});
+			const params = Object.assign({}, {shopId: this.shopId}, {page: this.page}, {sortType: this.sortType});
 			fetch(URL, params)
 			.then(response => response.json())
 			.then(responseData => {
