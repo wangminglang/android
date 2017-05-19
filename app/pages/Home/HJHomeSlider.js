@@ -1,6 +1,10 @@
 'use strict';
 
+import {observable, computed, action, runInAction,autorun} from 'mobx';
+
 import React,{Component} from 'react';
+import {observer} from 'mobx-react/native';
+
 import {
   AppRegistry,
   StyleSheet,
@@ -12,6 +16,28 @@ import {
   ListView
 } from 'react-native';
 
+
+class MyState {
+  @observable index = 0;
+  @action setIndex = (index) => {
+
+
+    this.index = index;
+
+  };
+}
+// const index = observable(0)
+const newState = new MyState();
+
+// autorun(() => {
+//   console.log(index.get());
+// });
+
+
+
+
+
+@observer
 export default class HomeSlider extends React.PureComponent {
 
 
@@ -27,7 +53,7 @@ export default class HomeSlider extends React.PureComponent {
         dataSource: ds.cloneWithRows([
         'John', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin'
       ]),
-        selectedKind:0
+        // selectedKind:0
       };
   };
 
@@ -55,23 +81,33 @@ export default class HomeSlider extends React.PureComponent {
     )
   }
   renderItem(rowID){
-    if (rowID == this.state.selectedKind) {
+        alert(newState.index);
+
+    if (rowID == newState.index) {
       return(
-        <Text style={styles.topTextStyle}>{rowID}</Text>
+        <Text style={styles.topTextStyle}>{newState.index}</Text>
       )
     }else {
       return(
-        <Text>{rowID}</Text>
+        <Text>{newState.index}</Text>
       )
     }
   }
 
   _selectedKind(rowID){
-    this.setState({
-      selectedKind:rowID,
-    });
-    alert(rowID);
+    // newState.index = rowID;
+    // this.setIndex(rowID);
+    newState.setIndex(rowID);
   }
+
+  // @action 
+  // setIndex = (rowID)=>{
+  //   runInAction(() => {
+  //     index.set(rowID);
+  //     alert(index.get());
+  //   });
+     
+  // }
 
 
 

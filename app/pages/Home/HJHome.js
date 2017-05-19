@@ -11,10 +11,14 @@ import {
 
 import HomeList from './HJHomeListView'
 import HomeSlider from './HJHomeSlider'
+import Header from '../../components/Header';
 
 export default class Home extends React.Component {
 
 
+  static navigationOptions = (navigation) => ({
+      header: <Header title="首页" />
+  })
 
   constructor(props){
     super(props);
@@ -26,11 +30,11 @@ export default class Home extends React.Component {
   };
 
 
+        // {this.renderNavBar()}
 
   render() {
     return (
       <View style={styles.container}>
-        {this.renderNavBar()}
         {this.renderTextInput()}
         {this.renderSliderView()}
         {this.renderHomeList()}
