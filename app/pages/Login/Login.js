@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Created by duan on 2017/5/12.
  */
@@ -11,11 +13,64 @@ import {
     Image
 } from 'react-native';
 import TextDivider from "./TextDriver";
+import TimerMixin from 'react-timer-mixin'
 //得到屏幕宽度
 var dimen = require('Dimensions');
 var width = dimen.get('window').width;
 import CheckBox from 'react-native-check-box';
+
+var timer;
+
 var Login = React.createClass({
+    mixins:[TimerMixin],
+
+
+
+    getDefaultProps () {
+        return{
+            duration: 1000,
+            countDown: '5',
+        }
+
+    },
+
+    getInitialState(){
+        return{
+            countDown:'发送验证码',
+            disabled:false
+        }
+    },
+
+    
+
+    startTimer(){
+        var count = this.props.countDown;
+        timer = this.setInterval(function () {
+            
+            if(count>0){
+               count--;
+               this.setState({
+                countDown:count,
+                disabled:true
+               }); 
+            }else{
+                this.setState({
+                countDown:'发送验证码',
+                disabled:false,
+               });
+               this.clearInterval(timer);
+            }
+            
+            console.log(this.state.countDown);
+        },this.props.duration);
+    },
+
+    componentDidMount: function() {
+        // this.startTimer();
+    },
+
+
+
     render() {
         return (
             <View style={styles.content}>
@@ -40,10 +95,10 @@ var Login = React.createClass({
                         underlineColorAndroid='transparent'>
                     </TextInput>
                     <View style={styles.divider}/>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={()=>this.startTimer()} disabled={this.state.disabled}>
                         <View style={styles.getCode}>
                             <Text style={styles.codeStyle}>
-                                获取验证码
+                                {this.state.countDown}
                             </Text>
                         </View>
                     </TouchableOpacity>

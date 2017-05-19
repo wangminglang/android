@@ -76,17 +76,6 @@ export default class LoopView extends React.Component{
     this.props.callBack(data);
   }
 
-  // componentDidMount(){
-  //   global.NetUtil.POST("http://119.2.8.83:888/api/index_app/lunbo", {'source': '0'}, (data)=>this.dealLunBoData(data));
-  // }
-
-  // dealLunBoData(data){
-  //   if (data.result) {
-  //     this.setState({
-  //       itemArr:data.data
-  //     })
-  //   }
-  // }
 }
 
 
