@@ -16,14 +16,47 @@ import TextDivider from "./TextDriver";
 var dimen = require('Dimensions');
 var width = dimen.get('window').width;
 import CheckBox from 'react-native-check-box';
+import TimerMixin from 'react-timer-mixin'
+var timer;
 export default class Login extends React.Component {
+    //noinspection JSAnnotator
+    mixins: [TimerMixin]
+    static defaultProps = {
+        duration: 1000,
+        countDown: '5',
+    };
+
     constructor(props) {
         super(props);
         this.state = {
             phoneNumber: "",
             code: "",
+            countDown: '发送验证码',
+            disabled: false
         };
     };
+
+    startTimer() {
+        var count = this.props.countDown;
+        timer = this.setInterval(function () {
+
+            if (count > 0) {
+                count--;
+                this.setState({
+                    countDown: count,
+                    disabled: true
+                });
+            } else {
+                this.setState({
+                    countDown: '发送验证码',
+                    disabled: false,
+                });
+                this.clearInterval(timer);
+            }
+
+            console.log(this.state.countDown);
+        }, this.props.duration);
+    }
 
     render() {
         return (
@@ -57,8 +90,9 @@ export default class Login extends React.Component {
                     <View style={styles.divider}/>
                     <TouchableOpacity>
                         <View style={styles.code}>
-                            <Text style={styles.codeStyle} onPress={() => getCode()}>
-                                获取验证码
+                            <Text style={styles.codeStyle} onPress={() => this.startTimer()}
+                                  disabled={this.state.disabled}>
+                                {this.state.countDown}
                             </Text>
                         </View>
                     </TouchableOpacity>
@@ -138,12 +172,14 @@ export default class Login extends React.Component {
         };
         NetUtil.POST('http://192.168.1.248:957/buyerapi/user/getVerifyCode', params, (data) => this.successGetCodeCallback(data));
     }
+
     successGetCodeCallback(data) {
         console.log(data);
         if (data.result) {
             Alert.alert("发送成功");
         }
     }
+
     onCheck() {
         this.setState({
             checked: !this.state.checked
