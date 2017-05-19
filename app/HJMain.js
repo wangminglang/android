@@ -41,7 +41,6 @@ const NavigationMine = StackNavigator({
     Mine: {screen: Mine},
     MineLogin: {screen: Login},
 });
-
 const MyApp = TabNavigator({
   Home: {
     screen: Home,

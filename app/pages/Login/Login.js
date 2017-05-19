@@ -15,7 +15,14 @@ import TextDivider from "./TextDriver";
 var dimen = require('Dimensions');
 var width = dimen.get('window').width;
 import CheckBox from 'react-native-check-box';
-var Login = React.createClass({
+export default class Login extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            phoneNumber: "",
+            code: "",
+        };
+    };
     render() {
         return (
             <View style={styles.content}>
@@ -31,24 +38,29 @@ var Login = React.createClass({
                     style={styles.inputStyle}
                     placeholder="手机号"
                     keyboardType='numeric'
+                    onChangeText={(text) => {
+                    this.state.phoneNumber = text}}
                     underlineColorAndroid='transparent'>
                 </TextInput>
                 <View style={styles.marginTop}>
                     <TextInput
                         style={styles.inputCodeStyle}
                         placeholder="验证码"
+                        onChangeText={(text) => {
+                            this.state.code = text}}
                         underlineColorAndroid='transparent'>
                     </TextInput>
                     <View style={styles.divider}/>
                     <TouchableOpacity>
-                        <View style={styles.getCode}>
-                            <Text style={styles.codeStyle}>
+                        <View style={styles.code}>
+                            <Text style={styles.codeStyle} onPress={()=>getCode()}>
                                 获取验证码
                             </Text>
                         </View>
                     </TouchableOpacity>
                 </View>
-                <TouchableOpacity>
+                <TouchableOpacity
+                    onPress={()=>this.login()}>
                     <View style={styles.btnLogin}>
                         <Text style={styles.loginText}>
                             登录
@@ -57,6 +69,11 @@ var Login = React.createClass({
                 </TouchableOpacity>
                 <View style={styles.agreement}>
                     <CheckBox
+                        onClick={() => this.onCheck()}
+                        isChecked={this.state.checked}
+                        checkedImage={<Image source={require('./../../images/zhifugou.png')} style={{width: 18, height: 18}}/>}
+                        unCheckedImage={<Image source={require('./../../images/zhifugou2.png')}
+                                             style={{width: 18, height: 18}}/>}
                     ></CheckBox>
                     <Text>
                         我已阅读并同意<Text >《服务协议》</Text>
@@ -68,8 +85,38 @@ var Login = React.createClass({
                 </View>
             </View>
         );
-    },
-});
+    }
+
+    /**
+     * 登陆
+     */
+    login(){
+        if (this.state.checked === false) {
+            Alert.alert("您必须同意服务协议");
+            return;
+        }
+        if (this.state.phoneNumber.length === 0) {
+            Alert.alert("手机号不能为空");
+            return;
+        }
+        if (this.state.code.length === 0) {
+            Alert.alert("验证码不能为空");
+            return;
+        }
+    }
+
+    /**
+     * 获取验证码
+     */
+    getCode(){
+
+    }
+    onCheck() {
+        this.setState({
+            checked:!this.state.checked
+        })
+    }
+}
 const styles = StyleSheet.create({
     content: {
         flex: 1,
@@ -125,7 +172,7 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: '#333333'
     },
-    getCode: {
+    code: {
         width: 100,
         height: 45,
         alignItems: 'center',
@@ -150,6 +197,7 @@ const styles = StyleSheet.create({
         marginTop: 23,
         marginLeft: 15,
         flexDirection: 'row',
+        alignItems:'center'
     },
     bottom: {
         width: width,

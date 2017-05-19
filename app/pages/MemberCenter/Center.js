@@ -29,7 +29,8 @@ export default class Mine extends React.Component {
             waitPay: "",
             waitShipping: "",
             shipping: "",
-            partShipped: ""
+            partShipped: "",
+            messageNum:""
         };
     };
 
@@ -39,14 +40,14 @@ export default class Mine extends React.Component {
 
     successCallback(data) {
         if (data.result) {
-            console.log(data.data.icon);
             this.setState({
                 imgUrl: data.data.icon,
                 userName: data.data.username,
                 waitPay: data.data.orderState.waitPay,
                 waitShipping: data.data.orderState.waitShipping,
                 shipping: data.data.orderState.shipping,
-                partShipped: data.data.orderState.partShipped
+                partShipped: data.data.orderState.partShipped,
+                messageNum:data.data.messageNum,
             })
         }
     }
@@ -58,6 +59,7 @@ export default class Mine extends React.Component {
                     <View>
                         <HeadView
                             imgUrl={this.state.imgUrl}
+                            messageNum={this.state.messageNum}
                             userName={this.state.userName}/>
                         <MyCell
                             leftTitle="我的订单"
@@ -94,7 +96,7 @@ export default class Mine extends React.Component {
      * 地址管理
      */
     jump_ToAddressManner() {
-        // alert('点击了');
+        // Alert.alert('点击了');
         const {navigate} = this.props.navigation;
         navigate('MineLogin');
     }

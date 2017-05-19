@@ -15,6 +15,7 @@ export default class HeaderView extends React.Component {
     static defaultProps = {
         imgUrl: null,
         userName: "",
+        messageNum:"",
     };
     render() {
         return (
@@ -29,9 +30,9 @@ export default class HeaderView extends React.Component {
         return (
             <View style={{alignItems: 'center'}}>
                 <Image source={require('./../../images/bg_gerenzhongxin.png')} style={styles.bg_style}>
-                    <Image source={{uri:this.props.imgUrl}} style={styles.top_img_style}/>
+                    <Image source={this.props.imgUrl?{uri:this.props.imgUrl}:require('./../../images/ico_touxiang.png')} style={styles.top_img_style}/>
                     <Text style={{marginTop: 15, color: 'white',}}>{this.props.userName}</Text>
-                    <Image source={this.props.imgUrl ? {uri:this.props.imgUrl} : require('./../../images/ico_shouyexiaoxi.png')} style={styles.top_right_img_style}/>
+                    <Image source={this.props.messageNum===0 ?require('./../../images/ico_shouyexiaoxi.png'): require('./../../images/ico_xiaoxi_hong.png')} style={styles.top_right_img_style}/>
                     
                 </Image>
             </View>
