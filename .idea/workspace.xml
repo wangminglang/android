@@ -2,15 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe5468e6-3ab8-48c5-909b-542a6a02c5d8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/images/ico_xiaoxi_hong.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/images/zhifugou.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/images/zhifugou2.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/images/dianpushangpin.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/images/dianputouxiang.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/mobx/HJGoodsListStore.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/HJMain.js" afterPath="$PROJECT_DIR$/app/HJMain.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/pages/Login/Login.js" afterPath="$PROJECT_DIR$/app/pages/Login/Login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/pages/MemberCenter/Center.js" afterPath="$PROJECT_DIR$/app/pages/MemberCenter/Center.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/pages/MemberCenter/MyHeaderView.js" afterPath="$PROJECT_DIR$/app/pages/MemberCenter/MyHeaderView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.android.js" afterPath="$PROJECT_DIR$/index.android.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/common/HJNetUtil.js" afterPath="$PROJECT_DIR$/app/common/HJNetUtil.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/common/constants.js" afterPath="$PROJECT_DIR$/app/common/constants.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/common/globalConstants.js" afterPath="$PROJECT_DIR$/app/common/globalConstants.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/mobx/HJBaseListStore.js" afterPath="$PROJECT_DIR$/app/mobx/HJBaseListStore.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/pages/Home/HJHome.js" afterPath="$PROJECT_DIR$/app/pages/Home/HJHome.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/pages/Home/HJHomeSlider.js" afterPath="$PROJECT_DIR$/app/pages/Home/HJHomeSlider.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/pages/Shop/HJShop.js" afterPath="$PROJECT_DIR$/app/pages/Shop/HJShop.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/pages/Shop/HJShopDetail.js" afterPath="$PROJECT_DIR$/app/pages/Shop/HJShopDetail.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.ios.js" afterPath="$PROJECT_DIR$/index.ios.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,7 +37,7 @@
         <entry file="file://$PROJECT_DIR$/app/pages/Login/Login.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="217">
-              <caret line="30" column="50" lean-forward="true" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
+              <caret line="30" column="50" lean-forward="false" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -43,9 +48,13 @@
       <file leaf-file-name="HJNetUtil.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/common/HJNetUtil.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="386">
-              <caret line="40" column="24" lean-forward="true" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
-              <folding />
+            <state relative-caret-position="436">
+              <caret line="42" column="24" lean-forward="false" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
+              <folding>
+                <marker date="1495182168149" expanded="true" signature="96:1945" ph="{...}" />
+                <marker date="1495182168149" expanded="true" signature="1918:1932" ph="{...}" />
+                <marker date="1495182168149" expanded="true" signature="2100:2270" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -54,19 +63,26 @@
         <entry file="file://$PROJECT_DIR$/app/pages/Shop/HJShop.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
-              <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="26" selection-end-column="4" />
+              <caret line="24" column="1" lean-forward="false" selection-start-line="24" selection-start-column="1" selection-end-line="26" selection-end-column="4" />
               <folding>
                 <element signature="e#15#68#0" expanded="true" />
+                <marker date="1495182168212" expanded="true" signature="2169:2508" ph="{...}" />
+                <marker date="1495182168212" expanded="true" signature="2278:2508" ph="{...}" />
+                <marker date="1495182168212" expanded="true" signature="2329:2508" ph="&lt;TouchableOpacity/&gt;" />
+                <marker date="1495182168212" expanded="true" signature="2452:2508" ph="&lt;View/&gt;" />
+                <marker date="1495182168212" expanded="true" signature="4170:4193" ph="{&quot;color&quot;: '##7f7f7f'...}" />
+                <marker date="1495182168212" expanded="true" signature="4170:4285" ph="{...}" />
+                <marker date="1495182168212" expanded="true" signature="4209:4283" ph="{&quot;flexDirection&quot;: 'row'...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HJMain.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="HJMain.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/HJMain.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="34" column="12" lean-forward="false" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
+            <state relative-caret-position="-714">
+              <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
               <folding>
                 <element signature="e#315#354#0" expanded="true" />
               </folding>
@@ -74,11 +90,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Center.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Center.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/pages/MemberCenter/Center.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="311">
-              <caret line="97" column="28" lean-forward="true" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
+              <caret line="97" column="28" lean-forward="false" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#41#80#0" expanded="true" />
@@ -91,7 +107,7 @@
         <entry file="file://$PROJECT_DIR$/app/pages/MemberCenter/MyHeaderView.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="200">
-              <caret line="31" column="103" lean-forward="true" selection-start-line="31" selection-start-column="103" selection-end-line="31" selection-end-column="103" />
+              <caret line="31" column="103" lean-forward="false" selection-start-line="31" selection-start-column="103" selection-end-line="31" selection-end-column="103" />
               <folding />
             </state>
           </provider>
@@ -423,12 +439,12 @@
       <workItem from="1494921840440" duration="1973000" />
       <workItem from="1494984050982" duration="25916000" />
       <workItem from="1495068953652" duration="23090000" />
-      <workItem from="1495155718811" duration="9468000" />
+      <workItem from="1495155718811" duration="9852000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="73151000" />
+    <option name="totallyTimeSpent" value="73535000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -724,7 +740,7 @@
     <entry file="file://$PROJECT_DIR$/app/pages/MemberCenter/MyHeaderView.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
-          <caret line="31" column="103" lean-forward="true" selection-start-line="31" selection-start-column="103" selection-end-line="31" selection-end-column="103" />
+          <caret line="31" column="103" lean-forward="false" selection-start-line="31" selection-start-column="103" selection-end-line="31" selection-end-column="103" />
           <folding />
         </state>
       </provider>
@@ -732,19 +748,9 @@
     <entry file="file://$PROJECT_DIR$/app/pages/Login/Login.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="217">
-          <caret line="30" column="50" lean-forward="true" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
+          <caret line="30" column="50" lean-forward="false" selection-start-line="30" selection-start-column="50" selection-end-line="30" selection-end-column="50" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/HJMain.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="34" column="12" lean-forward="false" selection-start-line="34" selection-start-column="12" selection-end-line="34" selection-end-column="12" />
-          <folding>
-            <element signature="e#315#354#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -752,28 +758,49 @@
     <entry file="file://$PROJECT_DIR$/app/pages/Shop/HJShop.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
-          <caret line="24" column="1" lean-forward="true" selection-start-line="24" selection-start-column="1" selection-end-line="26" selection-end-column="4" />
+          <caret line="24" column="1" lean-forward="false" selection-start-line="24" selection-start-column="1" selection-end-line="26" selection-end-column="4" />
           <folding>
             <element signature="e#15#68#0" expanded="true" />
+            <marker date="1495182168212" expanded="true" signature="2169:2508" ph="{...}" />
+            <marker date="1495182168212" expanded="true" signature="2278:2508" ph="{...}" />
+            <marker date="1495182168212" expanded="true" signature="2329:2508" ph="&lt;TouchableOpacity/&gt;" />
+            <marker date="1495182168212" expanded="true" signature="2452:2508" ph="&lt;View/&gt;" />
+            <marker date="1495182168212" expanded="true" signature="4170:4193" ph="{&quot;color&quot;: '##7f7f7f'...}" />
+            <marker date="1495182168212" expanded="true" signature="4170:4285" ph="{...}" />
+            <marker date="1495182168212" expanded="true" signature="4209:4283" ph="{&quot;flexDirection&quot;: 'row'...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/common/HJNetUtil.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="40" column="24" lean-forward="true" selection-start-line="40" selection-start-column="24" selection-end-line="40" selection-end-column="24" />
-          <folding />
+        <state relative-caret-position="436">
+          <caret line="42" column="24" lean-forward="false" selection-start-line="42" selection-start-column="24" selection-end-line="42" selection-end-column="24" />
+          <folding>
+            <marker date="1495182168149" expanded="true" signature="96:1945" ph="{...}" />
+            <marker date="1495182168149" expanded="true" signature="1918:1932" ph="{...}" />
+            <marker date="1495182168149" expanded="true" signature="2100:2270" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/pages/MemberCenter/Center.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="311">
-          <caret line="97" column="28" lean-forward="true" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
+          <caret line="97" column="28" lean-forward="false" selection-start-line="97" selection-start-column="28" selection-end-line="97" selection-end-column="28" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#41#80#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/HJMain.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-714">
+          <caret line="8" column="22" lean-forward="true" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+          <folding>
+            <element signature="e#315#354#0" expanded="true" />
           </folding>
         </state>
       </provider>

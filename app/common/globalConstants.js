@@ -12,7 +12,10 @@ global.gScreen = {
 
 global.gColors = {
     title: '#333333',
-    background: '#f4f4f4'
+    description: '#7f7f7f',
+    background: '#f4f4f4',
+    white: 'white',
+    red: '#ea4335'
 }
 
 global.gFetchArguments = {
@@ -22,6 +25,7 @@ global.gFetchArguments = {
 global.gBaseUrl = {
 	baseUrl: 'http://192.168.1.248:957/'
 }
+
 
 
 global.NetUtil = NetUtil;

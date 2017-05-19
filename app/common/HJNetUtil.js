@@ -13,18 +13,18 @@ export default NetUtil = {
 			})
 	},
 
-	POST: (url,params,callback) => {
-        let tokenString = Common.netConfig.AppId;
-        tokenString = tokenString+Common.netConfig.AppKey;
-        let now = Date.now().toString().slice(0,10);
-        tokenString += now;
-        let token = md5.hex_md5(tokenString);
+	POST: (url,params,successCallback,failCallback) => {
+        // let tokenString = Common.netConfig.AppId;
+        // tokenString = tokenString+Common.netConfig.AppKey;
+        // let now = Date.now().toString().slice(0,10);
+        // tokenString += now;
+        // let token = md5.hex_md5(tokenString);
         let param = {
-          'appId':Common.netConfig.AppId,
-          'deviceId' : '95501CD5-EF3D-4690-8E45-29D6610C7B85',
-          'clientversion' : Common.netConfig.clientversion,
-          'time' : now,
-          'token' : token
+          // 'appId':Common.netConfig.AppId,
+          // 'deviceId' : '95501CD5-EF3D-4690-8E45-29D6610C7B85',
+          // 'clientversion' : Common.netConfig.clientversion,
+          // 'time' : now,
+          // 'token' : token
         };
         for (let key in params) {
           if (params.hasOwnProperty(key)) {
@@ -37,21 +37,24 @@ export default NetUtil = {
                       method: 'POST',
                       headers: {
                         'Accept': 'application/json',
-                        "Content-Type": "application/x-www-form-urlencoded",
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                        'UserAgent':Common.netConfig.UserAgent,
+                        'User-Agent':Common.netConfig.UserAgent,
                       },
                       body: queryString
                  }
              )
             .then((response)=>response.json())
             .then((responseData)=>{
-              // alert(responseData.data.changeExpertNoticeText);
-              if (callback) {
-								// console.log(url,param,responseData);
-                callback(responseData);
+              if (successCallback) {
+								console.log(url,param,responseData);
+                successCallback(responseData);
               }
             })
             .catch((error)=>{
-              alert(error);
+              if (failCallback) {
+                failCallback(error);
+              }
             })
         }
 }

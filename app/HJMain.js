@@ -32,18 +32,25 @@ let tabNavigationOptions = (label, icon) => {
   }
 }
 
+const NavigationHome = StackNavigator({
+    Home: {screen: Home},
+});
 const NavigationShop = StackNavigator({
     Shop: {screen: Shop},
     ShopDetail: {screen: ShopDetail}
 });
-
+const NavigationCategory = StackNavigator({
+    Category: {screen: Category},
+});
 const NavigationMine = StackNavigator({
     Mine: {screen: Mine},
     MineLogin: {screen: Login},
 });
+
+
 const MyApp = TabNavigator({
   Home: {
-    screen: Home,
+    screen: NavigationHome,
     navigationOptions: tabNavigationOptions('首页', require('./images/ico_dhshouye.png'))
   },
   Shop: {
@@ -51,7 +58,7 @@ const MyApp = TabNavigator({
     navigationOptions: tabNavigationOptions('店铺', require('./images/ico_dhdianpu.png'))
   },
   Category: {
-    screen: Category,
+    screen: NavigationCategory,
     navigationOptions: tabNavigationOptions('分类', require('./images/ico_dhfeilei.png'))
   },
   Mine: {
