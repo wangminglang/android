@@ -119,8 +119,9 @@ export default class Login extends React.Component {
         console.log(data);
         if (data.result) {
             Alert.alert("登录成功");
-            Alert.alert("登录失败");
+
         } else {
+            Alert.alert("登录失败");
         }
     }
 

@@ -81,7 +81,7 @@ export default class HomeSlider extends React.PureComponent {
     )
   }
   renderItem(rowID){
-        alert(newState.index);
+        // alert(newState.index);
 
     if (rowID == newState.index) {
       return(
