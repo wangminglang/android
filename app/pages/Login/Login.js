@@ -38,7 +38,7 @@ export default class Login extends React.Component {
 
     startTimer() {
         var count = this.props.countDown;
-        timer = this.setInterval(function () {
+        timer = setInterval(()=>{
 
             if (count > 0) {
                 count--;
@@ -51,7 +51,7 @@ export default class Login extends React.Component {
                     countDown: '发送验证码',
                     disabled: false,
                 });
-                this.clearInterval(timer);
+                clearInterval(timer);
             }
 
             console.log(this.state.countDown);
@@ -88,10 +88,10 @@ export default class Login extends React.Component {
                         underlineColorAndroid='transparent'>
                     </TextInput>
                     <View style={styles.divider}/>
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => this.startTimer()}
+                                      disabled={this.state.disabled}>
                         <View style={styles.code}>
-                            <Text style={styles.codeStyle} onPress={() => this.startTimer()}
-                                  disabled={this.state.disabled}>
+                            <Text style={styles.codeStyle}>
                                 {this.state.countDown}
                             </Text>
                         </View>
