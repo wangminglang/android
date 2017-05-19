@@ -86,11 +86,11 @@ export default class Home extends React.Component {
 
 
   componentDidMount(){
-    global.NetUtil.GET("http://192.168.1.248:957/buyerapi/home/getHomeAllClassFirstPageData",(data)=>this.successCallback(data),null);
-
+    global.NetUtil.POST('http://192.168.1.248:957/buyerapi/home/getHomeAllClassFirstPageData','',(data)=>this.successCallback(data));
   }
 
   successCallback(data){
+    console.log(data);
     if (data.result) {
       this.setState({
         headLunbo:data.data[0].headLunbo,
