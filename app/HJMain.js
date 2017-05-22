@@ -21,7 +21,6 @@ import ShopDetail from './pages/Shop/HJShopDetail';
 
 let tabNavigationOptions = (label, icon) => {
   return {
-    tabBarVisible: true, //显示tabBar
     tabBarLabel: label,
     tabBarIcon: ({tintColor}) => (
       <Image
