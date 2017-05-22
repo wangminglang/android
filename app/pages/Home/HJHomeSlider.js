@@ -17,52 +17,98 @@ import {
 } from 'react-native';
 
 
-class MyState {
-  @observable index = 0;
-  @action setIndex = (index) => {
+//待办事项行数据
+class TodoListItem {
 
+    index;
 
-    this.index = index;
+    @observable
+    title;
 
-  };
+    @observable
+    seleted = false;
+
+    @action
+    toggleFinish() {
+        if (!this.seleted) {this.seleted = true}
+    }    
 }
-// const index = observable(0)
-const newState = new MyState();
 
-// autorun(() => {
-//   console.log(index.get());
-// });
-
-
+//待办事项列表数据
+class TodoListHolder {
+    @observable
+    dataList = [];
+    @computed
+    get taskLeft() {
+        return this.dataList.filter((it) => it.seleted == true);
+    }
+    @action
+    clear(){}
+}
 
 
 
 @observer
-export default class HomeSlider extends React.PureComponent {
+export default class HomeSlider extends React.Component {
+
+  todoList = new TodoListHolder();
 
 
 
   static defaultProps = {
+      list :[
+          'John', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin'
+      ]
   };
+
+  ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+
+  pre = 0;
+
   // 初始化模拟数据
   constructor(props) {
     super(props);
-    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    for (let i = 0; i < this.props.list.length; i++) {
+            let listItem = new TodoListItem();
+            if (i == 0) {listItem.seleted = true}
+            listItem.title = this.props.list[i];
+            listItem.index = i;
+            this.todoList.dataList.push(listItem)
+        }
 
-      this.state = {
-        dataSource: ds.cloneWithRows([
-        'John', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin'
-      ]),
-        // selectedKind:0
-      };
+    autorun(() => {
+    var arr = this.todoList.dataList.filter((it) => it.seleted == true);
+    var c = 0;
+    if (arr.length>1) 
+    {
+        console.log('保持的',this.pre);
+
+      for (var i = 0; i < arr.length; i++) {
+        var item = arr[i];
+
+        if (item.index === this.pre) {
+          console.log('上一个',this.pre);
+          this.todoList.dataList[this.pre].seleted = false;
+        }else{
+          c = item.index;
+          console.log('现在的',this.pre);
+        }
+
+      }
+      this.pre = c;
+       console.log('-----------')
+
+    }
+  })
+
   };
-
+   
 
   render() {
     return (
       <View style={styles.containStyle}>
         <ListView
-          dataSource={this.state.dataSource}
+          dataSource={this.ds.cloneWithRows(this.todoList.dataList.slice())}
           renderRow={this.renderRow.bind(this)}
           horizontal={true}
           showsHorizontalScrollIndicator={false}
@@ -73,45 +119,15 @@ export default class HomeSlider extends React.PureComponent {
 
   renderRow(rowData,sectionID,rowID){
     return(
-      <TouchableOpacity activeOpacity={0.5} onPress={()=>this._selectedKind(rowID)}>
-      <View style={styles.topClickStyle}>
-        {this.renderItem(rowID)}
-      </View>
-      </TouchableOpacity>
+      <Item rowData={rowData} callBack={this.callBack}/>
     )
   }
-  renderItem(rowID){
-        // alert(newState.index);
 
-    if (rowID == newState.index) {
-      return(
-        <Text style={styles.topTextStyle}>{newState.index}</Text>
-      )
-    }else {
-      return(
-        <Text>{newState.index}</Text>
-      )
-    }
-  }
-
-  _selectedKind(rowID){
-    // newState.index = rowID;
-    // this.setIndex(rowID);
-    newState.setIndex(rowID);
-  }
-
-  // @action 
-  // setIndex = (rowID)=>{
-  //   runInAction(() => {
-  //     index.set(rowID);
-  //     alert(index.get());
-  //   });
-     
-  // }
-
-
-
+  callBack(){}
+  
 }
+
+
 const styles = StyleSheet.create({
   containStyle:{
     flex:1,
@@ -137,3 +153,31 @@ const styles = StyleSheet.create({
     color:'white',
   }
 })
+
+@observer
+export class Item extends React.Component {
+  render(){
+    return(
+      <TouchableOpacity activeOpacity={0.5} onPress={()=>this.props.rowData.toggleFinish()}>
+      <View style={styles.topClickStyle}>
+      {this.renderItem()}
+      </View>
+      </TouchableOpacity>
+    )
+  }
+
+  renderItem(){
+
+    if (this.props.rowData.seleted) {
+      return(
+        <Text style={styles.topTextStyle}>{this.props.rowData.title}</Text>
+      )
+    }else {
+      return(
+        <Text>{this.props.rowData.title}</Text>
+      )
+    }
+  }
+}
+
+
