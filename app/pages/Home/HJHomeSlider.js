@@ -81,22 +81,22 @@ export default class HomeSlider extends React.Component {
     var c = 0;
     if (arr.length>1) 
     {
-        console.log('保持的',this.pre);
+        // console.log('保持的',this.pre);
 
       for (var i = 0; i < arr.length; i++) {
         var item = arr[i];
 
         if (item.index === this.pre) {
-          console.log('上一个',this.pre);
+          // console.log('上一个',this.pre);
           this.todoList.dataList[this.pre].seleted = false;
         }else{
           c = item.index;
-          console.log('现在的',this.pre);
+          // console.log('现在的',this.pre);
         }
 
       }
       this.pre = c;
-       console.log('-----------')
+       // console.log('-----------')
 
     }
   })
@@ -119,14 +119,44 @@ export default class HomeSlider extends React.Component {
 
   renderRow(rowData,sectionID,rowID){
     return(
-      <Item rowData={rowData} callBack={this.callBack}/>
+      <Item rowData={rowData}/>
     )
   }
 
-  callBack(){}
   
 }
 
+
+
+
+@observer
+export class Item extends React.Component {
+  render(){
+    return(
+      <TouchableOpacity activeOpacity={0.5} onPress={()=>this.props.rowData.toggleFinish()}>
+        {this.renderItem()}
+      </TouchableOpacity>
+    )
+  }
+
+  renderItem(){
+
+    if (this.props.rowData.seleted) {
+      return(
+        <View style={styles.topClickStyle,styles.topClickStyle_S}>
+        <Text style={styles.topTextStyle}>{this.props.rowData.title}</Text>
+        </View>
+      )
+    }else {
+      return(
+        <View style={styles.topClickStyle}>
+        <Text>{this.props.rowData.title}</Text>
+        </View>
+
+      )
+    }
+  }
+}
 
 const styles = StyleSheet.create({
   containStyle:{
@@ -143,41 +173,18 @@ const styles = StyleSheet.create({
     height:30,
     width:60,
     marginRight:5,
-    backgroundColor:'red',
+    backgroundColor:'white',
     justifyContent:'center',
-    alignItems:'center'
+    alignItems:'center',
+
+  },
+  topClickStyle_S:{
+    borderBottomWidth:2,
+    borderBottomColor:'red',
   },
   topTextStyle:{
-    borderBottomWidth:2,
-    borderBottomColor:'blue',
-    color:'white',
+
+    color:'red',
   }
 })
-
-@observer
-export class Item extends React.Component {
-  render(){
-    return(
-      <TouchableOpacity activeOpacity={0.5} onPress={()=>this.props.rowData.toggleFinish()}>
-      <View style={styles.topClickStyle}>
-      {this.renderItem()}
-      </View>
-      </TouchableOpacity>
-    )
-  }
-
-  renderItem(){
-
-    if (this.props.rowData.seleted) {
-      return(
-        <Text style={styles.topTextStyle}>{this.props.rowData.title}</Text>
-      )
-    }else {
-      return(
-        <Text>{this.props.rowData.title}</Text>
-      )
-    }
-  }
-}
-
 
