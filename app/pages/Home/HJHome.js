@@ -25,7 +25,8 @@ export default class Home extends React.Component {
     this.state = {
       headLunbo:[],
       catInfo:Object,
-      goodsList:[]
+      goodsList:[],
+      catList:[]
     };
   };
 
@@ -86,11 +87,12 @@ export default class Home extends React.Component {
 
 
   componentDidMount(){
-    global.NetUtil.POST('buyerapi/home/getHomeAllClassFirstPageData','',(data)=>this.successCallback(data));
+    NetUtil.POST('buyerapi/home/getHomeAllClassFirstPageData','',(data)=>this.successCallback(data));
+    NetUtil.POST('buyerapi/cat/getAllCatList','',(data)=>this.getAllCatList(data));
   }
 
   successCallback(data){
-    console.log(data);
+    // console.log(data);
     if (data.result) {
       this.setState({
         headLunbo:data.data[0].headLunbo,
@@ -98,7 +100,16 @@ export default class Home extends React.Component {
         goodsList:data.data[0].goodsList
       })
     }
-    // console.log(this.state);
+  }
+
+  getAllCatList(data){
+    if (data.result) {
+      this.setState({
+          catList:data.data
+      })
+    }
+        console.log('11111'+this.state.catList);
+
   }
 
 }
