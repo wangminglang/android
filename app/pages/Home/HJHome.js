@@ -86,7 +86,7 @@ export default class Home extends React.Component {
 
 
   componentDidMount(){
-    global.NetUtil.POST('http://192.168.1.248:957/buyerapi/home/getHomeAllClassFirstPageData','',(data)=>this.successCallback(data));
+    global.NetUtil.POST('buyerapi/home/getHomeAllClassFirstPageData','',(data)=>this.successCallback(data));
   }
 
   successCallback(data){
