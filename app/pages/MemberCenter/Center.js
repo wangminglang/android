@@ -35,7 +35,10 @@ export default class Mine extends React.Component {
     };
 
     componentDidMount() {
-        NetUtil.GET("http://192.168.1.248:957/buyerapi/user/getUserInfo?id=1", (data) => this.successCallback(data), null);
+        let params = {
+            'id': 1,
+        };
+        NetUtil.POST("http://192.168.1.248:957/buyerapi/user/getUserInfo",params, (data) => this.successCallback(data), null);
     }
 
     successCallback(data) {
