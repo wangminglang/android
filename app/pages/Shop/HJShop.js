@@ -17,7 +17,7 @@ import Header from '../../components/Header';
 import Loading from '../../components/Loading';
 import LoadMoreFooter from '../../components/LoadMoreFooter';
 
-const URL = gBaseUrl.baseUrl + 'buyerapi/shop/getShopsList';
+const URL = 'buyerapi/shop/getShopsList';
 
 @observer
 export default class Shop extends React.Component {
