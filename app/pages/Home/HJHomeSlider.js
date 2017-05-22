@@ -143,7 +143,7 @@ export class Item extends React.Component {
 
     if (this.props.rowData.seleted) {
       return(
-        <View style={styles.topClickStyle,styles.topClickStyle_S}>
+        <View style={styles.topClickStyle_S}>
         <Text style={styles.topTextStyle}>{this.props.rowData.title}</Text>
         </View>
       )
@@ -179,6 +179,12 @@ const styles = StyleSheet.create({
 
   },
   topClickStyle_S:{
+    height:30,
+    width:60,
+    marginRight:5,
+    backgroundColor:'white',
+    justifyContent:'center',
+    alignItems:'center',
     borderBottomWidth:2,
     borderBottomColor:'red',
   },
