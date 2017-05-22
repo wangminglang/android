@@ -31,6 +31,7 @@ export default NetUtil = {
             param[key] = params[key];
           }
         }
+        url = gBaseUrl.baseUrl+url;
         let queryString = toQueryString(param);
         fetch(url,
                 {
