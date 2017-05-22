@@ -32,13 +32,14 @@ export default class Login extends React.Component {
             phoneNumber: "",
             code: "",
             countDown: '发送验证码',
-            disabled: false
+            disabled: false,
+            checked: true
         };
     };
 
     startTimer() {
         var count = this.props.countDown;
-        timer = setInterval(()=>{
+        timer = setInterval(() => {
 
             if (count > 0) {
                 count--;
@@ -88,7 +89,7 @@ export default class Login extends React.Component {
                         underlineColorAndroid='transparent'>
                     </TextInput>
                     <View style={styles.divider}/>
-                    <TouchableOpacity onPress={() => this.startTimer()}
+                    <TouchableOpacity onPress={() => this.getCode()}
                                       disabled={this.state.disabled}>
                         <View style={styles.code}>
                             <Text style={styles.codeStyle}>
@@ -171,6 +172,7 @@ export default class Login extends React.Component {
             'mobile': this.state.phoneNumber,
         };
         NetUtil.POST('http://192.168.1.248:957/buyerapi/user/getVerifyCode', params, (data) => this.successGetCodeCallback(data));
+        this.startTimer();
     }
 
     successGetCodeCallback(data) {
