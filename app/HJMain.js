@@ -9,7 +9,6 @@ import {
 } from 'react-native';
 
 import {StackNavigator, TabNavigator} from 'react-navigation';
-// import { Navigator } from 'react-native-deprecated-custom-components';
 
 import Home from './pages/Home/HJHome';
 import Shop from './pages/Shop/HJShop';
@@ -22,6 +21,7 @@ import ShopDetail from './pages/Shop/HJShopDetail';
 
 let tabNavigationOptions = (label, icon) => {
   return {
+    tabBarVisible: true, //显示tabBar
     tabBarLabel: label,
     tabBarIcon: ({tintColor}) => (
       <Image
@@ -83,7 +83,7 @@ const MyApp = TabNavigator({
         fontSize: 12, // 文字大小
         marginBottom: 5
     }
-  },
+  }
 })
 
 module.exports = MyApp; 

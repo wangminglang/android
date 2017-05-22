@@ -35,6 +35,7 @@ const sortTypes = [
 export default class ShopDetail extends React.Component {
 
   static navigationOptions = ({ navigation }) => ({
+    tabBarVisible: false, //隐藏tabBar
     header: <Header title={navigation.state.params.nameShop} showLeftIcon={true} leftIconAction={() => navigation.goBack()} />
   })
 
