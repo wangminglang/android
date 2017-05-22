@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe5468e6-3ab8-48c5-909b-542a6a02c5d8" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/pages/AdressManner/Adress.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/common/api.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/HJMain.js" afterPath="$PROJECT_DIR$/app/HJMain.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/pages/Login/Login.js" afterPath="$PROJECT_DIR$/app/pages/Login/Login.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/pages/MemberCenter/Center.js" afterPath="$PROJECT_DIR$/app/pages/MemberCenter/Center.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.android.js" afterPath="$PROJECT_DIR$/index.android.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -30,26 +28,34 @@
       <file leaf-file-name="Login.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/pages/Login/Login.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="19" column="45" lean-forward="true" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
+            <state relative-caret-position="301">
+              <caret line="172" column="34" lean-forward="false" selection-start-line="172" selection-start-column="34" selection-end-line="172" selection-end-column="34" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#41#80#0" expanded="true" />
                 <element signature="e#330#376#0" expanded="true" />
-                <marker date="1495444191315" expanded="true" signature="1071:1131" ph="{...}" />
+                <marker date="1495446451905" expanded="true" signature="1114:1174" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Adress.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Adress.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/pages/AdressManner/Adress.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50">
-              <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-              <folding>
-                <element signature="e#64#102#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="200">
+              <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HJNetUtil.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/common/HJNetUtil.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1650">
+              <caret line="67" column="65" lean-forward="true" selection-start-line="67" selection-start-column="65" selection-end-line="67" selection-end-column="65" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -57,18 +63,18 @@
       <file leaf-file-name="globalConstants.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/common/globalConstants.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="24" column="15" lean-forward="false" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="15" />
+            <state relative-caret-position="125">
+              <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Header.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/components/Header.js">
+      <file leaf-file-name="api.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/common/api.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="400">
-              <caret line="29" column="13" lean-forward="true" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+            <state relative-caret-position="250">
+              <caret line="10" column="14" lean-forward="false" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -77,11 +83,9 @@
       <file leaf-file-name="Center.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/pages/MemberCenter/Center.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="18" column="38" lean-forward="true" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
-              <folding>
-                <element signature="e#316#350#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="175">
+              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="42" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -89,8 +93,8 @@
       <file leaf-file-name="UserDefaults.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/common/UserDefaults.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-30">
-              <caret line="6" column="10" lean-forward="true" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+            <state relative-caret-position="175">
+              <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -99,8 +103,8 @@
       <file leaf-file-name="HJHomeCell.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/pages/Home/HJHomeCell.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="200">
-              <caret line="23" column="37" lean-forward="false" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
+            <state relative-caret-position="-1250">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -118,23 +122,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HJShop.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/pages/Shop/HJShop.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="25" column="31" lean-forward="false" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
-              <folding>
-                <element signature="e#15#68#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="HJHome.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/pages/Home/HJHome.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="86" column="0" lean-forward="true" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+            <state relative-caret-position="33">
+              <caret line="78" column="11" lean-forward="true" selection-start-line="78" selection-start-column="11" selection-end-line="78" selection-end-column="11" />
               <folding>
                 <element signature="e#15#53#0" expanded="true" />
               </folding>
@@ -162,6 +154,7 @@
       <find>navLeftIconStyle</find>
       <find>goBack</find>
       <find>Login</find>
+      <find>getHomeAllClassFirstPageData</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -175,15 +168,15 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/app/pages/Login/TextDriver.js" />
         <option value="$PROJECT_DIR$/app/pages/Home/HJHome.js" />
-        <option value="$PROJECT_DIR$/app/common/api.js" />
         <option value="$PROJECT_DIR$/app/pages/MemberCenter/MyCell.js" />
         <option value="$PROJECT_DIR$/app/pages/MemberCenter/MyMiddleView.js" />
         <option value="$PROJECT_DIR$/app/pages/MemberCenter/MyHeaderView.js" />
         <option value="$PROJECT_DIR$/index.android.js" />
         <option value="$PROJECT_DIR$/app/HJMain.js" />
-        <option value="$PROJECT_DIR$/app/pages/Login/Login.js" />
-        <option value="$PROJECT_DIR$/app/pages/MemberCenter/Center.js" />
         <option value="$PROJECT_DIR$/app/pages/AdressManner/Adress.js" />
+        <option value="$PROJECT_DIR$/app/pages/MemberCenter/Center.js" />
+        <option value="$PROJECT_DIR$/app/common/api.js" />
+        <option value="$PROJECT_DIR$/app/pages/Login/Login.js" />
       </list>
     </option>
   </component>
@@ -433,6 +426,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="haojiaReactNative" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="haojiaReactNative" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="common" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
@@ -445,13 +456,14 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\git_code\haojiaReactNative\Utils" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\git_code\haojiaReactNative\app\common" />
       <recent name="E:\git_code\haojiaReactNative\app\images" />
       <recent name="E:\git_code\haojiaReactNative\app\utils" />
       <recent name="E:\git_code\haojiaReactNative\app\image" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\git_code\haojiaReactNative\Utils" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -556,12 +568,12 @@
       <workItem from="1495068953652" duration="23090000" />
       <workItem from="1495155718811" duration="15517000" />
       <workItem from="1495417889148" duration="7922000" />
-      <workItem from="1495437389995" duration="6589000" />
+      <workItem from="1495437389995" duration="7953000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="93711000" />
+    <option name="totallyTimeSpent" value="95075000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -745,7 +757,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/common/api.js" />
     <entry file="file://$PROJECT_DIR$/app/mobx/HJBaseListStore.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
@@ -783,14 +794,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="575">
           <caret line="31" column="103" lean-forward="false" selection-start-line="31" selection-start-column="103" selection-end-line="31" selection-end-column="103" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/common/constants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="15" column="52" lean-forward="false" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
           <folding />
         </state>
       </provider>
@@ -833,24 +836,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/common/HJNetUtil.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-705">
-          <caret line="31" column="11" lean-forward="true" selection-start-line="31" selection-start-column="11" selection-end-line="31" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/Home/HJHome.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="86" column="0" lean-forward="true" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
-          <folding>
-            <element signature="e#15#53#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/components/Header.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="400">
@@ -864,7 +849,7 @@
         <state relative-caret-position="202">
           <caret line="25" column="31" lean-forward="false" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
           <folding>
-            <element signature="e#15#68#0" expanded="true" />
+            <element signature="e#15#68#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -879,43 +864,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/common/globalConstants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="24" column="15" lean-forward="false" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/Login/Login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="19" column="45" lean-forward="true" selection-start-line="19" selection-start-column="45" selection-end-line="19" selection-end-column="45" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#41#80#0" expanded="true" />
-            <element signature="e#330#376#0" expanded="true" />
-            <marker date="1495444191315" expanded="true" signature="1071:1131" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/common/UserDefaults.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-30">
-          <caret line="6" column="10" lean-forward="true" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/Home/HJHomeCell.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="23" column="37" lean-forward="false" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/pages/Shop/HJShopDetail.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
@@ -926,23 +874,90 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/MemberCenter/Center.js">
+    <entry file="file://$PROJECT_DIR$/app/pages/AdressManner/Adress.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="18" column="38" lean-forward="true" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
+        <state relative-caret-position="200">
+          <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/common/UserDefaults.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/common/HJNetUtil.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1650">
+          <caret line="67" column="65" lean-forward="true" selection-start-line="67" selection-start-column="65" selection-end-line="67" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/Home/HJHomeCell.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1250">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/Home/HJHome.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="33">
+          <caret line="78" column="11" lean-forward="true" selection-start-line="78" selection-start-column="11" selection-end-line="78" selection-end-column="11" />
           <folding>
-            <element signature="e#316#350#0" expanded="true" />
+            <element signature="e#15#53#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/AdressManner/Adress.js">
+    <entry file="file://$PROJECT_DIR$/app/common/constants.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="2" column="7" lean-forward="false" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
+        <state relative-caret-position="225">
+          <caret line="9" column="35" lean-forward="true" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/common/globalConstants.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="11" column="0" lean-forward="true" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/MemberCenter/Center.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/Login/Login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="172" column="34" lean-forward="false" selection-start-line="172" selection-start-column="34" selection-end-line="172" selection-end-column="34" />
           <folding>
-            <element signature="e#64#102#0" expanded="true" />
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#41#80#0" expanded="true" />
+            <element signature="e#330#376#0" expanded="true" />
+            <marker date="1495446451905" expanded="true" signature="1114:1174" ph="{...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/common/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="10" column="14" lean-forward="false" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>
