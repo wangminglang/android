@@ -23,7 +23,7 @@ export default class MyCell extends React.Component {
         return (
             <View style={styles.viewStyle}>
                 <View style={styles.leftViewStyle}>
-                    <Image source={{uri: this.props.imgName}} style={styles.leftImgStyle}/>
+                    {/*<Image source={{uri: this.props.imgName}} style={styles.leftImgStyle}/>*/}
                     <Text style={styles.txt_style} ref={component => this._root = component}>{this.props.leftTitle}</Text>
                 </View>
                 {/*-------右边---------*/}

@@ -17,6 +17,7 @@ import Mine from './pages/MemberCenter/Center';
 
 import Login from './pages/Login/Login'
 import Adress from './pages/AdressManner/Adress'
+import AddAdress from './pages/AdressManner/AddAdress'
 import ShopDetail from './pages/Shop/HJShopDetail';
 
 let tabNavigationOptions = (label, icon) => {
@@ -45,6 +46,7 @@ const NavigationMine = StackNavigator({
     Mine: {screen: Mine},
     MineLogin: {screen: Login},
     MineAdress: {screen: Adress},
+    MineAddAdress: {screen: AddAdress},
 });
 
 
