@@ -9,7 +9,6 @@ import {
 } from 'react-native';
 
 import {StackNavigator, TabNavigator} from 'react-navigation';
-// import { Navigator } from 'react-native-deprecated-custom-components';
 
 import Home from './pages/Home/HJHome';
 import Shop from './pages/Shop/HJShop';
@@ -17,7 +16,7 @@ import Category from './pages/Category/HJCategory';
 import Mine from './pages/MemberCenter/Center';
 
 import Login from './pages/Login/Login'
-
+import Adress from './pages/AdressManner/Adress'
 import ShopDetail from './pages/Shop/HJShopDetail';
 
 let tabNavigationOptions = (label, icon) => {
@@ -45,6 +44,7 @@ const NavigationCategory = StackNavigator({
 const NavigationMine = StackNavigator({
     Mine: {screen: Mine},
     MineLogin: {screen: Login},
+    MineAdress: {screen: Adress},
 });
 
 
@@ -83,7 +83,7 @@ const MyApp = TabNavigator({
         fontSize: 12, // 文字大小
         marginBottom: 5
     }
-  },
+  }
 })
 
 module.exports = MyApp; 

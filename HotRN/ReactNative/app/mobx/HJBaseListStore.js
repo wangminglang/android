@@ -42,7 +42,7 @@ export default class baseListStore {
 
 	_fetchDataFromUrl = () => {
 		return new Promise((resolve, reject) => {
-            const URL = this.URL;
+            const URL = gBaseUrl.baseUrl + this.URL;
 			fetch(URL, {
 				page: this.page
 			})

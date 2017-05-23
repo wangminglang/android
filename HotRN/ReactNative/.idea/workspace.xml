@@ -2,9 +2,253 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fe5468e6-3ab8-48c5-909b-542a6a02c5d8" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/node_modules/react-native-tab-view/src/SceneMap.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/__tests__/NavigationActions-test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/__tests__/NavigationStateUtils-test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/__tests__/addNavigationHelpers-test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/routers/__tests__/Routers-test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/routers/__tests__/StackRouter-test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/routers/__tests__/TabRouter-test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/routers/__tests__/createConfigGetter-test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/routers/__tests__/validateRouteConfigMap-test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/__tests__/NavigationScenesReducer-test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/__tests__/NavigationActions-test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/__tests__/NavigationStateUtils-test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/__tests__/addNavigationHelpers-test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/routers/__tests__/Routers-test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/routers/__tests__/StackRouter-test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/routers/__tests__/TabRouter-test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/routers/__tests__/createConfigGetter-test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/routers/__tests__/validateRouteConfigMap-test.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/__tests__/NavigationScenesReducer-test.js" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/pages/Login/Login.js" afterPath="$PROJECT_DIR$/app/pages/Login/Login.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/pages/MemberCenter/Center.js" afterPath="$PROJECT_DIR$/app/pages/MemberCenter/Center.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/HJMain.js" afterPath="$PROJECT_DIR$/app/HJMain.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/common/HJNetUtil.js" afterPath="$PROJECT_DIR$/app/common/HJNetUtil.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/common/api.js" afterPath="$PROJECT_DIR$/app/common/api.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/mobx/HJBaseListStore.js" afterPath="$PROJECT_DIR$/app/mobx/HJBaseListStore.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/mobx/HJGoodsListStore.js" afterPath="$PROJECT_DIR$/app/mobx/HJGoodsListStore.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/pages/Home/HJHome.js" afterPath="$PROJECT_DIR$/app/pages/Home/HJHome.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/pages/Shop/HJShop.js" afterPath="$PROJECT_DIR$/app/pages/Shop/HJShop.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/pages/Shop/HJShopDetail.js" afterPath="$PROJECT_DIR$/app/pages/Shop/HJShopDetail.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-native-drawer-layout-polyfill/package.json" afterPath="$PROJECT_DIR$/node_modules/react-native-drawer-layout-polyfill/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-native-drawer-layout/README.md" afterPath="$PROJECT_DIR$/node_modules/react-native-drawer-layout/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-native-drawer-layout/dist/DrawerLayout.js" afterPath="$PROJECT_DIR$/node_modules/react-native-drawer-layout/dist/DrawerLayout.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-native-drawer-layout/package.json" afterPath="$PROJECT_DIR$/node_modules/react-native-drawer-layout/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-native-tab-view/README.md" afterPath="$PROJECT_DIR$/node_modules/react-native-tab-view/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-native-tab-view/package.json" afterPath="$PROJECT_DIR$/node_modules/react-native-tab-view/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-native-tab-view/src/TabBar.js" afterPath="$PROJECT_DIR$/node_modules/react-native-tab-view/src/TabBar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-native-tab-view/src/TabViewAnimated.js" afterPath="$PROJECT_DIR$/node_modules/react-native-tab-view/src/TabViewAnimated.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-native-tab-view/src/TabViewPagerAndroid.js" afterPath="$PROJECT_DIR$/node_modules/react-native-tab-view/src/TabViewPagerAndroid.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-native-tab-view/src/TabViewPagerPan.js" afterPath="$PROJECT_DIR$/node_modules/react-native-tab-view/src/TabViewPagerPan.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-native-tab-view/src/TabViewPagerScroll.js" afterPath="$PROJECT_DIR$/node_modules/react-native-tab-view/src/TabViewPagerScroll.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-native-tab-view/src/TabViewTypeDefinitions.js" afterPath="$PROJECT_DIR$/node_modules/react-native-tab-view/src/TabViewTypeDefinitions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-native-tab-view/src/TouchableItem.js" afterPath="$PROJECT_DIR$/node_modules/react-native-tab-view/src/TouchableItem.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-native-tab-view/src/index.js" afterPath="$PROJECT_DIR$/node_modules/react-native-tab-view/src/index.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/README.md" afterPath="$PROJECT_DIR$/node_modules/react-navigation/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/NavigationActions.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/NavigationActions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/NavigationActions.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/NavigationActions.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/PlatformHelpers.native.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/PlatformHelpers.native.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/PlatformHelpers.native.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/PlatformHelpers.native.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/StateUtils.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/StateUtils.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/StateUtils.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/StateUtils.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/TypeDefinition.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/TypeDefinition.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/TypeDefinition.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/TypeDefinition.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/addNavigationHelpers.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/addNavigationHelpers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/addNavigationHelpers.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/addNavigationHelpers.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/createNavigationContainer.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/createNavigationContainer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/createNavigationContainer.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/createNavigationContainer.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/navigators/DrawerNavigator.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/navigators/DrawerNavigator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/navigators/DrawerNavigator.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/navigators/DrawerNavigator.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/navigators/StackNavigator.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/navigators/StackNavigator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/navigators/StackNavigator.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/navigators/StackNavigator.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/navigators/TabNavigator.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/navigators/TabNavigator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/navigators/TabNavigator.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/navigators/TabNavigator.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/navigators/createNavigator.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/navigators/createNavigator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/navigators/createNavigator.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/navigators/createNavigator.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/routers/StackRouter.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/routers/StackRouter.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/routers/StackRouter.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/routers/StackRouter.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/routers/TabRouter.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/routers/TabRouter.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/routers/TabRouter.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/routers/TabRouter.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/routers/createConfigGetter.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/routers/createConfigGetter.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/routers/createConfigGetter.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/routers/createConfigGetter.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/routers/getScreenConfigDeprecated.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/routers/getScreenConfigDeprecated.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/routers/getScreenForRouteName.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/routers/getScreenForRouteName.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/routers/getScreenForRouteName.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/routers/getScreenForRouteName.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/routers/validateRouteConfigMap.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/routers/validateRouteConfigMap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/routers/validateRouteConfigMap.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/routers/validateRouteConfigMap.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/routers/validateScreenOptions.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/routers/validateScreenOptions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/routers/validateScreenOptions.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/routers/validateScreenOptions.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/Card.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/Card.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/Card.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/Card.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/CardStack.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/CardStack.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/CardStack.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/CardStack.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/CardStackStyleInterpolator.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/CardStackStyleInterpolator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/CardStackStyleInterpolator.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/CardStackStyleInterpolator.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/CardStackTransitioner.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/CardStackTransitioner.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/CardStackTransitioner.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/CardStackTransitioner.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/Drawer/DrawerNavigatorItems.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/Drawer/DrawerNavigatorItems.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/Drawer/DrawerNavigatorItems.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/Drawer/DrawerNavigatorItems.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/Drawer/DrawerScreen.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/Drawer/DrawerScreen.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/Drawer/DrawerScreen.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/Drawer/DrawerScreen.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/Drawer/DrawerSidebar.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/Drawer/DrawerSidebar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/Drawer/DrawerSidebar.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/Drawer/DrawerSidebar.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/Drawer/DrawerView.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/Drawer/DrawerView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/Drawer/DrawerView.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/Drawer/DrawerView.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/Header.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/Header.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/Header.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/Header.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/HeaderBackButton.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/HeaderBackButton.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/HeaderBackButton.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/HeaderBackButton.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/HeaderStyleInterpolator.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/HeaderStyleInterpolator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/HeaderTitle.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/HeaderTitle.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/PointerEventsContainer.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/PointerEventsContainer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/PointerEventsContainer.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/PointerEventsContainer.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/SceneView.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/SceneView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/SceneView.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/SceneView.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/ScenesReducer.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/ScenesReducer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/ScenesReducer.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/ScenesReducer.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/TabView/TabBarBottom.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/TabView/TabBarBottom.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/TabView/TabBarBottom.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/TabView/TabBarBottom.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/TabView/TabBarIcon.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/TabView/TabBarIcon.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/TabView/TabBarIcon.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/TabView/TabBarIcon.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/TabView/TabBarTop.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/TabView/TabBarTop.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/TabView/TabBarTop.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/TabView/TabBarTop.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/TabView/TabView.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/TabView/TabView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/TabView/TabView.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/TabView/TabView.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/TouchableItem.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/TouchableItem.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/TouchableItem.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/TouchableItem.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/TransitionConfigs.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/TransitionConfigs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/TransitionConfigs.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/TransitionConfigs.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/Transitioner.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/Transitioner.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/Transitioner.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/Transitioner.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/withNavigation.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/withNavigation.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/withNavigation.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/views/withNavigation.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/withCachedChildNavigation.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/withCachedChildNavigation.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/withCachedChildNavigation.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib-rn/withCachedChildNavigation.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/NavigationActions.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/NavigationActions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/NavigationActions.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/NavigationActions.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/PlatformHelpers.native.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/PlatformHelpers.native.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/PlatformHelpers.native.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/PlatformHelpers.native.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/StateUtils.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/StateUtils.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/StateUtils.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/StateUtils.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/TypeDefinition.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/TypeDefinition.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/TypeDefinition.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/TypeDefinition.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/addNavigationHelpers.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/addNavigationHelpers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/addNavigationHelpers.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/addNavigationHelpers.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/createNavigationContainer.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/createNavigationContainer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/createNavigationContainer.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/createNavigationContainer.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/navigators/DrawerNavigator.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/navigators/DrawerNavigator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/navigators/DrawerNavigator.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/navigators/DrawerNavigator.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/navigators/StackNavigator.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/navigators/StackNavigator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/navigators/StackNavigator.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/navigators/StackNavigator.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/navigators/TabNavigator.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/navigators/TabNavigator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/navigators/TabNavigator.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/navigators/TabNavigator.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/navigators/createNavigator.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/navigators/createNavigator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/navigators/createNavigator.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/navigators/createNavigator.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/routers/StackRouter.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/routers/StackRouter.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/routers/StackRouter.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/routers/StackRouter.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/routers/TabRouter.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/routers/TabRouter.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/routers/TabRouter.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/routers/TabRouter.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/routers/createConfigGetter.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/routers/createConfigGetter.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/routers/createConfigGetter.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/routers/createConfigGetter.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/routers/getScreenConfigDeprecated.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/routers/getScreenConfigDeprecated.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/routers/getScreenForRouteName.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/routers/getScreenForRouteName.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/routers/getScreenForRouteName.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/routers/getScreenForRouteName.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/routers/validateRouteConfigMap.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/routers/validateRouteConfigMap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/routers/validateRouteConfigMap.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/routers/validateRouteConfigMap.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/routers/validateScreenOptions.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/routers/validateScreenOptions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/routers/validateScreenOptions.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/routers/validateScreenOptions.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/Card.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/Card.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/Card.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/Card.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/CardStack.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/CardStack.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/CardStack.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/CardStack.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/CardStackStyleInterpolator.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/CardStackStyleInterpolator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/CardStackStyleInterpolator.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/CardStackStyleInterpolator.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/CardStackTransitioner.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/CardStackTransitioner.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/CardStackTransitioner.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/CardStackTransitioner.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/Drawer/DrawerNavigatorItems.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/Drawer/DrawerNavigatorItems.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/Drawer/DrawerNavigatorItems.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/Drawer/DrawerNavigatorItems.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/Drawer/DrawerScreen.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/Drawer/DrawerScreen.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/Drawer/DrawerScreen.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/Drawer/DrawerScreen.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/Drawer/DrawerSidebar.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/Drawer/DrawerSidebar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/Drawer/DrawerSidebar.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/Drawer/DrawerSidebar.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/Drawer/DrawerView.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/Drawer/DrawerView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/Drawer/DrawerView.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/Drawer/DrawerView.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/Header.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/Header.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/Header.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/Header.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/HeaderBackButton.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/HeaderBackButton.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/HeaderBackButton.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/HeaderBackButton.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/HeaderStyleInterpolator.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/HeaderStyleInterpolator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/HeaderTitle.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/HeaderTitle.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/PointerEventsContainer.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/PointerEventsContainer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/PointerEventsContainer.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/PointerEventsContainer.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/SceneView.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/SceneView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/SceneView.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/SceneView.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/ScenesReducer.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/ScenesReducer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/ScenesReducer.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/ScenesReducer.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/TabView/TabBarBottom.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/TabView/TabBarBottom.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/TabView/TabBarBottom.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/TabView/TabBarBottom.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/TabView/TabBarIcon.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/TabView/TabBarIcon.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/TabView/TabBarIcon.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/TabView/TabBarIcon.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/TabView/TabBarTop.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/TabView/TabBarTop.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/TabView/TabBarTop.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/TabView/TabBarTop.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/TabView/TabView.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/TabView/TabView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/TabView/TabView.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/TabView/TabView.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/TouchableItem.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/TouchableItem.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/TouchableItem.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/TouchableItem.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/TransitionConfigs.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/TransitionConfigs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/TransitionConfigs.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/TransitionConfigs.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/Transitioner.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/Transitioner.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/Transitioner.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/Transitioner.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/withNavigation.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/withNavigation.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/withNavigation.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/views/withNavigation.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/withCachedChildNavigation.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/withCachedChildNavigation.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/lib/withCachedChildNavigation.js.flow" afterPath="$PROJECT_DIR$/node_modules/react-navigation/lib/withCachedChildNavigation.js.flow" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/package.json" afterPath="$PROJECT_DIR$/node_modules/react-navigation/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/NavigationActions.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/NavigationActions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/PlatformHelpers.native.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/PlatformHelpers.native.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/StateUtils.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/StateUtils.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/TypeDefinition.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/TypeDefinition.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/__tests__/NavigationStateUtils-test.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/__tests__/NavigationStateUtils-test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/__tests__/addNavigationHelpers-test.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/__tests__/addNavigationHelpers-test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/addNavigationHelpers.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/addNavigationHelpers.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/createNavigationContainer.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/createNavigationContainer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/navigators/DrawerNavigator.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/navigators/DrawerNavigator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/navigators/StackNavigator.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/navigators/StackNavigator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/navigators/TabNavigator.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/navigators/TabNavigator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/navigators/createNavigator.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/navigators/createNavigator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/routers/StackRouter.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/routers/StackRouter.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/routers/TabRouter.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/routers/TabRouter.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/routers/__tests__/Routers-test.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/routers/__tests__/Routers-test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/routers/__tests__/StackRouter-test.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/routers/__tests__/StackRouter-test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/routers/__tests__/TabRouter-test.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/routers/__tests__/TabRouter-test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/routers/__tests__/createConfigGetter-test.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/routers/__tests__/createConfigGetter-test.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/routers/createConfigGetter.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/routers/createConfigGetter.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/routers/getScreenConfigDeprecated.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/routers/getScreenConfigDeprecated.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/routers/getScreenForRouteName.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/routers/getScreenForRouteName.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/routers/validateRouteConfigMap.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/routers/validateRouteConfigMap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/routers/validateScreenOptions.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/routers/validateScreenOptions.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/views/Card.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/views/Card.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/views/CardStack.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/views/CardStack.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/views/CardStackStyleInterpolator.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/views/CardStackStyleInterpolator.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/views/CardStackTransitioner.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/views/CardStackTransitioner.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/views/Drawer/DrawerNavigatorItems.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/views/Drawer/DrawerNavigatorItems.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/views/Drawer/DrawerScreen.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/views/Drawer/DrawerScreen.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/views/Drawer/DrawerSidebar.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/views/Drawer/DrawerSidebar.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/views/Drawer/DrawerView.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/views/Drawer/DrawerView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/views/Header.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/views/Header.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/views/HeaderBackButton.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/views/HeaderBackButton.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/views/PointerEventsContainer.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/views/PointerEventsContainer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/views/SceneView.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/views/SceneView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/views/ScenesReducer.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/views/ScenesReducer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/views/TabView/TabBarBottom.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/views/TabView/TabBarBottom.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/views/TabView/TabBarIcon.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/views/TabView/TabBarIcon.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/views/TabView/TabBarTop.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/views/TabView/TabBarTop.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/views/TabView/TabView.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/views/TabView/TabView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/views/TouchableItem.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/views/TouchableItem.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/views/TransitionConfigs.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/views/TransitionConfigs.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/views/Transitioner.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/views/Transitioner.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/views/withNavigation.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/views/withNavigation.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/react-navigation/src/withCachedChildNavigation.js" afterPath="$PROJECT_DIR$/node_modules/react-navigation/src/withCachedChildNavigation.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,7 +262,9 @@
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
-    <favorites_list name="haojiaReactNative" />
+    <favorites_list name="haojiaReactNative">
+      <favorite_root url="file://$PROJECT_DIR$/app/pages/Login/Login.js" type="psiFile" klass="com.intellij.ide.projectView.impl.nodes.PsiFileNode" />
+    </favorites_list>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
@@ -26,57 +272,91 @@
         <entry file="file://$PROJECT_DIR$/app/pages/Login/Login.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="151">
-              <caret line="141" column="43" lean-forward="true" selection-start-line="141" selection-start-column="43" selection-end-line="141" selection-end-column="43" />
+              <caret line="24" column="61" lean-forward="false" selection-start-line="24" selection-start-column="61" selection-end-line="24" selection-end-column="61" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <element signature="e#41#80#0" expanded="true" />
                 <element signature="e#330#376#0" expanded="true" />
-                <marker date="1495435356008" expanded="true" signature="868:928" ph="{...}" />
+                <marker date="1495503247919" expanded="true" signature="1114:1174" ph="{...}" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.android.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.android.js">
+      <file leaf-file-name="Adress.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/pages/AdressManner/Adress.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+            <state relative-caret-position="120">
+              <caret line="33" column="35" lean-forward="false" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
               <folding>
-                <element signature="e#13#52#0" expanded="true" />
+                <element signature="e#64#103#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HJNetUtil.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/common/HJNetUtil.js">
+      <file leaf-file-name="HJShop.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/pages/Shop/HJShop.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="40" column="58" lean-forward="false" selection-start-line="40" selection-start-column="58" selection-end-line="40" selection-end-column="58" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="constants.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/common/constants.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="15" column="52" lean-forward="false" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HJHome.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/pages/Home/HJHome.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="69" column="21" lean-forward="true" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
+            <state relative-caret-position="51">
+              <caret line="71" column="41" lean-forward="false" selection-start-line="71" selection-start-column="41" selection-end-line="71" selection-end-column="41" />
               <folding>
-                <element signature="e#15#53#0" expanded="true" />
+                <marker date="1495507361869" expanded="true" signature="546:2111" ph="{...}" />
+                <marker date="1495507361869" expanded="true" signature="595:638" ph="{...}" />
+                <marker date="1495507361869" expanded="true" signature="662:730" ph="{...}" />
+                <marker date="1495507361869" expanded="true" signature="744:1378" ph="{...}" />
+                <marker date="1495507361869" expanded="true" signature="834:1367" ph="&lt;View/&gt;" />
+                <marker date="1495507361869" expanded="true" signature="939:1343" ph="&lt;FlatList/&gt;" />
+                <marker date="1495507361869" expanded="true" signature="1415:1484" ph="{...}" />
+                <marker date="1495507361869" expanded="true" signature="1513:1632" ph="{...}" />
+                <marker date="1495507361869" expanded="true" signature="1658:1732" ph="{...}" />
+                <marker date="1495507361869" expanded="true" signature="1756:1882" ph="{...}" />
+                <marker date="1495507361869" expanded="true" signature="1796:1878" ph="{...}" />
+                <marker date="1495507361869" expanded="true" signature="1905:1994" ph="{...}" />
+                <marker date="1495507361869" expanded="true" signature="2023:2108" ph="{...}" />
+                <marker date="1495507361869" expanded="true" signature="2150:3604" ph="{...}" />
+                <marker date="1495507361869" expanded="true" signature="2173:2246" ph="{&quot;data&quot;: React.PropTypes.object...}" />
+                <marker date="1495507361869" expanded="true" signature="2259:3505" ph="{...}" />
+                <marker date="1495507361869" expanded="true" signature="2310:3495" ph="&lt;TouchableOpacity/&gt;" />
+                <marker date="1495507361869" expanded="true" signature="2433:2840" ph="&lt;View/&gt;" />
+                <marker date="1495507361869" expanded="true" signature="2603:2824" ph="&lt;View/&gt;" />
+                <marker date="1495507361869" expanded="true" signature="2849:3469" ph="&lt;View/&gt;" />
+                <marker date="1495507361869" expanded="true" signature="2925:3439" ph="{...}" />
+                <marker date="1495507361869" expanded="true" signature="3020:3413" ph="&lt;View/&gt;" />
+                <marker date="1495507361869" expanded="true" signature="3526:3602" ph="{...}" />
+                <marker date="1495507361869" expanded="true" signature="3639:4266" ph="{...}" />
+                <marker date="1495507361869" expanded="true" signature="3654:3712" ph="{&quot;backgroundColor&quot;: gColors.background...}" />
+                <marker date="1495507361869" expanded="true" signature="3722:3789" ph="{&quot;width&quot;: gScreen.width...}" />
+                <marker date="1495507361869" expanded="true" signature="3802:3904" ph="{&quot;flexDirection&quot;: 'row'...}" />
+                <marker date="1495507361869" expanded="true" signature="3919:3955" ph="{...}" />
+                <marker date="1495507361869" expanded="true" signature="3970:4025" ph="{...}" />
+                <marker date="1495507361869" expanded="true" signature="4036:4084" ph="{&quot;color&quot;: gColors.title...}" />
+                <marker date="1495507361869" expanded="true" signature="4101:4174" ph="{&quot;color&quot;: gColors.description...}" />
+                <marker date="1495507361869" expanded="true" signature="4190:4264" ph="{&quot;flexDirection&quot;: 'row'...}" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Center.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/pages/MemberCenter/Center.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="82" column="70" lean-forward="false" selection-start-line="82" selection-start-column="37" selection-end-line="82" selection-end-column="70" />
+              <folding>
+                <element signature="e#41#80#0" expanded="true" />
+                <element signature="e#316#350#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="api.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/common/api.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="175">
+              <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -84,9 +364,100 @@
       <file leaf-file-name="MyHeaderView.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/pages/MemberCenter/MyHeaderView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="575">
-              <caret line="31" column="103" lean-forward="false" selection-start-line="31" selection-start-column="103" selection-end-line="31" selection-end-column="103" />
+            <state relative-caret-position="127">
+              <caret line="56" column="20" lean-forward="false" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="20" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HJMain.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/HJMain.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="276">
+              <caret line="46" column="14" lean-forward="false" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
+              <folding>
+                <marker date="1495507361824" expanded="true" signature="2402:2404" ph="{&quot;tabBarPosition&quot;: 'bottom'...}" />
+                <marker date="1495507361824" expanded="true" signature="2466:2550" ph="{...}" />
+                <marker date="1495507361824" expanded="true" signature="2478:2548" ph="{&quot;resizeMode&quot;: 'contain'...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyMiddleView.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/pages/MemberCenter/MyMiddleView.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="23" column="53" lean-forward="false" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyCell.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/pages/MemberCenter/MyCell.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="50">
+              <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HJShopDetail.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/pages/Shop/HJShopDetail.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="33" column="9" lean-forward="false" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
+              <folding>
+                <element signature="e#15#53#0" expanded="true" />
+                <marker date="1495507361876" expanded="true" signature="957:1088" ph="{...}" />
+                <marker date="1495507361876" expanded="true" signature="957:3380" ph="{...}" />
+                <marker date="1495507361876" expanded="true" signature="1112:1298" ph="{...}" />
+                <marker date="1495507361876" expanded="true" signature="1149:1177" ph="{...}" />
+                <marker date="1495507361876" expanded="true" signature="1322:1521" ph="{...}" />
+                <marker date="1495507361876" expanded="true" signature="1438:1515" ph="{...}" />
+                <marker date="1495507361876" expanded="true" signature="1460:1508" ph="{&quot;shopDetail&quot;: responseData.data...}" />
+                <marker date="1495507361876" expanded="true" signature="1534:2913" ph="{...}" />
+                <marker date="1495507361876" expanded="true" signature="1664:2902" ph="&lt;View/&gt;" />
+                <marker date="1495507361876" expanded="true" signature="1896:2834" ph="&lt;ScrollView/&gt;" />
+                <marker date="1495507361876" expanded="true" signature="2228:2420" ph="&lt;RefreshControl/&gt;" />
+                <marker date="1495507361876" expanded="true" signature="2469:2733" ph="&lt;View/&gt;" />
+                <marker date="1495507361876" expanded="true" signature="2559:2707" ph="{...}" />
+                <marker date="1495507361876" expanded="true" signature="2947:3074" ph="{...}" />
+                <marker date="1495507361876" expanded="true" signature="3107:3256" ph="{...}" />
+                <marker date="1495507361876" expanded="true" signature="3152:3252" ph="{...}" />
+                <marker date="1495507361876" expanded="true" signature="3279:3378" ph="{...}" />
+                <marker date="1495507361876" expanded="true" signature="3418:4015" ph="{...}" />
+                <marker date="1495507361876" expanded="true" signature="3437:4009" ph="&lt;View/&gt;" />
+                <marker date="1495507361876" expanded="true" signature="3506:3879" ph="&lt;View/&gt;" />
+                <marker date="1495507361876" expanded="true" signature="4062:6440" ph="{...}" />
+                <marker date="1495507361876" expanded="true" signature="4087:4227" ph="{&quot;sortTypes&quot;: React.PropTypes.array...}" />
+                <marker date="1495507361876" expanded="true" signature="4241:4299" ph="{&quot;currentType&quot;: '综合排序'...}" />
+                <marker date="1495507361876" expanded="true" signature="4314:5408" ph="{...}" />
+                <marker date="1495507361876" expanded="true" signature="4487:5394" ph="&lt;View/&gt;" />
+                <marker date="1495507361876" expanded="true" signature="4524:5044" ph="&lt;View/&gt;" />
+                <marker date="1495507361876" expanded="true" signature="4649:5026" ph="&lt;TouchableOpacity/&gt;" />
+                <marker date="1495507361876" expanded="true" signature="5079:5366" ph="&lt;View/&gt;" />
+                <marker date="1495507361876" expanded="true" signature="5130:5346" ph="&lt;TouchableOpacity/&gt;" />
+                <marker date="1495507361876" expanded="true" signature="5222:5312" ph="&lt;View/&gt;" />
+                <marker date="1495507361876" expanded="true" signature="5428:5501" ph="{...}" />
+                <marker date="1495507361876" expanded="true" signature="5450:5494" ph="{...}" />
+                <marker date="1495507361876" expanded="true" signature="5544:6201" ph="{...}" />
+                <marker date="1495507361876" expanded="true" signature="5875:6187" ph="&lt;TouchableOpacity/&gt;" />
+                <marker date="1495507361876" expanded="true" signature="6240:6438" ph="{...}" />
+                <marker date="1495507361876" expanded="true" signature="6299:6358" ph="{&quot;currentType&quot;: title...}" />
+                <marker date="1495507361876" expanded="true" signature="6476:6960" ph="{...}" />
+                <marker date="1495507361876" expanded="true" signature="6492:6954" ph="&lt;TouchableOpacity/&gt;" />
+                <marker date="1495507361876" expanded="true" signature="7010:7069" ph="{&quot;backgroundColor&quot;: gColors.background...}" />
+                <marker date="1495507361876" expanded="true" signature="7083:7222" ph="{&quot;flexDirection&quot;: 'row'...}" />
+                <marker date="1495507361876" expanded="true" signature="7239:7287" ph="{&quot;color&quot;: gColors.title...}" />
+                <marker date="1495507361876" expanded="true" signature="7306:7448" ph="{&quot;position&quot;: 'absolute'...}" />
+                <marker date="1495507361876" expanded="true" signature="7466:7586" ph="{&quot;backgroundColor&quot;: gColors.white...}" />
+                <marker date="1495507361876" expanded="true" signature="7608:7729" ph="{&quot;flexDirection&quot;: 'row'...}" />
+                <marker date="1495507361876" expanded="true" signature="7739:7896" ph="{&quot;backgroundColor&quot;: gColors.white...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -102,11 +473,17 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>divider</find>
       <find>global</find>
       <find>onpres</find>
       <find>startTimer</find>
       <find>checked</find>
+      <find>titlebar</find>
+      <find>navLeftIconStyle</find>
+      <find>goBack</find>
+      <find>Login</find>
+      <find>getHomeAllClassFirstPageData</find>
+      <find>divider</find>
+      <find>_onPressCell</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -120,14 +497,15 @@
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/app/pages/Login/TextDriver.js" />
         <option value="$PROJECT_DIR$/app/pages/Home/HJHome.js" />
-        <option value="$PROJECT_DIR$/app/common/api.js" />
         <option value="$PROJECT_DIR$/app/pages/MemberCenter/MyCell.js" />
         <option value="$PROJECT_DIR$/app/pages/MemberCenter/MyMiddleView.js" />
-        <option value="$PROJECT_DIR$/app/pages/MemberCenter/MyHeaderView.js" />
-        <option value="$PROJECT_DIR$/app/HJMain.js" />
-        <option value="$PROJECT_DIR$/app/pages/MemberCenter/Center.js" />
         <option value="$PROJECT_DIR$/index.android.js" />
+        <option value="$PROJECT_DIR$/app/HJMain.js" />
+        <option value="$PROJECT_DIR$/app/pages/MemberCenter/MyHeaderView.js" />
         <option value="$PROJECT_DIR$/app/pages/Login/Login.js" />
+        <option value="$PROJECT_DIR$/app/pages/MemberCenter/Center.js" />
+        <option value="$PROJECT_DIR$/app/pages/AdressManner/Adress.js" />
+        <option value="$PROJECT_DIR$/app/common/api.js" />
       </list>
     </option>
   </component>
@@ -172,8 +550,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -214,24 +590,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resource" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="haojiaReactNative" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="haojiaReactNative" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="pages" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -255,6 +613,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Mine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="haojiaReactNative" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="haojiaReactNative" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MemberCenter" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -316,12 +700,81 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="haojiaReactNative" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="haojiaReactNative" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AdressManner" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="haojiaReactNative" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="haojiaReactNative" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="common" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="haojiaReactNative">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="haojiaReactNative">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="Bundle">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -332,13 +785,14 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\git_code\haojiaReactNative\Utils" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\git_code\haojiaReactNative\app\common" />
       <recent name="E:\git_code\haojiaReactNative\app\images" />
       <recent name="E:\git_code\haojiaReactNative\app\utils" />
       <recent name="E:\git_code\haojiaReactNative\app\image" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\git_code\haojiaReactNative\Utils" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -442,12 +896,14 @@
       <workItem from="1494984050982" duration="25916000" />
       <workItem from="1495068953652" duration="23090000" />
       <workItem from="1495155718811" duration="15517000" />
-      <workItem from="1495417889148" duration="7412000" />
+      <workItem from="1495417889148" duration="7922000" />
+      <workItem from="1495437389995" duration="8529000" />
+      <workItem from="1495500971489" duration="6208000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86612000" />
+    <option name="totallyTimeSpent" value="101859000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -462,12 +918,12 @@
     <frame x="-8" y="-8" width="1370" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19758673" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22926094" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.09931507" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.018835617" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -519,14 +975,11 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Component/Login/Login.js" />
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="5" column="40" lean-forward="false" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
-          <folding>
-            <marker date="1495005498202" expanded="true" signature="1513:1517" ph="{&quot;react&quot;: &quot;16.0.0-alpha.6&quot;...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -536,7 +989,7 @@
         <state relative-caret-position="200">
           <caret line="13" column="25" lean-forward="false" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
           <folding>
-            <element signature="e#13#52#0" expanded="true" />
+            <element signature="e#13#52#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -546,21 +999,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1495005498202" expanded="true" signature="1513:1517" ph="{&quot;react&quot;: &quot;16.0.0-alpha.6&quot;...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/NHNetConfig.js" />
-    <entry file="file://$PROJECT_DIR$/Component/Login/Login.js" />
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1495005498202" expanded="true" signature="1513:1517" ph="{&quot;react&quot;: &quot;16.0.0-alpha.6&quot;...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -570,9 +1009,17 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <marker date="1495005498202" expanded="true" signature="1513:1517" ph="{&quot;react&quot;: &quot;16.0.0-alpha.6&quot;...}" />
-          </folding>
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/NHNetConfig.js" />
+    <entry file="file://$PROJECT_DIR$/Component/Login/Login.js" />
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -583,7 +1030,7 @@
         <state relative-caret-position="350">
           <caret line="14" column="19" lean-forward="true" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
           <folding>
-            <element signature="e#13#52#0" expanded="true" />
+            <element signature="e#13#52#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -594,42 +1041,10 @@
     <entry file="file://$PROJECT_DIR$/Component/MemberCenter/MyCell.js" />
     <entry file="file://$PROJECT_DIR$/Component/MemberCenter/Center.js" />
     <entry file="file://$PROJECT_DIR$/Component/Login/Login.js" />
-    <entry file="file://$PROJECT_DIR$/app/pages/Mine/HJMine.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/app.js" />
-    <entry file="file://$PROJECT_DIR$/app/common/UserDefaults.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/images/ic_back_dark.png">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="6" column="19" lean-forward="false" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="19" />
-          <folding>
-            <marker date="1495005498202" expanded="true" signature="1513:1517" ph="{&quot;react&quot;: &quot;16.0.0-alpha.6&quot;...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/Home/HJHomeCell.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-572">
-          <caret line="23" column="37" lean-forward="false" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/react-native/Libraries/react-native/react-native-implementation.js">
@@ -658,13 +1073,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.ios.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/react/lib/React.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="184">
@@ -679,26 +1087,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/common/api.js" />
-    <entry file="file://$PROJECT_DIR$/app/pages/Shop/HJShopDetail.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/mobx/HJBaseListStore.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="35" column="5" lean-forward="false" selection-start-line="35" selection-start-column="5" selection-end-line="35" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/common/globalConstants.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="8" column="33" lean-forward="false" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
         </state>
       </provider>
     </entry>
@@ -709,97 +1101,99 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/MemberCenter/MyCell.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="51" column="24" lean-forward="true" selection-start-line="51" selection-start-column="24" selection-end-line="51" selection-end-column="24" />
+        <state relative-caret-position="150">
+          <caret line="11" column="17" lean-forward="true" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/MemberCenter/MyMiddleView.js">
+    <entry file="file://$PROJECT_DIR$/index.ios.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="22" column="37" lean-forward="true" selection-start-line="22" selection-start-column="37" selection-end-line="22" selection-end-column="37" />
+        <state relative-caret-position="250">
+          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.android.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="21" column="35" lean-forward="true" selection-start-line="21" selection-start-column="35" selection-end-line="21" selection-end-column="35" />
           <folding>
-            <element signature="n#!!doc" expanded="false" />
-            <element signature="e#41#80#0" expanded="false" />
+            <element signature="e#13#52#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/Mine/HJMine.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="18" column="17" lean-forward="true" selection-start-line="18" selection-start-column="17" selection-end-line="18" selection-end-column="17" />
+          <folding>
+            <element signature="e#15#53#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/components/Header.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="23" column="40" lean-forward="true" selection-start-line="23" selection-start-column="40" selection-end-line="23" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#45#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/MemberCenter/MyHeaderView.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="31" column="103" lean-forward="false" selection-start-line="31" selection-start-column="103" selection-end-line="31" selection-end-column="103" />
+        <state relative-caret-position="400">
+          <caret line="29" column="13" lean-forward="true" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/Shop/HJShop.js">
+    <entry file="file://$PROJECT_DIR$/app/common/UserDefaults.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="19" column="20" lean-forward="false" selection-start-line="19" selection-start-column="12" selection-end-line="19" selection-end-column="20" />
-          <folding>
-            <element signature="e#15#68#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="175">
+          <caret line="7" column="6" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/HJMain.js">
+    <entry file="file://$PROJECT_DIR$/app/pages/Home/HJHomeCell.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="51" column="9" lean-forward="true" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
-          <folding>
-            <element signature="e#15#69#0" expanded="false" />
-            <element signature="e#315#354#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/common/HJNetUtil.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="40" column="58" lean-forward="false" selection-start-line="40" selection-start-column="58" selection-end-line="40" selection-end-column="58" />
+        <state relative-caret-position="250">
+          <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/common/constants.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="15" column="52" lean-forward="false" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+        <state relative-caret-position="225">
+          <caret line="9" column="35" lean-forward="true" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/MemberCenter/Center.js">
+    <entry file="file://$PROJECT_DIR$/app/common/globalConstants.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#41#80#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="195">
+          <caret line="25" column="40" lean-forward="true" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.android.js">
+    <entry file="file://$PROJECT_DIR$/app/common/HJNetUtil.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="15" column="20" lean-forward="false" selection-start-line="15" selection-start-column="20" selection-end-line="15" selection-end-column="20" />
+        <state relative-caret-position="270">
+          <caret line="41" column="57" lean-forward="true" selection-start-line="41" selection-start-column="57" selection-end-line="41" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/Home/HJHome.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="84" column="41" lean-forward="false" selection-start-line="84" selection-start-column="41" selection-end-line="84" selection-end-column="41" />
           <folding>
-            <element signature="e#13#52#0" expanded="true" />
+            <element signature="e#15#53#0" expanded="false" />
+            <marker date="1495507361861" expanded="true" signature="2363:2367" ph="{...}" />
+            <marker date="1495507361861" expanded="true" signature="2363:2370" ph="{...}" />
+            <marker date="1495507361861" expanded="true" signature="2422:2482" ph="{&quot;backgroundColor&quot;: '##dddddd'...}" />
+            <marker date="1495507361861" expanded="true" signature="2503:2692" ph="{&quot;backgroundColor&quot;: '##dddddd'...}" />
           </folding>
         </state>
       </provider>
@@ -807,23 +1201,174 @@
     <entry file="file://$PROJECT_DIR$/app/pages/Login/Login.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="151">
-          <caret line="141" column="43" lean-forward="true" selection-start-line="141" selection-start-column="43" selection-end-line="141" selection-end-column="43" />
+          <caret line="24" column="61" lean-forward="false" selection-start-line="24" selection-start-column="61" selection-end-line="24" selection-end-column="61" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#41#80#0" expanded="true" />
             <element signature="e#330#376#0" expanded="true" />
-            <marker date="1495435356008" expanded="true" signature="868:928" ph="{...}" />
+            <marker date="1495503247919" expanded="true" signature="1114:1174" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/Home/HJHome.js">
+    <entry file="file://$PROJECT_DIR$/app/pages/Shop/HJShopDetail.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="69" column="21" lean-forward="true" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
+        <state relative-caret-position="250">
+          <caret line="33" column="9" lean-forward="false" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="9" />
           <folding>
             <element signature="e#15#53#0" expanded="true" />
+            <marker date="1495507361876" expanded="true" signature="957:1088" ph="{...}" />
+            <marker date="1495507361876" expanded="true" signature="957:3380" ph="{...}" />
+            <marker date="1495507361876" expanded="true" signature="1112:1298" ph="{...}" />
+            <marker date="1495507361876" expanded="true" signature="1149:1177" ph="{...}" />
+            <marker date="1495507361876" expanded="true" signature="1322:1521" ph="{...}" />
+            <marker date="1495507361876" expanded="true" signature="1438:1515" ph="{...}" />
+            <marker date="1495507361876" expanded="true" signature="1460:1508" ph="{&quot;shopDetail&quot;: responseData.data...}" />
+            <marker date="1495507361876" expanded="true" signature="1534:2913" ph="{...}" />
+            <marker date="1495507361876" expanded="true" signature="1664:2902" ph="&lt;View/&gt;" />
+            <marker date="1495507361876" expanded="true" signature="1896:2834" ph="&lt;ScrollView/&gt;" />
+            <marker date="1495507361876" expanded="true" signature="2228:2420" ph="&lt;RefreshControl/&gt;" />
+            <marker date="1495507361876" expanded="true" signature="2469:2733" ph="&lt;View/&gt;" />
+            <marker date="1495507361876" expanded="true" signature="2559:2707" ph="{...}" />
+            <marker date="1495507361876" expanded="true" signature="2947:3074" ph="{...}" />
+            <marker date="1495507361876" expanded="true" signature="3107:3256" ph="{...}" />
+            <marker date="1495507361876" expanded="true" signature="3152:3252" ph="{...}" />
+            <marker date="1495507361876" expanded="true" signature="3279:3378" ph="{...}" />
+            <marker date="1495507361876" expanded="true" signature="3418:4015" ph="{...}" />
+            <marker date="1495507361876" expanded="true" signature="3437:4009" ph="&lt;View/&gt;" />
+            <marker date="1495507361876" expanded="true" signature="3506:3879" ph="&lt;View/&gt;" />
+            <marker date="1495507361876" expanded="true" signature="4062:6440" ph="{...}" />
+            <marker date="1495507361876" expanded="true" signature="4087:4227" ph="{&quot;sortTypes&quot;: React.PropTypes.array...}" />
+            <marker date="1495507361876" expanded="true" signature="4241:4299" ph="{&quot;currentType&quot;: '综合排序'...}" />
+            <marker date="1495507361876" expanded="true" signature="4314:5408" ph="{...}" />
+            <marker date="1495507361876" expanded="true" signature="4487:5394" ph="&lt;View/&gt;" />
+            <marker date="1495507361876" expanded="true" signature="4524:5044" ph="&lt;View/&gt;" />
+            <marker date="1495507361876" expanded="true" signature="4649:5026" ph="&lt;TouchableOpacity/&gt;" />
+            <marker date="1495507361876" expanded="true" signature="5079:5366" ph="&lt;View/&gt;" />
+            <marker date="1495507361876" expanded="true" signature="5130:5346" ph="&lt;TouchableOpacity/&gt;" />
+            <marker date="1495507361876" expanded="true" signature="5222:5312" ph="&lt;View/&gt;" />
+            <marker date="1495507361876" expanded="true" signature="5428:5501" ph="{...}" />
+            <marker date="1495507361876" expanded="true" signature="5450:5494" ph="{...}" />
+            <marker date="1495507361876" expanded="true" signature="5544:6201" ph="{...}" />
+            <marker date="1495507361876" expanded="true" signature="5875:6187" ph="&lt;TouchableOpacity/&gt;" />
+            <marker date="1495507361876" expanded="true" signature="6240:6438" ph="{...}" />
+            <marker date="1495507361876" expanded="true" signature="6299:6358" ph="{&quot;currentType&quot;: title...}" />
+            <marker date="1495507361876" expanded="true" signature="6476:6960" ph="{...}" />
+            <marker date="1495507361876" expanded="true" signature="6492:6954" ph="&lt;TouchableOpacity/&gt;" />
+            <marker date="1495507361876" expanded="true" signature="7010:7069" ph="{&quot;backgroundColor&quot;: gColors.background...}" />
+            <marker date="1495507361876" expanded="true" signature="7083:7222" ph="{&quot;flexDirection&quot;: 'row'...}" />
+            <marker date="1495507361876" expanded="true" signature="7239:7287" ph="{&quot;color&quot;: gColors.title...}" />
+            <marker date="1495507361876" expanded="true" signature="7306:7448" ph="{&quot;position&quot;: 'absolute'...}" />
+            <marker date="1495507361876" expanded="true" signature="7466:7586" ph="{&quot;backgroundColor&quot;: gColors.white...}" />
+            <marker date="1495507361876" expanded="true" signature="7608:7729" ph="{&quot;flexDirection&quot;: 'row'...}" />
+            <marker date="1495507361876" expanded="true" signature="7739:7896" ph="{&quot;backgroundColor&quot;: gColors.white...}" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/MemberCenter/MyCell.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="11" column="21" lean-forward="false" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/MemberCenter/MyMiddleView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="23" column="53" lean-forward="false" selection-start-line="23" selection-start-column="53" selection-end-line="23" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/HJMain.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="46" column="14" lean-forward="false" selection-start-line="46" selection-start-column="14" selection-end-line="46" selection-end-column="14" />
+          <folding>
+            <marker date="1495507361824" expanded="true" signature="2402:2404" ph="{&quot;tabBarPosition&quot;: 'bottom'...}" />
+            <marker date="1495507361824" expanded="true" signature="2466:2550" ph="{...}" />
+            <marker date="1495507361824" expanded="true" signature="2478:2548" ph="{&quot;resizeMode&quot;: 'contain'...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/MemberCenter/MyHeaderView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="56" column="20" lean-forward="false" selection-start-line="56" selection-start-column="5" selection-end-line="56" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/Shop/HJShop.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="71" column="41" lean-forward="false" selection-start-line="71" selection-start-column="41" selection-end-line="71" selection-end-column="41" />
+          <folding>
+            <marker date="1495507361869" expanded="true" signature="546:2111" ph="{...}" />
+            <marker date="1495507361869" expanded="true" signature="595:638" ph="{...}" />
+            <marker date="1495507361869" expanded="true" signature="662:730" ph="{...}" />
+            <marker date="1495507361869" expanded="true" signature="744:1378" ph="{...}" />
+            <marker date="1495507361869" expanded="true" signature="834:1367" ph="&lt;View/&gt;" />
+            <marker date="1495507361869" expanded="true" signature="939:1343" ph="&lt;FlatList/&gt;" />
+            <marker date="1495507361869" expanded="true" signature="1415:1484" ph="{...}" />
+            <marker date="1495507361869" expanded="true" signature="1513:1632" ph="{...}" />
+            <marker date="1495507361869" expanded="true" signature="1658:1732" ph="{...}" />
+            <marker date="1495507361869" expanded="true" signature="1756:1882" ph="{...}" />
+            <marker date="1495507361869" expanded="true" signature="1796:1878" ph="{...}" />
+            <marker date="1495507361869" expanded="true" signature="1905:1994" ph="{...}" />
+            <marker date="1495507361869" expanded="true" signature="2023:2108" ph="{...}" />
+            <marker date="1495507361869" expanded="true" signature="2150:3604" ph="{...}" />
+            <marker date="1495507361869" expanded="true" signature="2173:2246" ph="{&quot;data&quot;: React.PropTypes.object...}" />
+            <marker date="1495507361869" expanded="true" signature="2259:3505" ph="{...}" />
+            <marker date="1495507361869" expanded="true" signature="2310:3495" ph="&lt;TouchableOpacity/&gt;" />
+            <marker date="1495507361869" expanded="true" signature="2433:2840" ph="&lt;View/&gt;" />
+            <marker date="1495507361869" expanded="true" signature="2603:2824" ph="&lt;View/&gt;" />
+            <marker date="1495507361869" expanded="true" signature="2849:3469" ph="&lt;View/&gt;" />
+            <marker date="1495507361869" expanded="true" signature="2925:3439" ph="{...}" />
+            <marker date="1495507361869" expanded="true" signature="3020:3413" ph="&lt;View/&gt;" />
+            <marker date="1495507361869" expanded="true" signature="3526:3602" ph="{...}" />
+            <marker date="1495507361869" expanded="true" signature="3639:4266" ph="{...}" />
+            <marker date="1495507361869" expanded="true" signature="3654:3712" ph="{&quot;backgroundColor&quot;: gColors.background...}" />
+            <marker date="1495507361869" expanded="true" signature="3722:3789" ph="{&quot;width&quot;: gScreen.width...}" />
+            <marker date="1495507361869" expanded="true" signature="3802:3904" ph="{&quot;flexDirection&quot;: 'row'...}" />
+            <marker date="1495507361869" expanded="true" signature="3919:3955" ph="{...}" />
+            <marker date="1495507361869" expanded="true" signature="3970:4025" ph="{...}" />
+            <marker date="1495507361869" expanded="true" signature="4036:4084" ph="{&quot;color&quot;: gColors.title...}" />
+            <marker date="1495507361869" expanded="true" signature="4101:4174" ph="{&quot;color&quot;: gColors.description...}" />
+            <marker date="1495507361869" expanded="true" signature="4190:4264" ph="{&quot;flexDirection&quot;: 'row'...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/MemberCenter/Center.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="82" column="70" lean-forward="false" selection-start-line="82" selection-start-column="37" selection-end-line="82" selection-end-column="70" />
+          <folding>
+            <element signature="e#41#80#0" expanded="true" />
+            <element signature="e#316#350#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/AdressManner/Adress.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="33" column="35" lean-forward="false" selection-start-line="33" selection-start-column="35" selection-end-line="33" selection-end-column="35" />
+          <folding>
+            <element signature="e#64#103#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/common/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="175">
+          <caret line="7" column="7" lean-forward="true" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
+          <folding />
         </state>
       </provider>
     </entry>

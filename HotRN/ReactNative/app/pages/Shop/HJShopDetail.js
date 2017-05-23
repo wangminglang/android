@@ -1,6 +1,6 @@
 'use strict';
 
-import React,{Component} from 'react';
+import React,{Component, PureComponent} from 'react';
 import {
   AppRegistry,
   StyleSheet,
@@ -20,8 +20,8 @@ import GoodsStore from '../../mobx/HJGoodsListStore';
 import Loading from '../../components/Loading';
 import LoadMoreFooter from '../../components/LoadMoreFooter';
 
-const ShopDetailUrl = gBaseUrl.baseUrl + 'buyerapi/shop/getShopsDetail';
-const GoodsListUrl = gBaseUrl.baseUrl + 'buyerapi/goods/getGoodsList';
+const ShopDetailUrl = 'buyerapi/shop/getShopsDetail';
+const GoodsListUrl =  'buyerapi/goods/getGoodsList';
 
 const sortTypes = [
   {title: '综合排序', typeNum: 0},
@@ -35,6 +35,7 @@ const sortTypes = [
 export default class ShopDetail extends React.Component {
 
   static navigationOptions = ({ navigation }) => ({
+    tabBarVisible: false, //隐藏tabBar
     header: <Header title={navigation.state.params.nameShop} showLeftIcon={true} leftIconAction={() => navigation.goBack()} />
   })
 
@@ -83,7 +84,7 @@ export default class ShopDetail extends React.Component {
                 <View style={styles.contentContainer}>
                     {listData.map((itemData, i) => {
                         return (
-                            <GoodsItem key={i} data={itemData} />
+                            <GoodsItem key={i} data={itemData} onPress={this._onPressCell} />
                         )
                     })}
                 </View>
@@ -111,6 +112,12 @@ export default class ShopDetail extends React.Component {
   _onRefresh = () => {
         this.goodsListStore.isRefreshing = true;
         this.goodsListStore.fetchListData();
+  }
+
+  _onPressCell = () => {
+    this.props.navigation.setParams({
+      nameShop: 'bbb'
+    })
   }
 }
 
@@ -208,19 +215,31 @@ class GoodsSortHandleView extends Component {
     }
 }
 
-const GoodsItem = ({
-  data
-}) => {
-  return(
-    <TouchableOpacity
-            activeOpacity={0.75}
-            style={[styles.item]}
-    >
-            <Image style={{width: (gScreen.width-2)/2-10, height: (gScreen.width-2)/2-10}} source={data.image ? {uri: data.image} : require('../../images/dianpushangpin.jpg')} />
+class GoodsItem extends PureComponent {
+  static propTypes = {
+    data: React.PropTypes.object,
+    onPress: React.PropTypes.func
+  }
+
+  render() {
+    const {data} = this.props;
+    return(
+      <TouchableOpacity
+        activeOpacity={0.75}
+        style={[styles.item]}
+        onPress={this._onPress}
+      >
+        <Image style={{width: (gScreen.width-2)/2-10, height: (gScreen.width-2)/2-10}} source={data.image ? {uri: data.image} : require('../../images/dianpushangpin.jpg')} />
         <Text style={{fontSize: 13, color: gColors.title, }}>{data.title}</Text>  
-            <Text style={{fontSize: 13, color: gColors.red}}>￥{data.price}</Text>
-        </TouchableOpacity>
-  )
+          <Text style={{fontSize: 13, color: gColors.red}}>￥{data.price}</Text>
+      </TouchableOpacity>
+    )
+  }
+  
+  _onPress = () => {
+    const {data , onPress} = this.props;
+    onPress && onPress(data);
+  }
 }
 
 const styles = StyleSheet.create({
