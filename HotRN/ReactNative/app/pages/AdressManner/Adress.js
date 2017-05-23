@@ -15,8 +15,11 @@ import {
     TouchableOpacity
 } from 'react-native';
 
-
+import Header from '../../components/Header';
 export default class Adress extends React.Component {
+    static navigationOptions = ({navigation}) => ({
+        header: <Header title='地址管理' showLeftIcon={true} leftIconAction={() => navigation.goBack()}/>
+    })
 
     constructor(props) {
         super(props);
@@ -41,13 +44,14 @@ export default class Adress extends React.Component {
      * 添加地址
      */
     addAdress() {
-        Alert.alert("rrr");
+        const {navigate} = this.props.navigation;
+        navigate('MineAddAdress');
     }
 }
 const styles = StyleSheet.create({
     content: {
         flex: 1,
-        backgroundColor: '#ffffff',
+        backgroundColor: '#f4f4f4',
         justifyContent: 'center',
         alignItems: 'center'
     },

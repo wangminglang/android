@@ -16,8 +16,7 @@ import ShopStore from '../../mobx/HJBaseListStore';
 import Header from '../../components/Header';
 import Loading from '../../components/Loading';
 import LoadMoreFooter from '../../components/LoadMoreFooter';
-
-const URL = 'buyerapi/shop/getShopsList';
+import * as Api from './../../common/api';
 
 @observer
 export default class Shop extends React.Component {
@@ -29,7 +28,7 @@ export default class Shop extends React.Component {
 
   constructor(props){
     super(props);
-    this.shopListStore = new ShopStore(URL);
+    this.shopListStore = new ShopStore(Api.GET_SHOPS_LIST);
   };
 
   render() {
@@ -44,7 +43,7 @@ export default class Shop extends React.Component {
           ItemSeparatorComponent={this._renderSeparator}
           ListFooterComponent={this._renderFooter}
           onEndReached={this._onEndReach}
-          onEndReachedThreshold={30}
+          onEndReachedThreshold={0}
           onRefresh={this._onRefresh}
           refreshing={isRefreshing}
           keyExtractor={(item, index) => index}
