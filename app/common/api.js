@@ -14,3 +14,9 @@ export const GetHomeAllClassFirstPageData = "buyerapi/home/getHomeAllClassFirstP
 //获取首页更多数据接口
 export const GetHomeMoreData = "buyerapi/home/getHomeMoreData";
 
+//商铺列表
+export const GET_SHOPS_LIST = 'buyerapi/shop/getShopsList';
+//商铺详情
+export const GET_SHOPS_DETAIL = 'buyerapi/shop/getShopsDetail';
+//商品列表
+export const GET_GOODS_LIST =  'buyerapi/goods/getGoodsList';

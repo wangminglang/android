@@ -12,10 +12,8 @@ import {
 } from 'react-native';
 
 import TabNavigator from 'react-native-tab-navigator';
-import { Navigator } from 'react-native-deprecated-custom-components';
 import {StackNavigator} from 'react-navigation';
-
-
+import AddAdress from './pages/AdressManner/AddAdress'
 import ShopDetail from './pages/Shop/HJShopDetail';
 import Login from './pages/Login/Login';
 import Adress from './pages/AdressManner/Adress';
@@ -34,6 +32,7 @@ const NavigationMine = StackNavigator({
     Mine: {screen: Mine},
     MineLogin: {screen: Login},
     MineAdress: {screen: Adress},
+    MineAddAdress: {screen: AddAdress},
 });
 
 import Home from './pages/Home/HJHome';

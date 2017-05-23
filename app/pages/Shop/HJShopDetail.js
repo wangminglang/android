@@ -10,8 +10,7 @@ import {
   Image,
   Animated,
   TouchableOpacity,
-  ScrollView,
-  RefreshControl
+  FlatList
 } from 'react-native';
 import Header from '../../components/Header';
 import Util from '../../common/HJNetUtil';
@@ -19,9 +18,7 @@ import {observer} from 'mobx-react/native';
 import GoodsStore from '../../mobx/HJGoodsListStore';
 import Loading from '../../components/Loading';
 import LoadMoreFooter from '../../components/LoadMoreFooter';
-
-const ShopDetailUrl = 'buyerapi/shop/getShopsDetail';
-const GoodsListUrl =  'buyerapi/goods/getGoodsList';
+import * as Api from './../../common/api';
 
 const sortTypes = [
   {title: '综合排序', typeNum: 0},
@@ -45,12 +42,12 @@ export default class ShopDetail extends React.Component {
       shopDetail: {}
     }
     const {params} = this.props.navigation.state;
-    this.goodsListStore = new GoodsStore(GoodsListUrl, params.id);
+    this.goodsListStore = new GoodsStore(Api.GET_GOODS_LIST, params.id);
   }
 
   componentDidMount() {
     const {params} = this.props.navigation.state;
-    Util.POST(ShopDetailUrl, {id: params.id}, (responseData) => {
+    Util.POST(Api.GET_SHOPS_DETAIL, {id: params.id}, (responseData) => {
       this.setState({
         shopDetail : responseData.data
       })
@@ -66,52 +63,48 @@ export default class ShopDetail extends React.Component {
         <TopView shopDetail={shopDetail} />
         <GoodsSortHandleView shopDetail={shopDetail} sortTypes={sortTypes} onSelectSortType={this._onSelectSortType} />
         {!isFetching &&
-            <ScrollView
-                ref='scroll'
-                automaticallyAdjustContentInsets={false}
-                removeClippedSubviews={true}
-                scrollEventThrottle={16}
-                onMomentumScrollEnd={this._onMomentumScrollEnd}
-                bounces={true}
-                refreshControl={
-                    <RefreshControl
-                        refreshing={isFetching}
-                        onRefresh={this._onRefresh}
-                        colors={['rgb(217, 51, 58)']}
-                    />
-                }
-            >
-                <View style={styles.contentContainer}>
-                    {listData.map((itemData, i) => {
-                        return (
-                            <GoodsItem key={i} data={itemData} onPress={this._onPressCell} />
-                        )
-                    })}
-                </View>
-                <LoadMoreFooter isNoMore={this.goodsListStore.isNoMore} />
-            </ScrollView>
-          }
-          <Loading isShow={isFetching} />
+          <FlatList
+            numColumns={2}
+            data={listData.slice(0)}
+            renderItem={this._renderItem}
+            ItemSeparatorComponent={this._renderSeparator}
+            ListFooterComponent={this._renderFooter}
+            onEndReached={this._onEndReach}
+            onEndReachedThreshold={0}
+            onRefresh={this._onRefresh}
+            refreshing={isRefreshing}
+            keyExtractor={(item, index) => index}
+          />
+        }
+        <Loading isShow={isFetching} />
       </View>
     );
+  }
+
+  _onEndReach = () => {
+    if (!this.goodsListStore.isNoMore) {
+      this.goodsListStore.page++;
+      this.goodsListStore.fetchListData();
+    }
+  }
+
+  _onRefresh = () => {
+    this.goodsListStore.isRefreshing = true;
+    this.goodsListStore.fetchListData();
+  }
+
+  _renderItem = ({item, index}) => {
+    return <GoodsItem index={index} data={item} onPress={this._onPressCell} />
+  }
+
+  _renderFooter = () => {
+    return <LoadMoreFooter isNoMore={this.goodsListStore.isNoMore} />
   }
 
   _onSelectSortType = (type) => {
     const { title, typeNum } = type;
     this.goodsListStore.sortType = typeNum;
     this.goodsListStore.fetchListData();
-  }
-
-  _onMomentumScrollEnd = () => {
-        if (!this.goodsListStore.isNoMore) {
-            this.goodsListStore.page++;
-            this.goodsListStore.fetchListData();
-        }
-  }
-
-  _onRefresh = () => {
-        this.goodsListStore.isRefreshing = true;
-        this.goodsListStore.fetchListData();
   }
 
   _onPressCell = () => {
@@ -218,15 +211,17 @@ class GoodsSortHandleView extends Component {
 class GoodsItem extends PureComponent {
   static propTypes = {
     data: React.PropTypes.object,
-    onPress: React.PropTypes.func
+    onPress: React.PropTypes.func,
+    index: React.PropTypes.number
   }
 
   render() {
-    const {data} = this.props;
+    const {data, index} = this.props;
+    let marginLeft = index%2 ==0 ? 0 : 2;
     return(
       <TouchableOpacity
         activeOpacity={0.75}
-        style={[styles.item]}
+        style={[styles.item, {marginLeft:marginLeft}]}
         onPress={this._onPress}
       >
         <Image style={{width: (gScreen.width-2)/2-10, height: (gScreen.width-2)/2-10}} source={data.image ? {uri: data.image} : require('../../images/dianpushangpin.jpg')} />
@@ -235,7 +230,7 @@ class GoodsItem extends PureComponent {
       </TouchableOpacity>
     )
   }
-  
+
   _onPress = () => {
     const {data , onPress} = this.props;
     onPress && onPress(data);
@@ -282,7 +277,7 @@ const styles = StyleSheet.create({
     padding: 5,
     paddingBottom: 15,
     backgroundColor: gColors.white,
-    width: (gScreen.width - 4)/2,
+    width: (gScreen.width - 2)/2,
     marginTop: 2,
     alignItems: 'center'
   }

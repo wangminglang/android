@@ -15,10 +15,14 @@ var HeadView = require('./MyHeaderView');
 import Login from'../Login/Login';
 import Adress from '../AdressManner/Adress';
 import * as Api from './../../common/api';
+import Header from '../../components/Header';
 //得到屏幕宽度
 var dimen = require('Dimensions');
 var width = dimen.get('window').width;
 export default class Mine extends React.Component {
+    static navigationOptions = (navigation) => ({
+        header: null
+    })
     static defaultProps = {
         id: "",
     };

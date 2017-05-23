@@ -21,7 +21,7 @@ import Header from '../../components/Header';
 import * as Api from './../../common/api';
 var timer;
 export default class Login extends React.Component {
-    static navigationOptions = (navigation) => ({
+    static navigationOptions = ({navigation}) => ({
         header: <Header title='好价' showLeftIcon='true' leftIconAction={() => navigation.goBack()}/>
     })
     //noinspection JSAnnotator
@@ -283,5 +283,3 @@ const styles = StyleSheet.create({
         color:'#7f7f7f'
     }
 });
-//输出组件类
-module.exports = Login;
