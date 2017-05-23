@@ -18,6 +18,7 @@ var width = dimen.get('window').width;
 import CheckBox from 'react-native-check-box';
 import TimerMixin from 'react-timer-mixin'
 import Header from '../../components/Header';
+import * as Api from './../../common/api';
 var timer;
 export default class Login extends React.Component {
     static navigationOptions = (navigation) => ({
@@ -53,7 +54,7 @@ export default class Login extends React.Component {
                 });
             } else {
                 this.setState({
-                    countDown: '发送验证码',
+                    countDown: '获取验证码',
                     disabled: false,
                 });
                 clearInterval(timer);
@@ -113,7 +114,7 @@ export default class Login extends React.Component {
                         unCheckedImage={<Image source={require('./../../images/zhifugou2.png')}
                                                style={{width: 18, height: 18}}/>}
                     ></CheckBox>
-                    <Text>
+                    <Text style={styles.agreeText}>
                         我已阅读并同意<Text >《服务协议》</Text>
                     </Text>
                 </View>
@@ -145,7 +146,7 @@ export default class Login extends React.Component {
             'mobile': this.state.phoneNumber,
             'code': this.state.code,
         };
-        NetUtil.POST('http://192.168.1.248:957/buyerapi/user/login', params, (data) => this.successCallback(data));
+        NetUtil.POST(Api.LOGIN, params, (data) => this.successCallback(data));
     }
 
     successCallback(data) {
@@ -169,7 +170,7 @@ export default class Login extends React.Component {
         let params = {
             'mobile': this.state.phoneNumber,
         };
-        NetUtil.POST('http://192.168.1.248:957/buyerapi/user/getVerifyCode', params, (data) => this.successGetCodeCallback(data));
+        NetUtil.POST(Api.GET_VERIFY_CODE, params, (data) => this.successGetCodeCallback(data));
         this.startTimer();
     }
 
@@ -218,7 +219,7 @@ const styles = StyleSheet.create({
         paddingLeft: 15
     },
     inputCodeStyle: {
-        width: 230,
+        width: 250,
         height: 45,
         backgroundColor: '#EDEDED',
         fontSize: 15,
@@ -230,7 +231,7 @@ const styles = StyleSheet.create({
         color: '#333333'
     },
     code: {
-        width: 100,
+        width: 103.5,
         height: 45,
         alignItems: 'center',
         justifyContent: 'center',
@@ -276,6 +277,11 @@ const styles = StyleSheet.create({
         height: 30,
         width: .5
     },
+    agreeText:{
+        marginLeft:10,
+        fontSize:14,
+        color:'#7f7f7f'
+    }
 });
 //输出组件类
 module.exports = Login;

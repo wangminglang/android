@@ -32,7 +32,7 @@ export default class Mine extends React.Component {
             waitShipping: "",
             shipping: "",
             partShipped: "",
-            messageNum:""
+            messageNum: ""
         };
     };
 
@@ -40,7 +40,7 @@ export default class Mine extends React.Component {
         let params = {
             'id': 1,
         };
-        NetUtil.POST(Api.GET_USER_INFO,params, (data) => this.successCallback(data), null);
+        NetUtil.POST(Api.GET_USER_INFO, params, (data) => this.successCallback(data), null);
     }
 
     successCallback(data) {
@@ -52,7 +52,7 @@ export default class Mine extends React.Component {
                 waitShipping: data.data.orderState.waitShipping,
                 shipping: data.data.orderState.shipping,
                 partShipped: data.data.orderState.partShipped,
-                messageNum:data.data.messageNum,
+                messageNum: data.data.messageNum,
             })
         }
     }
@@ -104,7 +104,7 @@ export default class Mine extends React.Component {
      */
     jump_ToAddressManner() {
         const {navigate} = this.props.navigation;
-        navigate('MineLogin');
+        navigate('MineAdress');
     }
 }
 const styles = StyleSheet.create({

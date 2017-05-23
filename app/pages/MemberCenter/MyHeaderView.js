@@ -19,7 +19,7 @@ export default class HeaderView extends React.Component {
     };
     render() {
         return (
-            <View style={styles.viewStyle}>
+            <View>
                 {this.renderHeadView()}
             </View>
         );
@@ -52,9 +52,6 @@ const styles = StyleSheet.create({
         top: 20,
         height: 17,
         width: 19,
-    },
-    viewStyle: {
-        backgroundColor: 'red',
     },
     bg_style: {
         height: 165,
