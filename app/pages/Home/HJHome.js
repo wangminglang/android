@@ -14,6 +14,8 @@ import HomeSlider from './HJHomeSlider'
 import Header from '../../components/Header';
 import Loading from '../../components/Loading';
 
+import {GetHomeAllClassFirstPageData} from '../../common/api'
+
 export default class Home extends React.Component {
 
 
@@ -90,8 +92,8 @@ export default class Home extends React.Component {
 
 
   componentDidMount(){
-    NetUtil.POST('buyerapi/home/getHomeAllClassFirstPageData','',(data)=>this.successCallback(data));
-    NetUtil.POST('buyerapi/cat/getAllCatList','',(data)=>this.getAllCatList(data));
+    NetUtil.POST(GetHomeAllClassFirstPageData,'',(data)=>this.successCallback(data));
+    NetUtil.POST('GetHomeMoreData','',(data)=>this.getHomeMoreData(data));
   }
 
   successCallback(data){
@@ -108,14 +110,10 @@ export default class Home extends React.Component {
     }
   }
 
-  getAllCatList(data){
+  getHomeMoreData(data){
     if (data.result) {
-      this.setState({
-          catList:data.data
-      })
+      
     }
-        console.log('11111'+this.state.catList);
-
   }
 
 }

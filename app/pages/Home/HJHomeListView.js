@@ -29,6 +29,7 @@ export default class HomeList extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = {
+      refreshing:false,
     };
   };
 
@@ -41,8 +42,11 @@ export default class HomeList extends React.PureComponent {
           renderItem={this.renderRow}
           keyExtractor={this._keyExtractor}
           ItemSeparatorComponent={()=>this._ItemSeparatorComponent()}
-          onEndReachedThreshold={()=>this._onEndReachedThreshold()}
+          onEndReachedThreshold={1}
           ListHeaderComponent={()=>this._ListHeaderComponent()}
+          onEndReached={()=>this._onEndReached()}
+          refreshing={this.state.refreshing}
+          onRefresh={()=>this._onRefresh()}
         />
       </View>
     );
@@ -72,10 +76,13 @@ export default class HomeList extends React.PureComponent {
     )
   }
 
-  _onEndReachedThreshold(){
-
+  _onEndReached(){
+    alert('到底了');
   }
 
+  _onRefresh(){
+    // alert('到底了');
+  }
 
 }
 const styles = StyleSheet.create({
