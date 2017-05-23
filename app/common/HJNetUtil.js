@@ -1,8 +1,9 @@
 import Common from './constants';
-import md5 from "react-native-md5";
+// import md5 from "react-native-md5";
 
 export default NetUtil = {
 	GET: (url, successCallback, failCallback) => {
+    url = gBaseUrl.baseUrl+url;
 		fetch(url)
 			.then((response) => response.text())
 			.then((responseText) => {
@@ -32,6 +33,7 @@ export default NetUtil = {
           }
         }
         url = gBaseUrl.baseUrl+url;
+
         let queryString = toQueryString(param);
         fetch(url,
                 {

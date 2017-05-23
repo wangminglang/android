@@ -44,7 +44,7 @@ export default class baseListStore {
 
 	_fetchDataFromUrl = () => {
 		return new Promise((resolve, reject) => {
-            const URL = this.URL;
+            const URL = gBaseUrl.baseUrl + this.URL;
 			const params = Object.assign({}, {shopId: this.shopId}, {page: this.page}, {sortType: this.sortType});
 			fetch(URL, params)
 			.then(response => response.json())

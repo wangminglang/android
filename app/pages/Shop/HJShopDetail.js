@@ -20,8 +20,8 @@ import GoodsStore from '../../mobx/HJGoodsListStore';
 import Loading from '../../components/Loading';
 import LoadMoreFooter from '../../components/LoadMoreFooter';
 
-const ShopDetailUrl = gBaseUrl.baseUrl + 'buyerapi/shop/getShopsDetail';
-const GoodsListUrl = gBaseUrl.baseUrl + 'buyerapi/goods/getGoodsList';
+const ShopDetailUrl = 'buyerapi/shop/getShopsDetail';
+const GoodsListUrl =  'buyerapi/goods/getGoodsList';
 
 const sortTypes = [
   {title: '综合排序', typeNum: 0},
@@ -35,6 +35,7 @@ const sortTypes = [
 export default class ShopDetail extends React.Component {
 
   static navigationOptions = ({ navigation }) => ({
+    tabBarVisible: false, //隐藏tabBar
     header: <Header title={navigation.state.params.nameShop} showLeftIcon={true} leftIconAction={() => navigation.goBack()} />
   })
 
