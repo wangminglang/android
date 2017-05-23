@@ -12,7 +12,9 @@ import {
 var MyCell = require('./MyCell');
 var Middle = require('./MyMiddleView');
 var HeadView = require('./MyHeaderView');
-import Login from'../Login/Login'
+import Login from'../Login/Login';
+import Adress from '../AdressManner/Adress';
+import * as Api from './../../common/api';
 //得到屏幕宽度
 var dimen = require('Dimensions');
 var width = dimen.get('window').width;
@@ -38,7 +40,7 @@ export default class Mine extends React.Component {
         let params = {
             'id': 1,
         };
-        NetUtil.POST("http://192.168.1.248:957/buyerapi/user/getUserInfo",params, (data) => this.successCallback(data), null);
+        NetUtil.POST(Api.GET_USER_INFO,params, (data) => this.successCallback(data), null);
     }
 
     successCallback(data) {
@@ -76,7 +78,9 @@ export default class Mine extends React.Component {
 
                     </View>
                     <View style={{marginTop: 20}}>
-                        <TouchableOpacity onPress={() => this.jump_ToAddressManner()}>
+                        <TouchableOpacity
+                            activeOpacity={0.75}
+                            onPress={() => this.jump_ToAddressManner()}>
                             <MyCell
                                 leftTitle="地址管理"
                             />
@@ -99,7 +103,6 @@ export default class Mine extends React.Component {
      * 地址管理
      */
     jump_ToAddressManner() {
-        // Alert.alert('点击了');
         const {navigate} = this.props.navigation;
         navigate('MineLogin');
     }

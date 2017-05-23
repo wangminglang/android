@@ -17,8 +17,12 @@ var dimen = require('Dimensions');
 var width = dimen.get('window').width;
 import CheckBox from 'react-native-check-box';
 import TimerMixin from 'react-timer-mixin'
+import Header from '../../components/Header';
 var timer;
 export default class Login extends React.Component {
+    static navigationOptions = (navigation) => ({
+        header: <Header title='好价' showLeftIcon='true' leftIconAction={() => navigation.goBack()}/>
+    })
     //noinspection JSAnnotator
     mixins: [TimerMixin]
     static defaultProps = {
@@ -62,14 +66,6 @@ export default class Login extends React.Component {
     render() {
         return (
             <View style={styles.content}>
-                <View style={styles.titlebar}>
-                    <TouchableOpacity style={styles.navLeftIconStyle} onPress={() => {
-                        this.props.navigator.pop()
-                    }}>
-                        <Image source={{uri: 'icon_camera_back_normal'}} style={styles.navLeftIconStyle}></Image>
-                    </TouchableOpacity>
-                    <Text style={styles.top_txt_style}>好价</Text>
-                </View>
                 <TextInput
                     style={styles.inputStyle}
                     placeholder="手机号"
@@ -90,6 +86,7 @@ export default class Login extends React.Component {
                     </TextInput>
                     <View style={styles.divider}/>
                     <TouchableOpacity onPress={() => this.getCode()}
+                                      activeOpacity={0.75}
                                       disabled={this.state.disabled}>
                         <View style={styles.code}>
                             <Text style={styles.codeStyle}>
@@ -99,6 +96,7 @@ export default class Login extends React.Component {
                     </TouchableOpacity>
                 </View>
                 <TouchableOpacity
+                    activeOpacity={0.75}
                     onPress={() => this.login()}>
                     <View style={styles.btnLogin}>
                         <Text style={styles.loginText}>
@@ -202,18 +200,6 @@ const styles = StyleSheet.create({
         width: 20,
         position: 'absolute',
         right: 10
-    },
-    navLeftIconStyle: {
-        height: 20,
-        width: 20,
-        position: 'absolute',
-        left: 10
-    },
-    titlebar: {
-        height: 45,
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'center',
     },
     marginTop: {
         marginTop: 5,

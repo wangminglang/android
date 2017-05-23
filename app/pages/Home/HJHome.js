@@ -12,6 +12,7 @@ import {
 import HomeList from './HJHomeListView'
 import HomeSlider from './HJHomeSlider'
 import Header from '../../components/Header';
+import Loading from '../../components/Loading';
 
 export default class Home extends React.Component {
 
@@ -25,7 +26,9 @@ export default class Home extends React.Component {
     this.state = {
       headLunbo:[],
       catInfo:Object,
-      goodsList:[]
+      goodsList:[],
+      catList:[],
+      isLoading:true
     };
   };
 
@@ -38,6 +41,7 @@ export default class Home extends React.Component {
         {this.renderTextInput()}
         {this.renderSliderView()}
         {this.renderHomeList()}
+        <Loading isShow={this.state.isLoading} />
       </View>
     );
   }
@@ -86,19 +90,32 @@ export default class Home extends React.Component {
 
 
   componentDidMount(){
-    global.NetUtil.POST('buyerapi/home/getHomeAllClassFirstPageData','',(data)=>this.successCallback(data));
+    NetUtil.POST('buyerapi/home/getHomeAllClassFirstPageData','',(data)=>this.successCallback(data));
+    NetUtil.POST('buyerapi/cat/getAllCatList','',(data)=>this.getAllCatList(data));
   }
 
   successCallback(data){
-    console.log(data);
+    this.setState({
+      isLoading:false
+    });
+    // console.log(data);
     if (data.result) {
       this.setState({
         headLunbo:data.data[0].headLunbo,
         catInfo:data.data[0].catInfo,
-        goodsList:data.data[0].goodsList
+        goodsList:data.data[0].goodsList,
       })
     }
-    // console.log(this.state);
+  }
+
+  getAllCatList(data){
+    if (data.result) {
+      this.setState({
+          catList:data.data
+      })
+    }
+        console.log('11111'+this.state.catList);
+
   }
 
 }
