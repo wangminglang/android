@@ -18,6 +18,8 @@ import {
 //得到屏幕宽度
 var dimen = require('Dimensions');
 var width = dimen.get('window').width;
+import Picker from 'react-native-picker';
+import area from './area.json';
 import CheckBox from 'react-native-check-box';
 import Header from '../../components/Header';
 export default class AddAdress extends React.Component {
@@ -53,7 +55,7 @@ export default class AddAdress extends React.Component {
                     <Text style={styles.txtStyle}>省市区</Text>
                     <TouchableOpacity
                         activeOpacity={0.75}
-                        onPress={() => this.chooseArea()}>
+                        onPress={this._showAreaPicker.bind(this)}>
                         <Text style={styles.choosetxt}>
                             请选择省-市-区
                         </Text>
@@ -109,8 +111,48 @@ export default class AddAdress extends React.Component {
     /**
      * 选择省市区
      */
-    chooseArea() {
-        Alert.alert("省市区")
+    _createAreaData() {
+        let data = [];
+        let len = area.length;
+        for(let i=0;i<len;i++){
+            let city = [];
+            for(let j=0,cityLen=area[i]['city'].length;j<cityLen;j++){
+                let _city = {};
+                _city[area[i]['city'][j]['name']] = area[i]['city'][j]['area'];
+                city.push(_city);
+            }
+
+            let _data = {};
+            _data[area[i]['name']] = city;
+            data.push(_data);
+        }
+        return data;
+    }
+    _showAreaPicker() {
+        Picker.init({
+            pickerData: this._createAreaData(),
+            selectedValue: ['河北', '唐山', '古冶区'],
+            onPickerConfirm: pickedValue => {
+                console.log('area', pickedValue);
+            },
+            onPickerCancel: pickedValue => {
+                console.log('area', pickedValue);
+            },
+            onPickerSelect: pickedValue => {
+                //Picker.select(['山东', '青岛', '黄岛区'])
+                console.log('area', pickedValue);
+            }
+        });
+        Picker.show();
+    }
+    _toggle() {
+        Picker.toggle();
+    }
+
+    _isPickerShow(){
+        Picker.isPickerShow(status => {
+            alert(status);
+        });
     }
 }
 const styles = StyleSheet.create({

@@ -16,6 +16,7 @@ import ShopStore from '../../mobx/HJBaseListStore';
 import Header from '../../components/Header';
 import Loading from '../../components/Loading';
 import LoadMoreFooter from '../../components/LoadMoreFooter';
+import GlobalContants from './common/globalConstants';
 import * as Api from './../../common/api';
 
 @observer
