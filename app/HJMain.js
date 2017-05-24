@@ -38,7 +38,7 @@ const NavigationMine = StackNavigator({
 import Home from './pages/Home/HJHome';
 import Shop from './pages/Shop/HJShop';
 import Category from './pages/Category/HJCategory';
-import Mine from './pages/Mine/HJMine';
+import Mine from './pages/MemberCenter/Center';
 
 
 import {observable, computed, action, runInAction,autorun} from 'mobx';
