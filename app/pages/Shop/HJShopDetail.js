@@ -19,6 +19,7 @@ import GoodsStore from '../../mobx/HJGoodsListStore';
 import Loading from '../../components/Loading';
 import LoadMoreFooter from '../../components/LoadMoreFooter';
 import * as Api from './../../common/api';
+import {tabStatus} from '../../HJMain'
 
 const sortTypes = [
   {title: '综合排序', typeNum: 0},
@@ -31,10 +32,16 @@ const sortTypes = [
 @observer
 export default class ShopDetail extends React.Component {
 
+
+
   static navigationOptions = ({ navigation }) => ({
     tabBarVisible: false, //隐藏tabBar
-    header: <Header title={navigation.state.params.nameShop} showLeftIcon={true} leftIconAction={() => navigation.goBack()} />
-  })
+    header: <Header title={navigation.state.params.nameShop} showLeftIcon={true} leftIconAction={()=>{navigation.goBack();tabStatus.show();}}/>
+  });
+
+  _goBack(){
+    alert('dqwbdqbwdubqw');
+  }
 
   constructor(props) {
     super(props);
@@ -52,7 +59,13 @@ export default class ShopDetail extends React.Component {
         shopDetail : responseData.data
       })
     })
+  }
+  componentWillMount(){
+      tabStatus.hide();
+  }
 
+  componentWillUnmount() {
+    
   }
 
   render() {
