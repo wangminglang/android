@@ -17,7 +17,6 @@ import AddAdress from './pages/AdressManner/AddAdress'
 import ShopDetail from './pages/Shop/HJShopDetail';
 import Login from './pages/Login/Login';
 import Adress from './pages/AdressManner/Adress';
-
 const NavigationHome = StackNavigator({
     Home: {screen: Home},
 });
