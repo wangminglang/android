@@ -29,22 +29,23 @@ const sortTypes = [
   {title: '价格从高到低', typeNum: 4}
 ];
 
+let _this = null;
 @observer
 export default class ShopDetail extends React.Component {
-
-
-
   static navigationOptions = ({ navigation }) => ({
     tabBarVisible: false, //隐藏tabBar
-    header: <Header title={navigation.state.params.nameShop} showLeftIcon={true} leftIconAction={()=>{navigation.goBack();tabStatus.show();}}/>
+    header: <Header title={navigation.state.params.nameShop} showLeftIcon={true} leftIconAction={() => _this._goBack()}/>
   });
 
   _goBack(){
     alert('dqwbdqbwdubqw');
+    this.props.navigation.goBack();
+    tabStatus.show();
   }
 
   constructor(props) {
     super(props);
+    _this = this;
     this.state = {
       shopDetail: {}
     }
