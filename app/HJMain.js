@@ -13,10 +13,11 @@ import {
 
 import TabNavigator from 'react-native-tab-navigator';
 import {StackNavigator} from 'react-navigation';
-import AddAdress from './pages/AdressManner/AddAdress'
+import AddAdress from './pages/AdressManner/AddAddress'
 import ShopDetail from './pages/Shop/HJShopDetail';
 import Login from './pages/Login/Login';
-import Adress from './pages/AdressManner/Adress';
+import NoAddress from './pages/AdressManner/NoAddress';
+import Address from './pages/AdressManner/Address'
 const NavigationHome = StackNavigator({
     Home: {screen: Home},
 });
@@ -30,8 +31,9 @@ const NavigationCategory = StackNavigator({
 const NavigationMine = StackNavigator({
     Mine: {screen: Mine},
     MineLogin: {screen: Login},
-    MineAdress: {screen: Adress},
+    MineAdress: {screen: NoAddress},
     MineAddAdress: {screen: AddAdress},
+    Address: {screen: Address},
 });
 
 import Home from './pages/Home/HJHome';

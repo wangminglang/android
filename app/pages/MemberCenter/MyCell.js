@@ -60,7 +60,7 @@ export default class MyCell extends React.Component {
 const styles = StyleSheet.create({
     txt_style: {
         fontSize: 16,
-        marginLeft: 10
+        marginLeft: 15
     },
     leftViewStyle: {
         flexDirection: 'row',
