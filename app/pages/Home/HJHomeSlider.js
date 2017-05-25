@@ -21,6 +21,7 @@ import {
 class TodoListItem {
 
     index;
+    info;
 
     @observable
     title;
@@ -36,6 +37,7 @@ class TodoListItem {
 
 //待办事项列表数据
 class TodoListHolder {
+
     @observable
     dataList = [];
     @computed
@@ -43,7 +45,9 @@ class TodoListHolder {
         return this.dataList.filter((it) => it.seleted == true);
     }
     @action
-    clear(){}
+    clear(){
+      this.dataList.splice(0,this.dataList.length);
+    }
 }
 
 
@@ -56,9 +60,8 @@ export default class HomeSlider extends React.Component {
 
 
   static defaultProps = {
-      list :[
-          'John', 'Joel', 'James', 'Jimmy', 'Jackson', 'Jillian', 'Julie', 'Devin'
-      ]
+      list :[],
+      callBack:Object
   };
 
   ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
@@ -68,13 +71,15 @@ export default class HomeSlider extends React.Component {
   // 初始化模拟数据
   constructor(props) {
     super(props);
+    
     for (let i = 0; i < this.props.list.length; i++) {
-            let listItem = new TodoListItem();
-            if (i == 0) {listItem.seleted = true}
-            listItem.title = this.props.list[i];
-            listItem.index = i;
-            this.todoList.dataList.push(listItem)
-        }
+        let listItem = new TodoListItem();
+        if (i == 0) {listItem.seleted = true}
+        listItem.title = this.props.list[i].className;
+        listItem.index = i;
+        listItem.info = this.props.list[i];
+        this.todoList.dataList.push(listItem);
+    }
 
     autorun(() => {
     var arr = this.todoList.dataList.filter((it) => it.seleted == true);
@@ -96,8 +101,7 @@ export default class HomeSlider extends React.Component {
 
       }
       this.pre = c;
-       // console.log('-----------')
-
+      this.props.callBack(this.pre);
     }
   })
 
@@ -105,6 +109,8 @@ export default class HomeSlider extends React.Component {
    
 
   render() {
+
+
     return (
       <View style={styles.containStyle}>
         <ListView
@@ -123,6 +129,10 @@ export default class HomeSlider extends React.Component {
     )
   }
 
+  componentDidMount() {
+
+
+  }
   
 }
 
@@ -171,8 +181,7 @@ const styles = StyleSheet.create({
   },
   topClickStyle:{
     height:30,
-    width:60,
-    marginRight:5,
+    marginRight:15,
     backgroundColor:'white',
     justifyContent:'center',
     alignItems:'center',
@@ -180,8 +189,7 @@ const styles = StyleSheet.create({
   },
   topClickStyle_S:{
     height:30,
-    width:60,
-    marginRight:5,
+    marginRight:15,
     backgroundColor:'white',
     justifyContent:'center',
     alignItems:'center',
