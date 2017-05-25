@@ -7,7 +7,9 @@ import {
   Text,
   View,
   TextInput,
-  InteractionManager
+  InteractionManager,
+  Image,
+  TouchableOpacity
 } from 'react-native';
 
 import HomeList from './HJHomeListView';
@@ -15,10 +17,20 @@ import HomeSlider from './HJHomeSlider';
 import Header from '../../components/Header';
 import Loading from '../../components/Loading';
 import HomeCategoryList from './HJHomeCategoryList';
+import HomeMenus from './HJHomeMenus';
 
 import * as Api from '../../common/api';
 
+const sortTypes = [
+  {title: '综合排序', typeNum: 0},
+  {title: '销量排序', typeNum: 1},
+  {title: '最新上架', typeNum: 2},
+  {title: '价格从低到高', typeNum: 3},
+  {title: '价格从高到低', typeNum: 4}
+];
 
+const selectedType = '0';
+const selectedType2 = '';
 
 export default class Home extends React.Component {
 
@@ -37,7 +49,11 @@ export default class Home extends React.Component {
       isLoading:true,
       allCatList:[],
       selectPager:0,
-      categoryGoodsList:[]
+      categoryGoodsList:[],
+      sortType:'综合排序',
+      categoryType:'分类',
+      isUnfold:false,
+      isUnfoldC:false,
     };
   };
 
@@ -93,13 +109,26 @@ export default class Home extends React.Component {
   clickSlider(index){
     this.setState({
       selectPager:index,
-      isLoading:true
+      isLoading:true,
+      isUnfold:false,
+      isUnfoldC:false,
+      sortType:'综合排序',
+      categoryType:'分类',
     });
+
+    selectedType='0';
+    selectedType2='';
+
+    this.requestGoodList();
+    
+  }
+
+  requestGoodList(){
     InteractionManager.runAfterInteractions(() => {
-        var params = {
-        idClassificatioin:this.state.allCatList[index].id,
+      var params = {
+        idClassificatioin:this.state.allCatList[this.state.selectPager].id,
         page:1,
-        sortType:0,
+        sortType:selectedType,
         keyWord:'',
         shopId:'',
       }
@@ -119,15 +148,128 @@ export default class Home extends React.Component {
     else{
       return(
         <View style = {styles.categoryGoodsListStyle}>
-          <View style = {styles.sortBarStyle}>
-          </View>
+          {this.renderSortBar()}
           <HomeCategoryList list={this.state.categoryGoodsList}/>
+          {this.renderMenu()}
         </View>
       )    
     }
     
   }
 
+  renderSortBar(){
+            //         </TouchableOpacity>
+
+    return(
+      <View style = {styles.sortBarStyle}>
+
+        <TouchableOpacity activeOpacity={0.5} onPress={()=>this.clickLeft()} style = {styles.leftSortStyle}>
+
+          <View style = {styles.leftSortStyle1}>
+            <Text>{this.state.sortType}</Text>
+            <Image source={this.state.isUnfold ? require('../../images/ico_up.png') : require('../../images/ico_down.png')} 
+                   style={styles.sortBarLeftImageStyle}
+            />
+          </View>
+
+        </TouchableOpacity>
+
+
+        <TouchableOpacity activeOpacity={0.5} onPress={()=>this.clickRight()} style = {styles.rightCategoryStyle}>
+
+          <View style = {styles.rightCategoryStyle1}>
+            <Text>{this.state.categoryType}</Text>
+            <Image source={this.state.isUnfoldC ? require('../../images/ico_up.png') : require('../../images/ico_down.png')} 
+                   style={styles.sortBarLeftImageStyle}
+            />       
+          </View>
+
+        </TouchableOpacity>
+
+
+      </View>
+    );
+  }
+
+  clickLeft(){
+    // alert('1');
+    if (!this.state.isUnfoldC) {
+      this.setState({
+      isUnfold:!this.state.isUnfold
+    });
+    }
+    
+  }
+
+  clickRight(){
+    if (!this.state.isUnfold) {
+      this.setState({
+      isUnfoldC:!this.state.isUnfoldC
+    });
+    }
+  }
+
+  renderMenu(){
+    if (this.state.isUnfold) {
+      return(
+        <View style={styles.menusStyle}>
+          <HomeMenus list={sortTypes} 
+          callBack={(kind,index)=>this.clickSortType(kind,index)}
+          seletedType={selectedType}
+          />
+          <TouchableOpacity activeOpacity={1} onPress={()=>this.unfold()}>
+          <View style={styles.maskViewStyle}>
+          </View>
+          </TouchableOpacity>
+        </View>
+      )
+    }
+    else if (this.state.isUnfoldC) {
+      if (this.state.allCatList[this.state.selectPager].subClass.length) {
+        return(
+          <View style={styles.menusStyle}>
+            <HomeMenus list={this.state.allCatList[this.state.selectPager].subClass} 
+            kind={1}
+            seletedType={selectedType2}
+            callBack={(kind,index)=>this.clickCategoryType(kind,index)}
+            />
+            <TouchableOpacity activeOpacity={1} onPress={()=>this.unfoldC()}>
+            <View style={styles.maskViewStyle}>
+            </View>
+            </TouchableOpacity>
+          </View>
+        )
+      }
+
+    } 
+  }
+  clickSortType(i,j){
+    selectedType = j;
+    this.setState({
+      isUnfold:false,
+      sortType:sortTypes[j].title,
+    });
+    this.requestGoodList();
+  }
+  clickCategoryType(i,j){
+    selectedType2 = j;
+    this.setState({
+      isUnfoldC:false,
+      categoryType:this.state.allCatList[this.state.selectPager].subClass[j].className
+    });
+    this.requestGoodList();
+  }
+
+  unfold(){
+    this.setState({
+      isUnfold:!this.state.isUnfold
+    });
+  }
+  unfoldC(){
+    this.setState({
+      isUnfoldC:!this.state.isUnfoldC
+    });
+  }
 
   componentDidMount(){
     NetUtil.POST(Api.GetHomeAllClassFirstPageData,'',(data)=>this.successCallback(data));
@@ -216,13 +358,50 @@ const styles = StyleSheet.create({
       height:30,
       backgroundColor:'white'
     },
-    sortBarStyle:{
-      marginTop:1,
-      height:30,
-      backgroundColor:'white'
-    },
     categoryGoodsListStyle:{
       flex:1,
-    }
+    },
+    sortBarStyle:{
+      marginTop:1,
+      height:40,
+      backgroundColor:'white',
+      flexDirection:'row',
+      alignItems:'center',
+    },
+    leftSortStyle:{
+      position:'absolute',
+      left:15,
+      
+    },
 
+    leftSortStyle1:{
+      flexDirection:'row',
+      alignItems:'center'
+    },
+
+    rightCategoryStyle:{
+      position:'absolute',
+      right:15,
+      
+    },
+
+    rightCategoryStyle1:{
+      flexDirection:'row',
+      alignItems:'center'
+    },
+    sortBarLeftImageStyle:{
+      height:6,
+      width:13,
+      marginLeft:5,
+    },
+    menusStyle:{
+      position:'absolute',
+      top:40,
+    },
+    maskViewStyle:{
+      height:500,
+      width:gScreen.width,
+      backgroundColor:'black',
+      opacity:0.5
+    }
 });
