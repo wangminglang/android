@@ -182,18 +182,18 @@ export default class AddAdress extends React.Component {
     _showAreaPicker() {
         Alert.alert("dd")
         Picker.init({
-            // pickerData: this._createAreaData(),
-            // selectedValue: ['河北', '唐山', '古冶区'],
-            // onPickerConfirm: pickedValue => {
-            //     console.log('area', pickedValue);
-            // },
-            // onPickerCancel: pickedValue => {
-            //     console.log('area', pickedValue);
-            // },
-            // onPickerSelect: pickedValue => {
-            //     //Picker.select(['山东', '青岛', '黄岛区'])
-            //     console.log('area', pickedValue);
-            // }
+            pickerData: this._createAreaData(),
+            selectedValue: ['河北', '唐山', '古冶区'],
+            onPickerConfirm: pickedValue => {
+                console.log('area', pickedValue);
+            },
+            onPickerCancel: pickedValue => {
+                console.log('area', pickedValue);
+            },
+            onPickerSelect: pickedValue => {
+                //Picker.select(['山东', '青岛', '黄岛区'])
+                console.log('area', pickedValue);
+            }
         });
         Picker.show();
     }
