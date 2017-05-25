@@ -19,13 +19,24 @@ import GoodsStore from '../../mobx/HJGoodsListStore';
 import Loading from '../../components/Loading';
 import LoadMoreFooter from '../../components/LoadMoreFooter';
 import * as Api from './../../common/api';
+import TopViewb from './HJSortHandleView';
 
 const sortTypes = [
-  {title: '综合排序', typeNum: 0},
-  {title: '销量排序', typeNum: 1},
-  {title: '最新上架', typeNum: 2},
-  {title: '价格从低到高', typeNum: 3},
-  {title: '价格从高到低', typeNum: 4}
+  
+];
+
+const CONFIG = [
+  {
+    type:'title',
+    selectedIndex:0,
+    data:[
+      {title: '综合排序', typeNum: 0},
+      {title: '销量排序', typeNum: 1},
+      {title: '最新上架', typeNum: 2},
+      {title: '价格从低到高', typeNum: 3},
+      {title: '价格从高到低', typeNum: 4}
+    ]
+  }
 ];
 
 @observer
@@ -55,27 +66,34 @@ export default class ShopDetail extends React.Component {
 
   }
 
+  renderContent=(isFetching, isRefreshing, listData)=>{
+    return (
+      <FlatList
+        numColumns={2}
+        data={listData.slice(0)}
+        renderItem={this._renderItem}
+        ItemSeparatorComponent={this._renderSeparator}
+        ListFooterComponent={this._renderFooter}
+        onEndReached={this._onEndReach}
+        onEndReachedThreshold={0}
+        onRefresh={this._onRefresh}
+        refreshing={isRefreshing}
+        keyExtractor={(item, index) => index}
+      />
+    );
+  }
+
+  onSelectMenu=(index, subindex, data)=>{
+    
+  }
+
   render() {
     const { shopDetail } = this.state;
     const {isFetching, isRefreshing, listData} = this.goodsListStore;
     return (
       <View style={styles.container}>
         <TopView shopDetail={shopDetail} />
-        <GoodsSortHandleView shopDetail={shopDetail} sortTypes={sortTypes} onSelectSortType={this._onSelectSortType} />
-        {!isFetching &&
-          <FlatList
-            numColumns={2}
-            data={listData.slice(0)}
-            renderItem={this._renderItem}
-            ItemSeparatorComponent={this._renderSeparator}
-            ListFooterComponent={this._renderFooter}
-            onEndReached={this._onEndReach}
-            onEndReachedThreshold={0}
-            onRefresh={this._onRefresh}
-            refreshing={isRefreshing}
-            keyExtractor={(item, index) => index}
-          />
-        }
+        <TopViewb config={CONFIG} onSelectMenu={this.onSelectMenu} renderContent={() => this.renderContent(isFetching, isRefreshing, listData)} />
         <Loading isShow={isFetching} />
       </View>
     );
@@ -114,8 +132,6 @@ export default class ShopDetail extends React.Component {
   }
 }
 
-
-
 const TopView = ({shopDetail}) => {
   return (
       <View style={{padding: 15, backgroundColor: gColors.white}}>
@@ -126,86 +142,6 @@ const TopView = ({shopDetail}) => {
         <Text style={{marginTop: 10, fontSize: 12, color: gColors.description}}>{shopDetail.descriptionShop}</Text>
       </View>
   )
-}
-
-
-class GoodsSortHandleView extends Component {
-    static propTypes = {
-        sortTypes: React.PropTypes.array,
-        onSelectSortType: React.PropTypes.func,
-        shopDetail: React.PropTypes.object
-    }
-
-    state = {
-        isShow: false,
-        currentType: '综合排序'
-    }
-
-    render() {
-      const {sortTypes, shopDetail} = this.props;
-      const {isShow, currentType} = this.state;
-      const rotate = isShow ? '90deg' : '-90deg';
-
-      return(
-        <View style={{zIndex: 1}}>
-          <View style={[styles.sortView]} >
-            <Text style={styles.sortViewText} >全部商品（{shopDetail.total}）</Text>
-            <TouchableOpacity
-              activeOpacity={0.75}
-              style={{flexDirection: 'row'}}
-              onPress={this._show}
-            >
-              <Text style={styles.sortViewText} >{currentType}</Text>
-              <Image source={require('../../images/ic_back_dark.png')} style={{width: 12, height: 12, transform: [{rotate}]}} />
-            </TouchableOpacity>
-          </View>
-          {isShow && 
-            <View style={styles.animatedCover} >
-              <TouchableOpacity activeOpacity={1} style={{flex: 1}} onPress={this._show}>
-                <View>
-                  {sortTypes.map(this._renderSortTypeCell)}
-                </View>
-              </TouchableOpacity>
-            </View>
-          }
-        </View>
-      )
-    }
-
-    _show = () => {
-      this.setState({
-        isShow: !this.state.isShow
-      })
-    }
-
-    _renderSortTypeCell = (type, key) => {
-      const {sortTypes} = this.props;
-      const {title, typeNum} = type;
-      const {currentType} = this.state;
-      const isLast = sortTypes.length - 1 == key;
-      const titleStyle = [{fontSize: 14, color: gColors.description}];
-      if (currentType == title) titleStyle.push({color: '#ea4335'})
-      return (
-          <TouchableOpacity
-              key={key}
-              activeOpacity={0.95}
-              style={[styles.sortTypeItem, isLast && {width: gScreen.width}]}
-              onPress={() => this._onPressSortTypeCell(type)}
-          >
-              <Text style={titleStyle}>{title}</Text>
-          </TouchableOpacity>
-      )
-    }
-
-    _onPressSortTypeCell = (type) => {
-      const {title, typeNum} = type;
-      this.setState({
-        isShow: false,
-        currentType: title
-      })
-
-      this.props.onSelectSortType && this.props.onSelectSortType(type);
-    }
 }
 
 class GoodsItem extends PureComponent {
