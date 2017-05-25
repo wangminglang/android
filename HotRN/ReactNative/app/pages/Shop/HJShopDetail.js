@@ -19,11 +19,8 @@ import GoodsStore from '../../mobx/HJGoodsListStore';
 import Loading from '../../components/Loading';
 import LoadMoreFooter from '../../components/LoadMoreFooter';
 import * as Api from './../../common/api';
-import TopViewb from './HJSortHandleView';
-
-const sortTypes = [
-  
-];
+import SortHandleView from './HJSortHandleView';
+import {tabStatus} from '../../HJMain'
 
 const CONFIG = [
   {
@@ -39,16 +36,23 @@ const CONFIG = [
   }
 ];
 
+let _this = null;
 @observer
 export default class ShopDetail extends React.Component {
-
   static navigationOptions = ({ navigation }) => ({
     tabBarVisible: false, //隐藏tabBar
-    header: <Header title={navigation.state.params.nameShop} showLeftIcon={true} leftIconAction={() => navigation.goBack()} />
-  })
+    header: <Header title={navigation.state.params.nameShop} showLeftIcon={true} leftIconAction={() => _this._goBack()}/>
+  });
+
+  _goBack(){
+    alert('dqwbdqbwdubqw');
+    this.props.navigation.goBack();
+    tabStatus.show();
+  }
 
   constructor(props) {
     super(props);
+    _this = this;
     this.state = {
       shopDetail: {}
     }
@@ -63,7 +67,13 @@ export default class ShopDetail extends React.Component {
         shopDetail : responseData.data
       })
     })
+  }
+  componentWillMount(){
+      tabStatus.hide();
+  }
 
+  componentWillUnmount() {
+    
   }
 
   renderContent=(isFetching, isRefreshing, listData)=>{
@@ -93,7 +103,7 @@ export default class ShopDetail extends React.Component {
     return (
       <View style={styles.container}>
         <TopView shopDetail={shopDetail} />
-        <TopViewb config={CONFIG} onSelectMenu={this.onSelectMenu} renderContent={() => this.renderContent(isFetching, isRefreshing, listData)} />
+        <SortHandleView config={CONFIG} onSelectMenu={this.onSelectMenu} renderContent={() => this.renderContent(isFetching, isRefreshing, listData)} />
         <Loading isShow={isFetching} />
       </View>
     );

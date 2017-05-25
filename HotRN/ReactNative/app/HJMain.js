@@ -13,11 +13,11 @@ import {
 
 import TabNavigator from 'react-native-tab-navigator';
 import {StackNavigator} from 'react-navigation';
-import AddAdress from './pages/AdressManner/AddAdress'
+import AddAdress from './pages/AdressManner/AddAddress'
 import ShopDetail from './pages/Shop/HJShopDetail';
 import Login from './pages/Login/Login';
-import Adress from './pages/AdressManner/Adress';
-
+import NoAddress from './pages/AdressManner/NoAddress';
+import Address from './pages/AdressManner/Address'
 const NavigationHome = StackNavigator({
     Home: {screen: Home},
 });
@@ -31,8 +31,9 @@ const NavigationCategory = StackNavigator({
 const NavigationMine = StackNavigator({
     Mine: {screen: Mine},
     MineLogin: {screen: Login},
-    MineAdress: {screen: Adress},
+    MineAdress: {screen: NoAddress},
     MineAddAdress: {screen: AddAdress},
+    Address: {screen: Address},
 });
 
 import Home from './pages/Home/HJHome';
@@ -41,16 +42,55 @@ import Category from './pages/Category/HJCategory';
 import Mine from './pages/MemberCenter/Center';
 
 
+import {observable, computed, action, runInAction,autorun} from 'mobx';
+import {observer} from 'mobx-react/native';
+
+class TabStatus{
+  @observable
+  tabBarHeight = 59;
+
+  @observable 
+  overflow = 'visible';
+
+  @action
+  hide(){
+    // alert('2222');
+    this.tabBarHeight = 0;
+    this.overflow = 'hidden';
+  }
+
+  @action
+  show(){
+    // alert('1111');
+    this.tabBarHeight = 55;
+    this.overflow = 'visible';
+  }
+}
+// let tabStatus = new TabStatus();
+
+export let tabStatus = new TabStatus();
+// export  tabStatus;
+// let tabBarHeight = 0;
+// <TabNavigator
+//   tabBarStyle={{ height: tabBarHeight, overflow: 'hidden' }}
+//   sceneStyle={{ paddingBottom: tabBarHeight }}
+// />
+@observer
 export default class Main extends React.Component {
 
   constructor(props){
     super(props);
     this.state = {selectedTab:'Home'};
   }
+  
 
   render() {
+    // alert('dqwhudiiuqw');
     return (
-      <TabNavigator>
+      <TabNavigator
+      tabBarStyle={{ height: tabStatus.tabBarHeight, overflow:tabStatus.overflow }}
+      sceneStyle={{ paddingBottom: tabStatus.tabBarHeight }}
+      >
 
         {/* 首页 */}
         {this.renderTabItem("首页",require('./images/ico_dhshouye.png'),require('./images/ico_dhshouyed.png'),'Home','Home',Home,'12')}

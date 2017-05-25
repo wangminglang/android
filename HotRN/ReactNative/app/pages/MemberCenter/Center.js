@@ -13,7 +13,7 @@ var MyCell = require('./MyCell');
 var Middle = require('./MyMiddleView');
 var HeadView = require('./MyHeaderView');
 import Login from'../Login/Login';
-import Adress from '../AdressManner/Adress';
+import Adress from '../AdressManner/NoAddress';
 import * as Api from './../../common/api';
 import Header from '../../components/Header';
 //得到屏幕宽度
@@ -36,7 +36,8 @@ export default class Mine extends React.Component {
             waitShipping: "",
             shipping: "",
             partShipped: "",
-            messageNum: ""
+            messageNum: "",
+            addressNun: 0,
         };
     };
 
@@ -57,6 +58,7 @@ export default class Mine extends React.Component {
                 shipping: data.data.orderState.shipping,
                 partShipped: data.data.orderState.partShipped,
                 messageNum: data.data.messageNum,
+                addressNun: data.data.addressNun,
             })
         }
     }
@@ -108,7 +110,11 @@ export default class Mine extends React.Component {
      */
     jump_ToAddressManner() {
         const {navigate} = this.props.navigation;
-        navigate('MineAdress');
+        if (this.state.addressNun === 0) {
+            navigate('MineAdress');
+        } else {
+            navigate('Address');
+        }
     }
 }
 const styles = StyleSheet.create({
