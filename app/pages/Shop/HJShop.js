@@ -18,6 +18,7 @@ import Loading from '../../components/Loading';
 import LoadMoreFooter from '../../components/LoadMoreFooter';
 import GlobalContants from '../../common/globalConstants';
 import * as Api from './../../common/api';
+import {tabStatus} from '../../HJMain'
 
 @observer
 export default class Shop extends React.Component {
@@ -81,6 +82,11 @@ export default class Shop extends React.Component {
   _onPressCell = (data) => {
     const {navigate} = this.props.navigation;
     navigate('ShopDetail', data);
+  }
+  componentWillMount() {
+    tabStatus.show();
+  }
+  componentDidMount() {
   }
 
 }
