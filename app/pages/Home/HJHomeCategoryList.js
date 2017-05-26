@@ -33,7 +33,6 @@ export default class HomeCategoryList extends React.Component {
 
 
   render() {
-    console.log('1111111111'+this.props.list);
     return (
       <View style={styles.containStyle}>
         <FlatList
@@ -132,7 +131,7 @@ export class HomeCategoryListCell extends React.Component{
           {this.props.Item.title}
         </Text>
         <Text style={styles.cellBottomTextImageStyle}>
-          {'¥'+this.props.Item.price}
+          {'¥'+this.props.Item.minPrice}
         </Text>
       </View>
     );

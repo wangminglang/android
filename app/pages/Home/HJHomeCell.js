@@ -30,7 +30,7 @@ export default class HomeListCell extends React.Component{
 
         <View style={styles.bottomStyle}>
           <Text style={styles.priceStyle}>
-            {'¥'+this.props.Item.price}
+            {'¥'+this.props.Item.minPrice}
           </Text>
           <View style={styles.groupUserStyle}>
             {this._renderUser()}
