@@ -16,15 +16,18 @@ export default class MyCell extends React.Component {
         rightTitle: '',
         rightImgname: ''
     };
+
     setNativeProps(nativeProps) {
         this._root.setNativeProps(nativeProps);
     }
+
     render() {
         return (
             <View style={styles.viewStyle}>
                 <View style={styles.leftViewStyle}>
                     {/*<Image source={{uri: this.props.imgName}} style={styles.leftImgStyle}/>*/}
-                    <Text style={styles.txt_style} ref={component => this._root = component}>{this.props.leftTitle}</Text>
+                    <Text style={styles.txt_style}
+                          ref={component => this._root = component}>{this.props.leftTitle}</Text>
                 </View>
                 {/*-------右边---------*/}
                 <View style={styles.rightViewStyle}>
@@ -52,26 +55,29 @@ export default class MyCell extends React.Component {
     renderRightTitle() {
         if (this.props.rightTitle.length > 0) {
             return (
-                <Text style={{marginRight: 8}}>{this.props.rightTitle}</Text>
+                <Text style={{marginRight: 10}}>{this.props.rightTitle}</Text>
             )
         }
     }
 }
 const styles = StyleSheet.create({
     txt_style: {
-        fontSize: 16,
-        marginLeft: 15
+        fontSize: 14,
+        marginLeft: 15,
+        color: '#333333'
     },
     leftViewStyle: {
         flexDirection: 'row',
     },
     rightViewStyle: {
         flexDirection: 'row',
+        alignItems: "center"
     },
     iconStyle: {
-        height: 20,
-        width: 20,
-        marginRight: 10
+        height: 15,
+        width: 8,
+        marginRight: 15,
+        marginLeft:10
     },
     leftImgStyle: {
         height: 25,
@@ -84,7 +90,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         backgroundColor: 'white',
-        borderBottomWidth: 1,
+        borderBottomWidth: .5,
         borderBottomColor: '#dddddd',
     }
 });

@@ -15,43 +15,55 @@ import {
 var dimen = require('Dimensions');
 var width = dimen.get('window').width;
 import CheckBox from 'react-native-check-box';
+import * as Api from './../../common/api';
 export default class AddressListView extends React.Component {
-    static defaultProps = {
-        dataSource: []
-    }
+    static defaultProps = {}
     // 初始化模拟数据
     constructor(props) {
         super(props);
-        const dataSource = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
         this.state = {
-            dataSource: dataSource.cloneWithRows(this.props.dataSource)
+            dataSource: new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2}),
+            addressList: [1, 2, 3]
         };
+    }
+
+    componentDidMount() {
+        NetUtil.POST(Api.GET_ADDRESS_LIST, null, (data) => this.addressListsuccessCallback(data), null);
+    }
+
+    addressListsuccessCallback(data) {
+        if (data.result) {
+            Alert.alert(data.list.length);
+            this.setState({
+                // addressList: data.list
+            })
+        }
     }
 
     render() {
         return (
             <ListView
-                dataSource={this.state.dataSource}
-                renderRow={this.renderRow}
+                dataSource={this.state.dataSource.cloneWithRows(this.state.addressList)}
+                renderRow={this.renderRow.bind(this)}
             >
             </ListView>
         );
     }
 
 //具体的item
-    renderRow(rowdata) {
+    renderRow(rowData, rowId) {
         return (
-            <View style={styles.cellStyle}>
-                <View style={styles.viewStyle}>
-                    <Text style={styles.txtStyle}>姓名</Text>
-                    <Text style={styles.txtStyle}>1111111111111</Text>
+            <View style={styles.cellStyle2}>
+                <View style={styles.viewStyle2}>
+                    <Text style={styles.txtStyle2}>姓名</Text>
+                    <Text style={styles.txtStyle2}>1111111111111</Text>
                 </View>
-                <View style={styles.addressStyle}>
-                    <Text style={styles.txtStyle}>dddd</Text>
-                    <Text style={styles.adsStyle}>有有有有有有有有有有有顶顶顶顶顶顶顶顶</Text>
+                <View style={styles.addressStyle2}>
+                    <Text style={styles.txtStyle2}>dddd</Text>
+                    <Text style={styles.adsStyle2}>有有有有有有有有有有有顶顶顶顶顶顶顶顶</Text>
                 </View>
-                <View style={[styles.viewStyle, {marginBottom: 13}]}>
-                    <View style={styles.bottom}>
+                <View style={[styles.viewStyle2, {marginBottom: 13}]}>
+                    <View style={styles.bottom2}>
                         <CheckBox
                             onClick={() => this.onCheck()}
                             isChecked={true}
@@ -61,29 +73,37 @@ export default class AddressListView extends React.Component {
                                                    style={{width: 18, height: 18}}/>}
                         >
                         </CheckBox>
-                        <Text style={[styles.txt, {marginLeft: 5}]}>
+                        <Text style={[styles.txt2, {marginLeft: 5}]}>
                             设为默认地址
                         </Text>
                     </View>
-                    <View style={styles.actionStyle}>
-                        <TouchableOpacity onPress={(rowdata) => this.delete(rowdata)}>
-                            <Text style={styles.txt}>删除</Text>
+                    <View style={styles.actionStyle2}>
+                        <TouchableOpacity onPress={(rowData) => this.delete(rowData)}>
+                            <Text style={styles.txt2}>删除</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity onPress={(rowdata) => this.edit(rowdata)}>
-                            <Text style={[styles.txt, {marginLeft: 10}]}>编辑</Text>
+                        <TouchableOpacity onPress={ this.edit.bind(this,rowData)}>
+                            <Text style={[styles.txt2, {marginLeft: 10}]}>编辑</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
             </View>
         )
     }
-
     /**
      * 删除
      * @param rowdata
      */
     delete(rowdata) {
-        Alert.alert("88")
+        let params = {
+            'id': 1,
+        };
+        NetUtil.POST(Api.GET_ADDRESS_LIST, params, (data) => this.deletesuccessCallback(data), null);
+    }
+
+    deletesuccessCallback(data) {
+        if (data.result) {
+            NetUtil.POST(Api.GET_ADDRESS_LIST, null, (data) => this.addressListsuccessCallback(data), null);
+        }
     }
 
     /**
@@ -91,16 +111,32 @@ export default class AddressListView extends React.Component {
      * @param rowdata
      */
     edit(rowdata) {
-        Alert.alert("77")
+        const {navigate} = this.props.navigation;
+        navigate('MineAddAdress', rowdata);
     }
 
-    onCheck() {
-        Alert.alert("999")
+    /**
+     * 设置默认地址
+     * @param rowdata
+     */
+    onCheck(rowdata) {
+        let params = {
+            // 'isDefault': !rowdata.isDefault,
+            // 'id': rowdata.id,
+        };
+        NetUtil.POST(Api.SAVE_ADDRESS, params, (data) => this.successCallback(data));
+    }
+
+    successCallback(data) {
+        console.log(data);
+        if (data.result) {
+            NetUtil.POST(Api.GET_ADDRESS_LIST, null, (data) => this.addressListsuccessCallback(data), null);
+        }
     }
 }
 
 const styles = StyleSheet.create({
-    viewStyle: {
+    viewStyle2: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         paddingRight: 15,
@@ -108,13 +144,13 @@ const styles = StyleSheet.create({
         marginTop: 13,
         alignItems: 'center'
     },
-    actionStyle: {
+    actionStyle2: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         paddingLeft: 15,
         alignItems: 'center'
     },
-    addressStyle: {
+    addressStyle2: {
         flexDirection: 'row',
         paddingRight: 15,
         paddingLeft: 15,
@@ -124,33 +160,33 @@ const styles = StyleSheet.create({
         borderBottomColor: '#dddddd',
         alignItems: 'center'
     },
-    txtStyle: {
+    txtStyle2: {
         fontSize: 14,
         color: '#333333'
     },
-    adsStyle: {
+    adsStyle2: {
         fontSize: 14,
         color: '#333333',
         marginLeft: 15,
         marginRight: 15
     },
-    cellStyle: {
+    cellStyle2: {
         backgroundColor: 'white',
         width: width,
         // 水平居中和垂直居中
         justifyContent: 'center',
         marginTop: 10,
     },
-    bottom: {
+    bottom2: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center'
     },
-    txt: {
+    txt2: {
         color: '#333333',
         fontSize: 13,
     },
-    choosetxt: {
+    choosetxt2: {
         width: 250,
         color: '#7f7f7f',
         fontSize: 14,

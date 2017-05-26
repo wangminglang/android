@@ -38,6 +38,7 @@ export default class Mine extends React.Component {
             partShipped: "",
             messageNum: "",
             addressNun: 0,
+            mobile: ""
         };
     };
 
@@ -59,6 +60,7 @@ export default class Mine extends React.Component {
                 partShipped: data.data.orderState.partShipped,
                 messageNum: data.data.messageNum,
                 addressNun: data.data.addressNun,
+                mobile: data.data.mobile
             })
         }
     }
@@ -96,9 +98,13 @@ export default class Mine extends React.Component {
                     <MyCell
                         leftTitle="联系客服"
                     />
-                    <MyCell
-                        leftTitle="设置"
-                    />
+                    <TouchableOpacity
+                        activeOpacity={0.75}
+                        onPress={() => this._jump_ToSetting()}>
+                        <MyCell
+                            leftTitle="设置"
+                        />
+                    </TouchableOpacity>
                 </ScrollView>
             </View>
 
@@ -110,11 +116,16 @@ export default class Mine extends React.Component {
      */
     jump_ToAddressManner() {
         const {navigate} = this.props.navigation;
-        if (this.state.addressNun === 0) {
-            navigate('MineAdress');
-        } else {
-            navigate('Address');
-        }
+        navigate('Address', {addressNun: this.state.addressNun});
+    }
+
+    /**
+     * 跳转设置
+     * @private
+     */
+    _jump_ToSetting() {
+        const {navigate} = this.props.navigation;
+        navigate('Setting', {mobile: this.state.mobile});
     }
 }
 const styles = StyleSheet.create({

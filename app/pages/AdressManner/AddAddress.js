@@ -23,6 +23,7 @@ import area from './area.json';
 import CheckBox from 'react-native-check-box';
 import Header from '../../components/Header';
 import * as Api from './../../common/api';
+import  {DeviceEventEmitter} from 'react-native';
 export default class AddAdress extends React.Component {
     static navigationOptions = ({navigation}) => ({
         header: <Header title='新建收货地址' showLeftIcon={true} leftIconAction={() => navigation.goBack()}/>
@@ -148,7 +149,9 @@ export default class AddAdress extends React.Component {
             'address': this.state.adress,
             'isDefault': this.state.isDefault
         };
-        NetUtil.POST(Api.SAVE_ADDRESS, params, (data) => this.successCallback(data));
+        DeviceEventEmitter.emit('refreshData');
+        this.props.navigation.goBack();
+        // NetUtil.POST(Api.SAVE_ADDRESS, params, (data) => this.successCallback(data));
     }
 
     successCallback(data) {
@@ -180,7 +183,6 @@ export default class AddAdress extends React.Component {
     }
 
     _showAreaPicker() {
-        Alert.alert("dd")
         Picker.init({
             pickerData: this._createAreaData(),
             selectedValue: ['河北', '唐山', '古冶区'],
