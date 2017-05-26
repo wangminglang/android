@@ -19,6 +19,7 @@ import Loading from '../../components/Loading';
 import HomeCategoryList from './HJHomeCategoryList';
 import HomeMenus from './HJHomeMenus';
 
+
 import * as Api from '../../common/api';
 
 const sortTypes = [
@@ -31,6 +32,10 @@ const sortTypes = [
 
 const selectedType = '0';
 const selectedType2 = '';
+const idClassification = '';
+const page = 1;
+const isRequesting = false;
+const homePage = 1;
 
 export default class Home extends React.Component {
 
@@ -54,6 +59,7 @@ export default class Home extends React.Component {
       categoryType:'分类',
       isUnfold:false,
       isUnfoldC:false,
+      isNoMore:false,
     };
   };
 
@@ -118,16 +124,19 @@ export default class Home extends React.Component {
 
     selectedType='0';
     selectedType2='';
+    page = 1;
+    idClassification = this.state.allCatList[index].id;
 
     this.requestGoodList();
     
   }
 
   requestGoodList(){
+
     InteractionManager.runAfterInteractions(() => {
       var params = {
-        idClassificatioin:this.state.allCatList[this.state.selectPager].id,
-        page:1,
+        idClassification:idClassification,
+        page:page,
         sortType:selectedType,
         keyWord:'',
         shopId:'',
@@ -142,6 +151,8 @@ export default class Home extends React.Component {
         <HomeList
           dataSource={this.state.goodsList}
           headLunbo={this.state.headLunbo}
+          onEndReached={()=>this._onEndReached()}
+          isNoMore={this.state.isNoMore}
         />
       )
     }
@@ -249,6 +260,7 @@ export default class Home extends React.Component {
       isUnfold:false,
       sortType:sortTypes[j].title,
     });
+    page = 1;
     this.requestGoodList();
   }
   clickCategoryType(i,j){
@@ -257,6 +269,8 @@ export default class Home extends React.Component {
       isUnfoldC:false,
       categoryType:this.state.allCatList[this.state.selectPager].subClass[j].className
     });
+    idClassification=this.state.allCatList[this.state.selectPager].subClass[j].id;
+    page = 1;
     this.requestGoodList();
   }
 
@@ -273,7 +287,6 @@ export default class Home extends React.Component {
 
   componentDidMount(){
     NetUtil.POST(Api.GetHomeAllClassFirstPageData,'',(data)=>this.successCallback(data));
-    NetUtil.POST(Api.GetHomeMoreData,'',(data)=>this.getHomeMoreData(data));
     NetUtil.POST(Api.GetAllCatList,'',(data)=>this.GetAllCatList(data));
 
   }
@@ -292,16 +305,39 @@ export default class Home extends React.Component {
     }
   }
 
-  getHomeMoreData(data){
-    if (data.result) {
-      
+
+  _onEndReached(){
+    if (!isRequesting && !this.state.isNoMore) {
+      alert(homePage);
+      isRequesting = true;
+      homePage++;
+      NetUtil.POST(Api.GetHomeMoreData,{page:homePage},(data)=>this.getHomeMoreData(data));
     }
+  }
+  //首页获得更多数据
+  getHomeMoreData(data){
+    isRequesting = false;
+    var arr = this.state.goodsList;
+
+    if (data.result) {
+      if (!data.data.length) {
+        this.setState({
+          isNoMore:true
+        })
+        return;
+      }
+      arr.push(...data.data);
+      this.setState({
+        goodsList:arr
+      });
+    }
+
   }
 
   GetAllCatList(data){
     if (data.result) {
       var firstData = {
-        "id":"0",
+        "id":"-1",
         "className":"首页",
         "classImg":"",
         "subClass":[
@@ -311,20 +347,24 @@ export default class Home extends React.Component {
       this.setState({
         allCatList:data.data
       });
-
+      console.log('++++++',this.state.allCatList)
     }
   }
+
+
+
   getGoodsList(data){
     this.setState({
       isLoading:false
     });
+
     if (data.result) {
-      this.setState({
-        categoryGoodsList:data.data.list
-      });
+
+        this.setState({
+          categoryGoodsList:data.data.list
+        });
     }
   }
-
 }
 
 const styles = StyleSheet.create({

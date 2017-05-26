@@ -15,6 +15,7 @@ import {
 
 import HomeListCell from './HJHomeCell';
 import LoopView from '../../components/HJLoopView'
+import LoadMoreFooter from '../../components/LoadMoreFooter';
 
 export default class HomeList extends React.PureComponent {
 
@@ -23,7 +24,9 @@ export default class HomeList extends React.PureComponent {
   static defaultProps = {
         headLunbo:[],
         dataSource: [],
-        callBack: null
+        callBack: null,
+        onEndReached:null,
+        isNoMore:false,
   };
   // 初始化模拟数据
   constructor(props) {
@@ -47,6 +50,7 @@ export default class HomeList extends React.PureComponent {
           onEndReached={()=>this._onEndReached()}
           refreshing={this.state.refreshing}
           onRefresh={()=>this._onRefresh()}
+          ListFooterComponent={this._renderFooter}
         />
       </View>
     );
@@ -77,11 +81,13 @@ export default class HomeList extends React.PureComponent {
   }
 
   _onEndReached(){
-    alert('到底了');
+    this.props.onEndReached();
   }
 
   _onRefresh(){
-    // alert('到底了');
+  }
+  _renderFooter = () => {
+    return <LoadMoreFooter isNoMore={this.props.isNoMore} />
   }
 
 }
