@@ -19,18 +19,26 @@ var width = dimen.get('window').width;
 import Header from '../../components/Header';
 import MyCell from './../MemberCenter/MyCell'
 import * as Api from './../../common/api';
+import {tabStatus} from '../../HJMain'
+let _this = null;
 export default class Setting extends React.Component {
     static navigationOptions = ({navigation}) => ({
-        header: <Header title='设置' showLeftIcon={true} leftIconAction={() => navigation.goBack()}/>
+        header: <Header title='设置' showLeftIcon={true} leftIconAction={() => _this._goBack()}/>
     })
+    _goBack(){
+        this.props.navigation.goBack();
+        tabStatus.show();
+    }
     static defaultProps = {};
 
     constructor(props) {
         super(props);
+        _this = this;
         this.state = {};
     };
-
-
+    componentWillMount(){
+        tabStatus.hide();
+    }
     render() {
         const {params} = this.props.navigation.state;
         return (

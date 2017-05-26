@@ -25,9 +25,11 @@ import CheckBox from 'react-native-check-box';
 import Header from '../../components/Header';
 import * as Api from './../../common/api';
 import AddressListView from './AddressListView'
+import {tabStatus} from '../../HJMain'
+let _this = null
 export default class Address extends React.Component {
     static navigationOptions = ({navigation}) => ({
-        header: <Header title='地址管理' showLeftIcon={true} leftIconAction={() => navigation.goBack()}/>
+        header: <Header title='地址管理' showLeftIcon={true} leftIconAction={() => _this._goBack()}/>
     })
 
     constructor(props) {
@@ -35,6 +37,17 @@ export default class Address extends React.Component {
         this.state = {
             addressList: []
         };
+    };
+
+    _goBack(){
+        this.props.navigation.goBack();
+        tabStatus.show();
+    }
+    componentWillMount(){
+        tabStatus.hide();
+    }
+    componentWillUnmount() {
+        this.subscription.remove();
     };
 
     componentDidMount() {
