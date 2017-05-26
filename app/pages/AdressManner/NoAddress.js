@@ -27,11 +27,11 @@ export default class Adress extends React.Component {
 
     render() {
         return (
-            <View style={styles.content}>
-                <Image source={require('./../../images/bg_gerenzhongxin.png')} style={styles.imgStyle}/>
-                <Text style={styles.txtStyle}>您还没有收货地址</Text>
-                <TouchableOpacity style={styles.btn} onPress={() => this.addAdress()} activeOpacity={0.75}>
-                    <Text style={styles.btnText}>
+            <View style={styles.content1}>
+                <Image source={require('./../../images/bg_gerenzhongxin.png')} style={styles.imgStyle1}/>
+                <Text style={styles.txtStyle1}>您还没有收货地址</Text>
+                <TouchableOpacity style={styles.btn1} onPress={() => this.addAdress()} activeOpacity={0.75}>
+                    <Text style={styles.btnText1}>
                         + 新建地址
                     </Text>
                 </TouchableOpacity>
@@ -49,22 +49,22 @@ export default class Adress extends React.Component {
     }
 }
 const styles = StyleSheet.create({
-    content: {
+    content1: {
         flex: 1,
         backgroundColor: '#f4f4f4',
         justifyContent: 'center',
         alignItems: 'center'
     },
-    imgStyle: {
+    imgStyle1: {
         width: 66,
         height: 93,
     },
-    txtStyle: {
+    txtStyle1: {
         fontSize: 15,
         color: '#7a7a7a',
         marginTop: 24,
     },
-    btn: {
+    btn1: {
         marginTop: 19,
         width: 98,
         height: 30,
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#7a7a7a'
     },
-    btnText: {
+    btnText1: {
         fontSize: 14,
         color: '#333333',
     }
