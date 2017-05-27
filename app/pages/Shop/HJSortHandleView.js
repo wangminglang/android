@@ -29,24 +29,23 @@ export default class SortHandleView extends Component {
     let title = sortTypes[selectedIndex].title;
     return (
       <View style={{flex:1}}>
-        <View style={styles.sortView} >
-          <Text style={styles.sortViewText} >全部商品（{shopDetail.total}）</Text>
-          <TouchableOpacity
-            activeOpacity={0.75}
-            style={{flexDirection: 'row'}}
-            onPress={this._show}
-          >
-            <Text style={styles.sortViewText} >{title}</Text>
-          </TouchableOpacity>
-        </View>
+        <HandleView total={shopDetail.total} title={title} handleViewClick={this._toggle} />
 
-        <GoodsList ref='goodsList' params={shopDetail} />
+        <GoodsList ref='goodsList' shopDetail={shopDetail} />
 
         <View style={styles.bgContainer} pointerEvents={this.state.isShow ? 'auto' : 'none'} >
           <Animated.View style={[styles.bg, {opacity:this.state.fadeInOpacity}]} />
           <Animated.View style={[styles.content, {height: this.state.height}]}>
             <ScrollView style={styles.scroll}>
-              {sortTypes.map(this._renderListCell)}
+              {sortTypes.map((sortType, index) => {
+                return  <Cell 
+                          sortType={sortType} 
+                          key={index} 
+                          index={index} 
+                          selected={selectedIndex == index}
+                          cellClick={this._cellClick}
+                        />
+              })}
             </ScrollView>
           </Animated.View>
         </View>
@@ -54,34 +53,16 @@ export default class SortHandleView extends Component {
     );
   }
 
-  _renderListCell = (data, index) => {
-    const {sortTypes} = this.props;
-    const {title, typeNum} = data;
-    const {selectedIndex} = this.state;
-    const isLast = sortTypes.length - 1 == index;
-    const titleStyle = [{fontSize: 14, color: gColors.description}];
-    if (selectedIndex == typeNum) titleStyle.push({color: '#ea4335'})
-    return (
-      <TouchableOpacity
-          key={index}
-          activeOpacity={0.95}
-          style={[styles.sortTypeItem, isLast && {width: gScreen.width}]}
-          onPress={() => this._cellClick(index)}
-      >
-        <Text style={titleStyle}>{title}</Text>
-      </TouchableOpacity>
-    )
-  }
-
   _cellClick = (index) => {
-    this.refs.goodsList._changeSortType(index);
+    const {sortTypes} = this.props;
+    this.refs.goodsList._changeSortType(sortTypes[index].typeNum);
     this.setState({
       selectedIndex: index
     })
-    this._show();
+    this._toggle();
   }
 
-  _show=()=>{
+  _toggle=()=>{
     this.state.isShow ? 
     Animated.parallel([this._createAnimation(0), this._createFade(0)]).start() :
     Animated.parallel([this._createAnimation(250), this._createFade(1)]).start()
@@ -110,6 +91,54 @@ export default class SortHandleView extends Component {
         }
       );
   }
+}
+
+const HandleView = ({
+  total,
+  title,
+  handleViewClick
+}) => {
+  let onPress = () => {
+    handleViewClick && handleViewClick()
+  }
+
+  return (
+    <View style={styles.sortView} >
+      <Text style={styles.sortViewText} >全部商品（{total}）</Text>
+      <TouchableOpacity
+        activeOpacity={0.75}
+        style={{flexDirection: 'row'}}
+        onPress={onPress}
+      >
+        <Text style={styles.sortViewText} >{title}</Text>
+      </TouchableOpacity>
+    </View>
+  )
+}
+
+const Cell = ({
+  sortType,
+  index,
+  selected,
+  cellClick
+}) => {
+  const {title, typeNum} = sortType;
+  const titleStyle = [{fontSize: 14, color: gColors.description}];
+  if (selected) titleStyle.push({color: '#ea4335'});
+
+  let onPress = () => {
+    cellClick && cellClick(index)
+  }
+
+  return (
+    <TouchableOpacity
+        activeOpacity={0.95}
+        style={styles.sortTypeItem}
+        onPress={onPress}
+    >
+      <Text style={titleStyle}>{title}</Text>
+    </TouchableOpacity>
+  )
 }
 
 const styles = StyleSheet.create({

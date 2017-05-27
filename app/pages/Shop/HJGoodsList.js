@@ -24,8 +24,8 @@ export default class GoodsList extends React.PureComponent {
 
   constructor(props) {
     super(props);
-    const { params } = this.props;
-    this.goodsListStore = new GoodsStore(Api.GET_GOODS_LIST, params.id);
+    const { shopDetail } = this.props;
+    this.goodsListStore = new GoodsStore(Api.GET_GOODS_LIST, shopDetail.id);
   }
 
   render() {
@@ -53,8 +53,8 @@ export default class GoodsList extends React.PureComponent {
     );
   }
 
-  _changeSortType = (selectedIndex) => {
-    this.goodsListStore.sortType = selectedIndex;
+  _changeSortType = (typeNum) => {
+    this.goodsListStore.sortType = typeNum;
     this.refs.flatList.scrollToOffset({animated: false, offset: 0})
 	  this.goodsListStore.isRefreshing = true;
     this.goodsListStore.fetchListData();  
