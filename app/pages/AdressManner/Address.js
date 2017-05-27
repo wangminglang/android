@@ -35,7 +35,13 @@ export default class Address extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+<<<<<<< HEAD
             addressList: []
+=======
+            dataSource: new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2}),
+            addressList: [1, 2, 3],
+            addressNun: null,
+>>>>>>> 4d63747ec35255566096305100634f813a0deb50
         };
     };
 
@@ -64,6 +70,7 @@ export default class Address extends React.Component {
     }
 
     render() {
+<<<<<<< HEAD
         return (
             <View style={styles.content}>
                 <ScrollView>
@@ -73,6 +80,14 @@ export default class Address extends React.Component {
                     ></AddressListView>
                     <TouchableOpacity style={styles.btn} onPress={() => this.addAdress()} activeOpacity={0.75}>
                         <Text style={styles.btnText}>
+=======
+        return (this.state.addressNun ===null ?null:this.state.addressNun ===0 ?
+                <View style={styles.content1}>
+                    <Image source={require('./../../images/bg_gerenzhongxin.png')} style={styles.imgStyle1}/>
+                    <Text style={styles.txtStyle1}>您还没有收货地址</Text>
+                    <TouchableOpacity style={styles.btn1} onPress={() => this.addAdress()} activeOpacity={0.75}>
+                        <Text style={styles.btnText1}>
+>>>>>>> 4d63747ec35255566096305100634f813a0deb50
                             + 新建地址
                         </Text>
                     </TouchableOpacity>
