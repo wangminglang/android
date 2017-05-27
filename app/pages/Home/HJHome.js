@@ -308,7 +308,6 @@ export default class Home extends React.Component {
 
   _onEndReached(){
     if (!isRequesting && !this.state.isNoMore) {
-      alert(homePage);
       isRequesting = true;
       homePage++;
       NetUtil.POST(Api.GetHomeMoreData,{page:homePage},(data)=>this.getHomeMoreData(data));
