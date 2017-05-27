@@ -78,7 +78,7 @@ export default class Address extends React.Component {
     }
 
     render() {
-        return (this.state.addressNun === null ?null:this.state.addressNun===0?
+        return (this.state.addressNun ===null ?null:this.state.addressNun ===0 ?
                 <View style={styles.content1}>
                     <Image source={require('./../../images/bg_gerenzhongxin.png')} style={styles.imgStyle1}/>
                     <Text style={styles.txtStyle1}>您还没有收货地址</Text>

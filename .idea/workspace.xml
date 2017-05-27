@@ -3,9 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="fe5468e6-3ab8-48c5-909b-542a6a02c5d8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/common/api.js" afterPath="$PROJECT_DIR$/app/common/api.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/pages/AdressManner/Address.js" afterPath="$PROJECT_DIR$/app/pages/AdressManner/Address.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/pages/MemberCenter/Center.js" afterPath="$PROJECT_DIR$/app/pages/MemberCenter/Center.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/pages/MemberCenter/MyHeaderView.js" afterPath="$PROJECT_DIR$/app/pages/MemberCenter/MyHeaderView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/pages/Shop/HJShopDetail.js" afterPath="$PROJECT_DIR$/app/pages/Shop/HJShopDetail.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/pages/Shop/HJSortHandleView.js" afterPath="$PROJECT_DIR$/app/pages/Shop/HJSortHandleView.js" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/pages/Shop/HJShopDetail.js" afterPath="$PROJECT_DIR$/app/pages/Shop/HJGoodsList.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -60,20 +62,22 @@
       <file leaf-file-name="HJShopDetail.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/pages/Shop/HJShopDetail.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1250">
-              <caret line="70" column="1" lean-forward="false" selection-start-line="70" selection-start-column="1" selection-end-line="72" selection-end-column="3" />
-              <folding />
+            <state relative-caret-position="1325">
+              <caret line="53" column="1" lean-forward="false" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
+              <folding>
+                <marker date="1495853393092" expanded="false" signature="22:38" ph="..." />
+                <marker date="1495853393092" expanded="true" signature="2358:2360" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Address.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Address.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/pages/AdressManner/Address.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="81" column="46" lean-forward="false" selection-start-line="81" selection-start-column="46" selection-end-line="81" selection-end-column="46" />
+            <state relative-caret-position="261">
+              <caret line="96" column="35" lean-forward="true" selection-start-line="96" selection-start-column="35" selection-end-line="96" selection-end-column="35" />
               <folding>
-                <element signature="e#64#103#0" expanded="true" />
                 <element signature="e#345#386#0" expanded="true" />
               </folding>
             </state>
@@ -102,7 +106,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Center.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Center.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/pages/MemberCenter/Center.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="500">
@@ -197,9 +201,9 @@
         <option value="$PROJECT_DIR$/app/pages/Setting/Cell.js" />
         <option value="$PROJECT_DIR$/app/pages/MemberCenter/MyCell.js" />
         <option value="$PROJECT_DIR$/app/pages/MemberCenter/MyHeaderView.js" />
-        <option value="$PROJECT_DIR$/app/pages/AdressManner/Address.js" />
         <option value="$PROJECT_DIR$/app/pages/Setting/Setting.js" />
         <option value="$PROJECT_DIR$/app/pages/MemberCenter/Center.js" />
+        <option value="$PROJECT_DIR$/app/pages/AdressManner/Address.js" />
       </list>
     </option>
   </component>
@@ -622,12 +626,12 @@
       <workItem from="1495597424431" duration="17615000" />
       <workItem from="1495673467422" duration="27190000" />
       <workItem from="1495760309586" duration="23523000" />
-      <workItem from="1495845935054" duration="5751000" />
+      <workItem from="1495845935054" duration="6568000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="202249000" />
+    <option name="totallyTimeSpent" value="203066000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -642,14 +646,14 @@
     <frame x="-8" y="-8" width="1370" height="744" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19155355" sideWeight="0.48630136" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25263953" sideWeight="0.48026314" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.09931507" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17948718" sideWeight="0.51369864" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25263953" sideWeight="0.5197368" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.018835617" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -998,9 +1002,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/pages/Shop/HJShopDetail.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1250">
-          <caret line="70" column="1" lean-forward="false" selection-start-line="70" selection-start-column="1" selection-end-line="72" selection-end-column="3" />
-          <folding />
+        <state relative-caret-position="1325">
+          <caret line="53" column="1" lean-forward="false" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
+          <folding>
+            <marker date="1495853393092" expanded="false" signature="22:38" ph="..." />
+            <marker date="1495853393092" expanded="true" signature="2358:2360" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1025,17 +1032,6 @@
         <state relative-caret-position="195">
           <caret line="43" column="19" lean-forward="false" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/pages/AdressManner/Address.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="81" column="46" lean-forward="false" selection-start-line="81" selection-start-column="46" selection-end-line="81" selection-end-column="46" />
-          <folding>
-            <element signature="e#64#103#0" expanded="true" />
-            <element signature="e#345#386#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1083,6 +1079,16 @@
             <element signature="n#!!doc" expanded="true" />
             <element signature="e#41#80#0" expanded="true" />
             <element signature="e#335#369#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/pages/AdressManner/Address.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="96" column="35" lean-forward="true" selection-start-line="96" selection-start-column="35" selection-end-line="96" selection-end-column="35" />
+          <folding>
+            <element signature="e#345#386#0" expanded="true" />
           </folding>
         </state>
       </provider>

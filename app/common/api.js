@@ -11,6 +11,7 @@ export const GetHomeAllClassFirstPageData = "buyerapi/home/getHomeAllClassFirstP
 
 //获取所有分类接口
 export const GetAllCatList = 'buyerapi/cat/getAllCatList';
+
 // 获取商品列表接口
 export const GetGoodsList = 'buyerapi/goods/getGoodsList';
 
@@ -29,4 +30,3 @@ export const SAVE_ADDRESS =  'buyerapi/address/saveAddress';
 export const GET_ADDRESS_LIST =  'buyerapi/address/getAddressList';
 //删除地址列表
 export const DELETE_ADDRESS =  'buyerapi/address/deleteAddress';
-
