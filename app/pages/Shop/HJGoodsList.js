@@ -57,7 +57,7 @@ export default class GoodsList extends React.PureComponent {
   _changeSortType = (typeNum) => {
     this.goodsListStore.sortType = typeNum;
     this.refs.flatList.scrollToOffset({animated: false, offset: 0})
-    this.goodsListStore.refreshListData();
+    this.goodsListStore.changeSortType();
   }
 
   _onEndReach = () => {

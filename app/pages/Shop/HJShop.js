@@ -68,15 +68,11 @@ export default class Shop extends React.Component {
   }
 
   _onEndReach = () => {
-    if (!this.shopListStore.isNoMore) {
-      this.shopListStore.page++;
-      this.shopListStore.fetchListData();
-    }
+    this.shopListStore.loadMoreListData();
   }
 
   _onRefresh = () => {
-    this.shopListStore.isRefreshing = true;
-    this.shopListStore.fetchListData();
+    this.shopListStore.refreshListData();
   }
 
   _onPressCell = (data) => {

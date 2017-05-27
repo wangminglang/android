@@ -50,6 +50,13 @@ export default class baseListStore {
 	    }
 	}
 
+	@action 
+	changeSortType = () => {
+		this.listData.splice(0, this.listData.length)
+	    this.page = 1
+	    this.fetchListData();
+	}
+
 	@computed
 	get isFetching() {
 		return this.listData.length == 0 && this.errorMsg == ''

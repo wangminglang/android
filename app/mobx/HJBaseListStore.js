@@ -32,7 +32,20 @@ export default class baseListStore {
 			console.log(`${error}`)
 			this.errorMsg = error;
 		})
-		
+	}
+
+	@action 
+	refreshListData = () => {
+		this.isRefreshing = true;
+	    this.fetchListData();
+	}
+
+	@action 
+	loadMoreListData = () => {
+		if (!this.isNoMore) {
+		    this.page++;
+		    this.fetchListData();
+	    }
 	}
 
 	@computed
