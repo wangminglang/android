@@ -14,39 +14,40 @@ import {
   FlatList
 } from 'react-native';
 
+import {observer} from 'mobx-react/native';
 
+import * as Api from '../../common/api';
+import Loading from '../../components/Loading';
+
+
+@observer
 export default class HomeCategoryList extends React.Component {
 
   static defaultProps = {
       list :[],
-      callBack:Object
-  };
-
-  constructor(props){
-    super(props);
-    this.state = {
+      callBack:Object,
+      listStore:Object,
+      onEndReached:Object,
+      onRefresh:Object,  
     };
 
-
-  };
-
-
-
   render() {
+    const {listData,loading} = this.props.listStore;
     return (
       <View style={styles.containStyle}>
         <FlatList
             numColumns={2}
-            data={this.props.list}
+            data={listData.slice()}
             renderItem={this._renderItem}
             ItemSeparatorComponent={this._renderSeparator}
             ListFooterComponent={this._renderFooter}
-            onEndReached={this._onEndReach}
+            onEndReached={()=>this._onEndReach()}
             onEndReachedThreshold={0.1}
-            onRefresh={this._onRefresh}
+            onRefresh={()=>this._onRefresh()}
             refreshing={false}
             keyExtractor={(item, index) => index}
           />
+      <Loading isShow={loading} />
       </View>
     );
   }
@@ -65,11 +66,11 @@ export default class HomeCategoryList extends React.Component {
   }
 
   _onRefresh(){
-
+    this.props.onRefresh();
   }
 
   _onEndReach(){
-
+    this.props.onEndReached();
   }
   _renderFooter(){
     return(
