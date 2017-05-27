@@ -14,7 +14,9 @@ import {
     Image,
     TouchableOpacity,
     ListView,
-    ScrollView
+    ScrollView,
+    Platform,
+    BackAndroid
 } from 'react-native';
 //得到屏幕宽度
 var dimen = require('Dimensions');
@@ -42,15 +44,25 @@ export default class Address extends React.Component {
             addressNun: null,
         };
     };
-    _goBack(){
-        this.props.navigation.goBack();
+
+    _goBack() {
+        _this.props.navigation.goBack();
         tabStatus.show();
+        return true;
     }
-    componentWillMount(){
+
+    componentWillMount() {
         tabStatus.hide();
+        if (Platform.OS === 'android') {
+            BackAndroid.addEventListener('hardwareBackPress', _this._goBack);
+        }
     }
+
     componentWillUnmount() {
         this.subscription.remove();
+        if (Platform.OS === 'android') {
+            BackAndroid.removeEventListener('hardwareBackPress', _this._goBack);
+        }
     };
 
     componentDidMount() {
@@ -78,7 +90,7 @@ export default class Address extends React.Component {
     }
 
     render() {
-        return (this.state.addressNun ===null ?null:this.state.addressNun ===0 ?
+        return (this.state.addressNun === null ? null : this.state.addressNun === 0 ?
                 <View style={styles.content1}>
                     <Image source={require('./../../images/bg_gerenzhongxin.png')} style={styles.imgStyle1}/>
                     <Text style={styles.txtStyle1}>您还没有收货地址</Text>
