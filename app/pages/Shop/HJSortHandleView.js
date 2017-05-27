@@ -25,13 +25,13 @@ export default class SortHandleView extends Component {
 
   render() {
     const { selectedIndex } = this.state;
-    const { sortTypes, shopDetail } = this.props;
+    const { sortTypes, shopDetail, goodsItemClick } = this.props;
     let title = sortTypes[selectedIndex].title;
     return (
       <View style={{flex:1}}>
         <HandleView total={shopDetail.total} title={title} handleViewClick={this._toggle} />
 
-        <GoodsList ref='goodsList' shopDetail={shopDetail} />
+        <GoodsList ref='goodsList' shopDetail={shopDetail} goodsItemClick={goodsItemClick} />
 
         <View style={styles.bgContainer} pointerEvents={this.state.isShow ? 'auto' : 'none'} >
           <Animated.View style={[styles.bg, {opacity:this.state.fadeInOpacity}]} />

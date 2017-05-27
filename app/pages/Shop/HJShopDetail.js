@@ -64,9 +64,14 @@ export default class ShopDetail extends React.Component {
     return (
       <View style={styles.container}>
         <TopView shopDetail={shopDetail} />
-        <SortHandleView sortTypes={sortTypes} shopDetail={shopDetail} />
+        <SortHandleView sortTypes={sortTypes} shopDetail={shopDetail} goodsItemClick={this._goodsItemClick} />
       </View>
     );
+  }
+
+  _goodsItemClick = (id) => {
+    const {navigate} = this.props.navigation;
+    navigate('GoodsDetail', {id: id});
   }
 
 }

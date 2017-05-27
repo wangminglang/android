@@ -10,7 +10,8 @@ import {
   Image,
   Animated,
   TouchableOpacity,
-  FlatList
+  FlatList,
+  InteractionManager
 } from 'react-native';
 
 import {observer} from 'mobx-react/native';
@@ -56,20 +57,15 @@ export default class GoodsList extends React.PureComponent {
   _changeSortType = (typeNum) => {
     this.goodsListStore.sortType = typeNum;
     this.refs.flatList.scrollToOffset({animated: false, offset: 0})
-	  this.goodsListStore.isRefreshing = true;
-    this.goodsListStore.fetchListData();  
+    this.goodsListStore.refreshListData();
   }
 
   _onEndReach = () => {
-    if (!this.goodsListStore.isNoMore) {
-      this.goodsListStore.page++;
-      this.goodsListStore.fetchListData();
-    }
+    this.goodsListStore.loadMoreListData();
   }
 
   _onRefresh = () => {
-    this.goodsListStore.isRefreshing = true;
-    this.goodsListStore.fetchListData();
+    this.goodsListStore.refreshListData();
   }
 
   _renderItem = ({item, index}) => {
@@ -80,14 +76,9 @@ export default class GoodsList extends React.PureComponent {
     return <LoadMoreFooter isNoMore={this.goodsListStore.isNoMore} />
   }
 
-  _onSelectSortType = (type) => {
-    const { title, typeNum } = type;
-    this.goodsListStore.sortType = typeNum;
-    this.goodsListStore.fetchListData();
-  }
-
-  _onPressCell = () => {
-
+  _onPressCell = (id) => {
+    const { goodsItemClick } = this.props;
+    goodsItemClick && goodsItemClick(id);
   }
 }
 
@@ -109,14 +100,14 @@ class GoodsItem extends PureComponent {
       >
         <Image style={{width: (gScreen.width-2)/2-10, height: (gScreen.width-2)/2-10}} source={data.image ? {uri: data.image} : require('../../images/dianpushangpin.jpg')} />
         <Text style={{fontSize: 13, color: gColors.title, }}>{data.title}</Text>  
-          <Text style={{fontSize: 13, color: gColors.red}}>￥{data.price}</Text>
+        <Text style={{fontSize: 13, color: gColors.red}}>￥{data.price}</Text>
       </TouchableOpacity>
     )
   }
 
   _onPress = () => {
     const {data , onPress} = this.props;
-    onPress && onPress(data);
+    onPress && onPress(data.id);
   }
 }
 
