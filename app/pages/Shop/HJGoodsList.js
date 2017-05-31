@@ -98,7 +98,7 @@ class GoodsItem extends PureComponent {
         style={[styles.item, {marginLeft:marginLeft}]}
         onPress={this._onPress}
       >
-        <Image style={{width: (gScreen.width-2)/2-10, height: (gScreen.width-2)/2-10}} source={data.image ? {uri: data.image} : require('../../images/dianpushangpin.jpg')} />
+        <Image style={{width: (gScreen.width-2)/2-10, height: (gScreen.width-2)/2-10}} source={data.image ? {uri: data.image} : require('../../images/mr_dianpushangpin.jpg')} />
         <Text style={{fontSize: 13, color: gColors.title, }}>{data.title}</Text>  
         <Text style={{fontSize: 13, color: gColors.red}}>￥{data.price}</Text>
       </TouchableOpacity>

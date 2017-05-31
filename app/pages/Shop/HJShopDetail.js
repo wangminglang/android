@@ -80,7 +80,7 @@ const TopView = ({shopDetail}) => {
   return (
       <View style={{padding: 15, backgroundColor: gColors.white}}>
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
-          <Image style={{width: 42, height: 42}} source={shopDetail.image ? {uri: shopDetail.image} : require('../../images/dianputouxiang.jpg')} />
+          <Image style={{width: 42, height: 42}} source={shopDetail.image ? {uri: shopDetail.image} : require('../../images/mr_dianputouxiang.jpg')} />
           <Text numberOfLines={1} style={{fontSize: 16, color: gColors.title, marginLeft: 15, width: gScreen.width-96}}>{shopDetail.nameShop}</Text>
         </View>
         <Text style={{marginTop: 10, fontSize: 12, color: gColors.description}}>{shopDetail.descriptionShop}</Text>

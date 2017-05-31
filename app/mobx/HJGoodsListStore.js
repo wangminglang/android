@@ -53,7 +53,7 @@ export default class baseListStore {
 	@action 
 	changeSortType = () => {
 		this.listData.splice(0, this.listData.length)
-	    this.page = 1
+	    this.isRefreshing = true
 	    this.fetchListData();
 	}
 
