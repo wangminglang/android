@@ -131,7 +131,7 @@ export default class Home extends React.Component {
     idClassification = this.state.allCatList[index].id;
 
     
-     var params = {
+    var params = {
         idClassification:idClassification,
         sortType:selectedType,
         keyWord:'',
