@@ -6,6 +6,7 @@ export default class HJNetListUtil{
 	@observable page = 1
 	@observable loading = false
 	@observable isMore = true
+	@observable refreshing = false;
 
 	constructor(url,params,listKey) {
 		url = gBaseUrl.baseUrl + url;
@@ -24,6 +25,7 @@ export default class HJNetListUtil{
 				this.params = params;
 				this.params['page'] = this.page;
 			}
+			if (this.page ==1 ) {this.refreshing = true}
 			NetUtil.POST(
 			this.url,
 			this.params,
@@ -37,6 +39,7 @@ export default class HJNetListUtil{
 	successCallback(data){
 
 		this.errorMsg = '';
+		this.refreshing = false;
 		var list = [];
 		if (this.listKey) {
 			list = data.data[listKey];

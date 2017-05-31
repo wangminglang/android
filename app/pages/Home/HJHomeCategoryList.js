@@ -18,7 +18,7 @@ import {observer} from 'mobx-react/native';
 
 import * as Api from '../../common/api';
 import Loading from '../../components/Loading';
-
+import LoadMoreFooter from '../../components/LoadMoreFooter';
 
 @observer
 export default class HomeCategoryList extends React.Component {
@@ -32,7 +32,7 @@ export default class HomeCategoryList extends React.Component {
     };
 
   render() {
-    const {listData,loading} = this.props.listStore;
+    const {listData,loading,refreshing} = this.props.listStore;
     return (
       <View style={styles.containStyle}>
         <FlatList
@@ -44,10 +44,10 @@ export default class HomeCategoryList extends React.Component {
             onEndReached={()=>this._onEndReach()}
             onEndReachedThreshold={0.1}
             onRefresh={()=>this._onRefresh()}
-            refreshing={false}
+            refreshing={refreshing}
             keyExtractor={(item, index) => index}
           />
-      <Loading isShow={loading} />
+      <Loading isShow={this.props.listStore.isMore && loading} />
       </View>
     );
   }
@@ -56,6 +56,10 @@ export default class HomeCategoryList extends React.Component {
     return(
       <HomeCategoryListCell Item={rowData.item}/>
     )
+  }
+
+  _renderFooter = () => {
+    return <LoadMoreFooter isNoMore={!this.props.listStore.isMore} />
   }
 
   _renderSeparator(){
