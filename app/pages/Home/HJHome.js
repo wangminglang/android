@@ -18,6 +18,8 @@ import Header from '../../components/Header';
 import Loading from '../../components/Loading';
 import HomeCategoryList from './HJHomeCategoryList';
 import HomeMenus from './HJHomeMenus';
+import HJNetListUtil from '../../common/HJNetListUtil';
+import {observer} from 'mobx-react/native';
 
 
 import * as Api from '../../common/api';
@@ -37,6 +39,7 @@ const page = 1;
 const isRequesting = false;
 const homePage = 1;
 
+@observer
 export default class Home extends React.Component {
 
 
@@ -74,6 +77,7 @@ export default class Home extends React.Component {
         <Loading isShow={this.state.isLoading} />
       </View>
     );
+
   }
 
   renderTextInput(){
@@ -115,7 +119,6 @@ export default class Home extends React.Component {
   clickSlider(index){
     this.setState({
       selectPager:index,
-      isLoading:true,
       isUnfold:false,
       isUnfoldC:false,
       sortType:'综合排序',
@@ -127,22 +130,24 @@ export default class Home extends React.Component {
     page = 1;
     idClassification = this.state.allCatList[index].id;
 
-    this.requestGoodList();
     
-  }
-
-  requestGoodList(){
-
-    InteractionManager.runAfterInteractions(() => {
-      var params = {
+    var params = {
         idClassification:idClassification,
-        page:page,
         sortType:selectedType,
         keyWord:'',
         shopId:'',
-      }
-      NetUtil.POST(Api.GetGoodsList,params,(data)=>this.getGoodsList(data));
-    });
+    }
+    this.listStore = new HJNetListUtil(Api.GetGoodsList,params);
+  }
+
+  requestGoodList(){
+    var params = {
+        idClassification:idClassification,
+        sortType:selectedType,
+        keyWord:'',
+        shopId:'',
+    }
+    this.listStore && this.listStore.POST(params);
   }
 
   renderHomeList(selectPager){
@@ -160,12 +165,29 @@ export default class Home extends React.Component {
       return(
         <View style = {styles.categoryGoodsListStyle}>
           {this.renderSortBar()}
-          <HomeCategoryList list={this.state.categoryGoodsList}/>
+          <HomeCategoryList 
+          listStore={this.listStore}
+          onRefresh={()=>this.onRefreshCategoryList()}
+          onEndReached={()=>this.onEndReachedCategoryList()}
+          />
           {this.renderMenu()}
         </View>
       )    
     }
     
+  }
+  onRefreshCategoryList(){
+    if (!this.listStore.Loading) {
+      this.listStore.page = 1;
+      this.requestGoodList();
+    }
+  }
+
+  onEndReachedCategoryList(){
+    if (!this.listStore.Loading || !this.listStore.isMore) {
+      this.listStore.page++;
+      this.requestGoodList();
+    }
   }
 
   renderSortBar(){
@@ -261,6 +283,7 @@ export default class Home extends React.Component {
       sortType:sortTypes[j].title,
     });
     page = 1;
+    this.listStore.page = 1;
     this.requestGoodList();
   }
   clickCategoryType(i,j){
@@ -271,6 +294,7 @@ export default class Home extends React.Component {
     });
     idClassification=this.state.allCatList[this.state.selectPager].subClass[j].id;
     page = 1;
+    this.listStore.page = 1;
     this.requestGoodList();
   }
 
@@ -346,24 +370,9 @@ export default class Home extends React.Component {
       this.setState({
         allCatList:data.data
       });
-      console.log('++++++',this.state.allCatList)
     }
   }
 
-
-
-  getGoodsList(data){
-    this.setState({
-      isLoading:false
-    });
-
-    if (data.result) {
-
-        this.setState({
-          categoryGoodsList:data.data.list
-        });
-    }
-  }
 }
 
 const styles = StyleSheet.create({
