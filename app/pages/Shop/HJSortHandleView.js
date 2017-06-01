@@ -8,6 +8,7 @@ import {
   Animated,
   ScrollView,
   TouchableOpacity,
+  Image
 } from 'react-native';
 import GoodsList from './HJGoodsList';
 
@@ -29,7 +30,7 @@ export default class SortHandleView extends PureComponent {
     let title = sortTypes[selectedIndex].title;
     return (
       <View style={{flex:1}}>
-        <HandleView total={total} title={title} handleViewClick={this._toggle} />
+        <HandleView total={total} title={title} handleViewClick={this._toggle} isShow={this.state.isShow} />
 
         <GoodsList ref='goodsList' shopId={shopId} goodsItemClick={goodsItemClick} />
 
@@ -96,7 +97,8 @@ export default class SortHandleView extends PureComponent {
 const HandleView = ({
   total,
   title,
-  handleViewClick
+  handleViewClick,
+  isShow
 }) => {
   let onPress = () => {
     handleViewClick && handleViewClick()
@@ -107,10 +109,11 @@ const HandleView = ({
       <Text style={styles.sortViewText} >全部商品（{total}）</Text>
       <TouchableOpacity
         activeOpacity={0.75}
-        style={{flexDirection: 'row'}}
+        style={{flexDirection: 'row', alignItems: 'center'}}
         onPress={onPress}
       >
         <Text style={styles.sortViewText} >{title}</Text>
+        <Image style={{height: 6, width: 13, marginLeft: 5}} source={isShow ? require('../../images/ico_up.png') : require('../../images/ico_down.png')} />
       </TouchableOpacity>
     </View>
   )

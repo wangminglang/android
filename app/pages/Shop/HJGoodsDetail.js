@@ -34,6 +34,7 @@ export default class GoodsDetail extends Component {
 	      })
 	    })
 	}
+
 	render() {
 		const { goodsDetail } = this.state;
 		const { imageList, tuanList, shopInfo } = goodsDetail;
@@ -59,19 +60,27 @@ export default class GoodsDetail extends Component {
 				}
 
 				{shopInfo &&
-					<ShopView shopInfo={shopInfo} />
+					<ShopView shopInfo={shopInfo} goToShop={this._goToShop} />
 				}
 			</ScrollView>
 		)
 	}
+
+	_goToShop = (shopId) => {
+	    this.props.navigation.goBack();
+	}
 }
 
-const ShopView = ({shopInfo}) => {
+const ShopView = ({shopInfo, goToShop}) => {
+	let onPress = () => {
+		goToShop && goToShop(shopInfo.id)
+	}
+
 	return (
 		<View style={{padding: 15, backgroundColor: gColors.white, marginTop: 10, flexDirection: 'row', alignItems: 'center'}}>
 			<Image style={{width: 42, height: 42}} source={shopInfo.image ? {uri: shopInfo.image} : require('../../images/mr_dianputouxiang.jpg')} />
 			<Text style={{fontSize: 16, color: gColors.title, marginLeft: 10}}>{shopInfo.nameShop}</Text>
-			<TouchableOpacity style={{position: 'absolute', right: 15, borderWidth: 1, borderColor: gColors.red, width: 85, height: 30, justifyContent: 'center', alignItems: 'center'}}>
+			<TouchableOpacity onPress={onPress} style={{position: 'absolute', right: 15, borderWidth: 1, borderColor: gColors.red, width: 85, height: 30, justifyContent: 'center', alignItems: 'center'}}>
 				<Text style={{fontSize: 14, color: gColors.red}}>进店逛逛</Text>
 			</TouchableOpacity>
 		</View>
