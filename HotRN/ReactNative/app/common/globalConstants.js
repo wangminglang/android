@@ -15,7 +15,8 @@ global.gColors = {
     description: '#7f7f7f',
     background: '#f4f4f4',
     white: 'white',
-    red: '#ea4335'
+    red: '#ea4335',
+    clear: '#999999'
 }
 
 global.gFetchArguments = {

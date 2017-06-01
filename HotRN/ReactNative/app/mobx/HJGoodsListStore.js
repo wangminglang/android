@@ -34,7 +34,27 @@ export default class baseListStore {
 			console.log(`${error}`)
 			this.errorMsg = error;
 		})
-		
+	}
+
+	@action 
+	refreshListData = () => {
+		this.isRefreshing = true;
+	    this.fetchListData();
+	}
+
+	@action 
+	loadMoreListData = () => {
+		if (!this.isNoMore) {
+		    this.page++;
+		    this.fetchListData();
+	    }
+	}
+
+	@action 
+	changeSortType = () => {
+		this.listData.splice(0, this.listData.length)
+	    this.isRefreshing = true
+	    this.fetchListData();
 	}
 
 	@computed
@@ -44,23 +64,23 @@ export default class baseListStore {
 
 	_fetchDataFromUrl = () => {
 		return new Promise((resolve, reject) => {
-            const URL = gBaseUrl.baseUrl + this.URL;
 			const params = Object.assign({}, {shopId: this.shopId}, {page: this.page}, {sortType: this.sortType});
-			fetch(URL, params)
-			.then(response => response.json())
-			.then(responseData => {
-				if (responseData.result) {
+            NetUtil.POST(this.URL, {
+        		shopId: this.shopId, 
+        		page: this.page, 
+        		sortType: this.sortType
+        	}, (responseData) => {
+            	if (responseData.result) {
 					const {data} = responseData;
 					const {list} = data;
 					resolve({list, isNoMore: list.length < gFetchArguments.pageSize})
 				}else {
 					reject(responseData.error);
 				}
-			}).catch((error) => {
-				console.log(`${error}`)
+            }, (error) => {
+        		console.log(`${error}`)
                 reject('网络出错！')
-			})
-
+            })
 		})
 	}
 

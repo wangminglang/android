@@ -30,7 +30,6 @@ export default class ShopDetail extends React.Component {
   });
 
   _goBack(){
-    alert('dqwbdqbwdubqw');
     this.props.navigation.goBack();
     tabStatus.show();
   }
@@ -61,12 +60,18 @@ export default class ShopDetail extends React.Component {
 
   render() {
     const { shopDetail } = this.state;
+    const {params} = this.props.navigation.state;
     return (
       <View style={styles.container}>
         <TopView shopDetail={shopDetail} />
-        <SortHandleView sortTypes={sortTypes} shopDetail={shopDetail} />
+        <SortHandleView sortTypes={sortTypes} total={shopDetail.total} shopId={params.id} goodsItemClick={this._goodsItemClick} />
       </View>
     );
+  }
+
+  _goodsItemClick = (id) => {
+    const {navigate} = this.props.navigation;
+    navigate('GoodsDetail', {id: id});
   }
 
 }
@@ -75,7 +80,7 @@ const TopView = ({shopDetail}) => {
   return (
       <View style={{padding: 15, backgroundColor: gColors.white}}>
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
-          <Image style={{width: 42, height: 42}} source={shopDetail.image ? {uri: shopDetail.image} : require('../../images/dianputouxiang.jpg')} />
+          <Image style={{width: 42, height: 42}} source={shopDetail.image ? {uri: shopDetail.image} : require('../../images/mr_dianputouxiang.jpg')} />
           <Text numberOfLines={1} style={{fontSize: 16, color: gColors.title, marginLeft: 15, width: gScreen.width-96}}>{shopDetail.nameShop}</Text>
         </View>
         <Text style={{marginTop: 10, fontSize: 12, color: gColors.description}}>{shopDetail.descriptionShop}</Text>

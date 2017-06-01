@@ -1,6 +1,6 @@
 'use strict';
 
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   StyleSheet,
   Text,
@@ -8,10 +8,11 @@ import {
   Animated,
   ScrollView,
   TouchableOpacity,
+  Image
 } from 'react-native';
 import GoodsList from './HJGoodsList';
 
-export default class SortHandleView extends Component {
+export default class SortHandleView extends PureComponent {
   constructor(props){
     super(props);
     //分析数据
@@ -25,28 +26,27 @@ export default class SortHandleView extends Component {
 
   render() {
     const { selectedIndex } = this.state;
-    const { sortTypes, shopDetail } = this.props;
+    const { sortTypes, shopId, goodsItemClick, total } = this.props;
     let title = sortTypes[selectedIndex].title;
     return (
       <View style={{flex:1}}>
-        <View style={styles.sortView} >
-          <Text style={styles.sortViewText} >全部商品（{shopDetail.total}）</Text>
-          <TouchableOpacity
-            activeOpacity={0.75}
-            style={{flexDirection: 'row'}}
-            onPress={this._show}
-          >
-            <Text style={styles.sortViewText} >{title}</Text>
-          </TouchableOpacity>
-        </View>
+        <HandleView total={total} title={title} handleViewClick={this._toggle} isShow={this.state.isShow} />
 
-        <GoodsList ref='goodsList' params={shopDetail} />
+        <GoodsList ref='goodsList' shopId={shopId} goodsItemClick={goodsItemClick} />
 
         <View style={styles.bgContainer} pointerEvents={this.state.isShow ? 'auto' : 'none'} >
           <Animated.View style={[styles.bg, {opacity:this.state.fadeInOpacity}]} />
           <Animated.View style={[styles.content, {height: this.state.height}]}>
             <ScrollView style={styles.scroll}>
-              {sortTypes.map(this._renderListCell)}
+              {sortTypes.map((sortType, index) => {
+                return  <Cell 
+                          sortType={sortType} 
+                          key={index} 
+                          index={index} 
+                          selected={selectedIndex == index}
+                          cellClick={this._cellClick}
+                        />
+              })}
             </ScrollView>
           </Animated.View>
         </View>
@@ -54,34 +54,16 @@ export default class SortHandleView extends Component {
     );
   }
 
-  _renderListCell = (data, index) => {
-    const {sortTypes} = this.props;
-    const {title, typeNum} = data;
-    const {selectedIndex} = this.state;
-    const isLast = sortTypes.length - 1 == index;
-    const titleStyle = [{fontSize: 14, color: gColors.description}];
-    if (selectedIndex == typeNum) titleStyle.push({color: '#ea4335'})
-    return (
-      <TouchableOpacity
-          key={index}
-          activeOpacity={0.95}
-          style={[styles.sortTypeItem, isLast && {width: gScreen.width}]}
-          onPress={() => this._cellClick(index)}
-      >
-        <Text style={titleStyle}>{title}</Text>
-      </TouchableOpacity>
-    )
-  }
-
   _cellClick = (index) => {
-    this.refs.goodsList._changeSortType(index);
+    const {sortTypes} = this.props;
+    this.refs.goodsList._changeSortType(sortTypes[index].typeNum);
     this.setState({
       selectedIndex: index
     })
-    this._show();
+    this._toggle();
   }
 
-  _show=()=>{
+  _toggle=()=>{
     this.state.isShow ? 
     Animated.parallel([this._createAnimation(0), this._createFade(0)]).start() :
     Animated.parallel([this._createAnimation(250), this._createFade(1)]).start()
@@ -110,6 +92,56 @@ export default class SortHandleView extends Component {
         }
       );
   }
+}
+
+const HandleView = ({
+  total,
+  title,
+  handleViewClick,
+  isShow
+}) => {
+  let onPress = () => {
+    handleViewClick && handleViewClick()
+  }
+
+  return (
+    <View style={styles.sortView} >
+      <Text style={styles.sortViewText} >全部商品（{total}）</Text>
+      <TouchableOpacity
+        activeOpacity={0.75}
+        style={{flexDirection: 'row', alignItems: 'center'}}
+        onPress={onPress}
+      >
+        <Text style={styles.sortViewText} >{title}</Text>
+        <Image style={{height: 6, width: 13, marginLeft: 5}} source={isShow ? require('../../images/ico_up.png') : require('../../images/ico_down.png')} />
+      </TouchableOpacity>
+    </View>
+  )
+}
+
+const Cell = ({
+  sortType,
+  index,
+  selected,
+  cellClick
+}) => {
+  const {title, typeNum} = sortType;
+  const titleStyle = [{fontSize: 14, color: gColors.description}];
+  if (selected) titleStyle.push({color: '#ea4335'});
+
+  let onPress = () => {
+    cellClick && cellClick(index)
+  }
+
+  return (
+    <TouchableOpacity
+        activeOpacity={0.95}
+        style={styles.sortTypeItem}
+        onPress={onPress}
+    >
+      <Text style={titleStyle}>{title}</Text>
+    </TouchableOpacity>
+  )
 }
 
 const styles = StyleSheet.create({

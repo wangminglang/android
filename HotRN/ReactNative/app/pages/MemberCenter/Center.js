@@ -7,6 +7,7 @@ import {
     View,
     TouchableHighlight,
     ScrollView,
+    NativeModules,
     TouchableOpacity
 } from 'react-native';
 var MyCell = require('./MyCell');
@@ -95,9 +96,13 @@ export default class Mine extends React.Component {
                         </TouchableOpacity>
 
                     </View>
+                    <TouchableOpacity
+                        activeOpacity={0.75}
+                        onPress={() => this._skipNativeCall()}>
                     <MyCell
                         leftTitle="联系客服"
                     />
+                    </TouchableOpacity>
                     <TouchableOpacity
                         activeOpacity={0.75}
                         onPress={() => this._jump_ToSetting()}>
@@ -116,7 +121,7 @@ export default class Mine extends React.Component {
      */
     jump_ToAddressManner() {
         const {navigate} = this.props.navigation;
-        navigate('Address', {addressNun: this.state.addressNun});
+        navigate('Address');
     }
 
     /**
@@ -126,6 +131,13 @@ export default class Mine extends React.Component {
     _jump_ToSetting() {
         const {navigate} = this.props.navigation;
         navigate('Setting', {mobile: this.state.mobile});
+    }
+    /**
+     * 调用原生代码打电话
+     */
+    _skipNativeCall() {
+        let phone = '18201139076';
+        NativeModules.android.rnCallNative(phone);
     }
 }
 const styles = StyleSheet.create({

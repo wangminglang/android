@@ -14,7 +14,7 @@ import {
 
 import Main from './app/HJMain';
 
-export default class NHPatient extends React.Component {
+export default class Haojia extends React.Component {
 
   render() {
     var common = this.props['common'];
@@ -27,4 +27,4 @@ export default class NHPatient extends React.Component {
 }
 
 // 整体js模块的名称
-AppRegistry.registerComponent('NHPatient', () => NHPatient);
+AppRegistry.registerComponent('Haojia', () => Haojia);

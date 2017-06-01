@@ -20,12 +20,14 @@ import NoAddress from './pages/AdressManner/NoAddress';
 import Address from './pages/AdressManner/Address';
 import AddressListView from './pages/AdressManner/AddressListView';
 import Setting from './pages/Setting/Setting';
+import GoodsDetail from './pages/Shop/HJGoodsDetail';
 const NavigationHome = StackNavigator({
     Home: {screen: Home},
 });
 const NavigationShop = StackNavigator({
     Shop: {screen: Shop},
-    ShopDetail: {screen: ShopDetail}
+    ShopDetail: {screen: ShopDetail},
+    GoodsDetail: {screen: GoodsDetail}
 });
 const NavigationCategory = StackNavigator({
     Category: {screen: Category},

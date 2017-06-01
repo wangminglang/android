@@ -43,7 +43,6 @@ const styles = StyleSheet.create({
     top_img_style: {
         height: 60,
         width: 60,
-        marginLeft: 10,
         borderRadius: 30,
     },
     top_right_img_style: {

@@ -14,6 +14,8 @@ import {
     Image,
     TouchableOpacity,
     TextInput,
+    Platform,
+    BackAndroid
 } from 'react-native';
 //得到屏幕宽度
 var dimen = require('Dimensions');
@@ -23,14 +25,33 @@ import area from './area.json';
 import CheckBox from 'react-native-check-box';
 import Header from '../../components/Header';
 import * as Api from './../../common/api';
+let _this = null;
 import  {DeviceEventEmitter} from 'react-native';
 export default class AddAdress extends React.Component {
     static navigationOptions = ({navigation}) => ({
-        header: <Header title='新建收货地址' showLeftIcon={true} leftIconAction={() => navigation.goBack()}/>
+        header: <Header title='新建收货地址' showLeftIcon={true} leftIconAction={() => _this._goBack()}/>
     })
+
+    _goBack() {
+        _this.props.navigation.goBack();
+        return true;
+    }
+
+    componentWillMount() {
+        if (Platform.OS === 'android') {
+            BackAndroid.addEventListener('hardwareBackPress', _this._goBack);
+        }
+    }
+
+    componentWillUnmount() {
+        if (Platform.OS === 'android') {
+            BackAndroid.removeEventListener('hardwareBackPress', _this._goBack);
+        }
+    };
 
     constructor(props) {
         super(props);
+        _this = this;
         this.state = {
             name: "",
             phoneNumber: "",
@@ -269,7 +290,7 @@ const styles = StyleSheet.create({
         marginLeft: 15,
     },
     choosetxt: {
-        width:250,
+        width: 250,
         color: '#7f7f7f',
         fontSize: 14,
         marginLeft: 15,

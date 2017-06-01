@@ -7,7 +7,7 @@ import {
     StyleSheet,
 } from 'react-native';
 import Main from './app/HJMain';
-export default class HotRN extends Component {
+export default class Haojia extends Component {
 
     render() {
         return (
@@ -25,4 +25,4 @@ const styles = StyleSheet.create({
     }
 });
 
-AppRegistry.registerComponent('HotRN', () => HotRN);
+AppRegistry.registerComponent('Haojia', () => Haojia);

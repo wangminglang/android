@@ -24,6 +24,8 @@ export const GET_SHOPS_LIST = 'buyerapi/shop/getShopsList';
 export const GET_SHOPS_DETAIL = 'buyerapi/shop/getShopsDetail';
 //商品列表
 export const GET_GOODS_LIST =  'buyerapi/goods/getGoodsList';
+//商品详情
+export const GET_GOODS_DETAIL =  'buyerapi/goods/getGoodsDetail';
 //保存收货地址
 export const SAVE_ADDRESS =  'buyerapi/address/saveAddress';
 //收货地址列表
