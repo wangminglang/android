@@ -50,7 +50,7 @@ export default class HomeListCell extends React.Component{
     for (var i = 0; i < this.props.Item.groupUser.length; i++) {
       var user = this.props.Item.groupUser[i];
       arr.push(
-        <TouchableOpacity key={this.props.user.userId} onPress={() => this.cellClick(this.props.user.userId)}>
+        <TouchableOpacity key={user.userId} onPress={() => this.cellClick(this.props.user.userId)}>
         <Image style={styles.userStyle} source={{uri:user.headUrl}}/>
         </TouchableOpacity>
 

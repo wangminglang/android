@@ -11,7 +11,9 @@ import {
     View,
     Alert,
     Image,
-    TouchableOpacity
+    TouchableOpacity,
+    Platform,
+    BackAndroid
 } from 'react-native';
 //得到屏幕宽度
 var dimen = require('Dimensions');
@@ -26,8 +28,9 @@ export default class Setting extends React.Component {
         header: <Header title='设置' showLeftIcon={true} leftIconAction={() => _this._goBack()}/>
     })
     _goBack(){
-        this.props.navigation.goBack();
+        _this.props.navigation.goBack();
         tabStatus.show();
+        return true;
     }
     static defaultProps = {};
 
@@ -38,7 +41,15 @@ export default class Setting extends React.Component {
     };
     componentWillMount(){
         tabStatus.hide();
+        if (Platform.OS === 'android') {
+            BackAndroid.addEventListener('hardwareBackPress', _this._goBack);
+        }
     }
+    componentWillUnmount() {
+        if (Platform.OS === 'android') {
+            BackAndroid.removeEventListener('hardwareBackPress', _this._goBack);
+        }
+    };
     render() {
         const {params} = this.props.navigation.state;
         return (
