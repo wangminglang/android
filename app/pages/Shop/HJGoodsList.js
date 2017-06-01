@@ -25,8 +25,8 @@ export default class GoodsList extends React.PureComponent {
 
   constructor(props) {
     super(props);
-    const { shopDetail } = this.props;
-    this.goodsListStore = new GoodsStore(Api.GET_GOODS_LIST, shopDetail.id);
+    const { shopId } = this.props;
+    this.goodsListStore = new GoodsStore(Api.GET_GOODS_LIST, shopId);
   }
 
   render() {

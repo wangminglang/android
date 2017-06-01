@@ -55,23 +55,17 @@ export default class baseListStore {
 
 	_fetchDataFromUrl = () => {
 		return new Promise((resolve, reject) => {
-            const URL = gBaseUrl.baseUrl + this.URL;
-			fetch(URL, {
-				page: this.page
-			})
-			.then(response => response.json())
-			.then(responseData => {
-				if (responseData.result) {
+            NetUtil.POST(this.URL, {page: this.page}, (responseData) => {
+            	if (responseData.result) {
 					const {data} = responseData;
 					resolve({data, isNoMore: data.length < gFetchArguments.pageSize})
 				}else {
 					reject(responseData.error);
 				}
-			}).catch((error) => {
-				console.log(`${error}`)
+            }, (error) => {
+        		console.log(`${error}`)
                 reject('网络出错！')
-			})
-
+            })
 		})
 	}
 

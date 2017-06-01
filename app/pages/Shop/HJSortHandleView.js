@@ -1,6 +1,6 @@
 'use strict';
 
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import {
   StyleSheet,
   Text,
@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import GoodsList from './HJGoodsList';
 
-export default class SortHandleView extends Component {
+export default class SortHandleView extends PureComponent {
   constructor(props){
     super(props);
     //分析数据
@@ -25,13 +25,13 @@ export default class SortHandleView extends Component {
 
   render() {
     const { selectedIndex } = this.state;
-    const { sortTypes, shopDetail, goodsItemClick } = this.props;
+    const { sortTypes, shopId, goodsItemClick, total } = this.props;
     let title = sortTypes[selectedIndex].title;
     return (
       <View style={{flex:1}}>
-        <HandleView total={shopDetail.total} title={title} handleViewClick={this._toggle} />
+        <HandleView total={total} title={title} handleViewClick={this._toggle} />
 
-        <GoodsList ref='goodsList' shopDetail={shopDetail} goodsItemClick={goodsItemClick} />
+        <GoodsList ref='goodsList' shopId={shopId} goodsItemClick={goodsItemClick} />
 
         <View style={styles.bgContainer} pointerEvents={this.state.isShow ? 'auto' : 'none'} >
           <Animated.View style={[styles.bg, {opacity:this.state.fadeInOpacity}]} />

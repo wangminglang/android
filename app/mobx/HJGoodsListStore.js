@@ -64,23 +64,23 @@ export default class baseListStore {
 
 	_fetchDataFromUrl = () => {
 		return new Promise((resolve, reject) => {
-            const URL = gBaseUrl.baseUrl + this.URL;
 			const params = Object.assign({}, {shopId: this.shopId}, {page: this.page}, {sortType: this.sortType});
-			fetch(URL, params)
-			.then(response => response.json())
-			.then(responseData => {
-				if (responseData.result) {
+            NetUtil.POST(this.URL, {
+        		shopId: this.shopId, 
+        		page: this.page, 
+        		sortType: this.sortType
+        	}, (responseData) => {
+            	if (responseData.result) {
 					const {data} = responseData;
 					const {list} = data;
 					resolve({list, isNoMore: list.length < gFetchArguments.pageSize})
 				}else {
 					reject(responseData.error);
 				}
-			}).catch((error) => {
-				console.log(`${error}`)
+            }, (error) => {
+        		console.log(`${error}`)
                 reject('网络出错！')
-			})
-
+            })
 		})
 	}
 

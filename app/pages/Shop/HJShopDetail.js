@@ -30,7 +30,6 @@ export default class ShopDetail extends React.Component {
   });
 
   _goBack(){
-    alert('dqwbdqbwdubqw');
     this.props.navigation.goBack();
     tabStatus.show();
   }
@@ -61,10 +60,11 @@ export default class ShopDetail extends React.Component {
 
   render() {
     const { shopDetail } = this.state;
+    const {params} = this.props.navigation.state;
     return (
       <View style={styles.container}>
         <TopView shopDetail={shopDetail} />
-        <SortHandleView sortTypes={sortTypes} shopDetail={shopDetail} goodsItemClick={this._goodsItemClick} />
+        <SortHandleView sortTypes={sortTypes} total={shopDetail.total} shopId={params.id} goodsItemClick={this._goodsItemClick} />
       </View>
     );
   }
