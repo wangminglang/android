@@ -32,7 +32,7 @@ public class MyReactActivity extends Activity implements DefaultHardwareBackBtnH
                 .setInitialLifecycleState(LifecycleState.RESUMED)
                 //.setUseOldBridge(true) // uncomment this line if your app crashes
                 .build();
-        mReactRootView.startReactApplication(mReactInstanceManager, "HotRN", null);
+        mReactRootView.startReactApplication(mReactInstanceManager, "Haojia", null);
 
         setContentView(mReactRootView);
     }
